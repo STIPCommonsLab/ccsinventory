@@ -36,12 +36,6 @@
 			  'outcomes_policy' => isset($_POST['outcomes-policy']) ? '1' : '0',
 			  'outcomes_proofconcept' => isset($_POST['outcomes-proofconcept']) ? '1' : '0',
 			  'outcomes_other' => isset($_POST['outcomes-other']) ? '1' : '0',
-			  'audience_teachers' => isset($_POST['audience-teachers']) ? '1' : '0',
-			  'audience_museum' => isset($_POST['audience-museum']) ? '1' : '0',
-			  'audience_administration' => isset($_POST['audience-administration']) ? '1' : '0',
-			  'audience_scientists' => isset($_POST['audience-scientists']) ? '1' : '0',
-			  'audience_evaluators' => isset($_POST['audience-evaluators']) ? '1' : '0',
-			  'audience_public' => isset($_POST['audience-public']) ? '1' : '0',
 			  'participation_type' => "'" . sanitizeInput($_POST['participation-type']) . "'",
 			  'project_contact' => "'" . sanitizeInput($_POST['project-contact']) . "'",
 			  'affiliation' => "'" . sanitizeInput($_POST['affiliation']) . "'",
@@ -356,50 +350,7 @@
 				    </label>
 					</div>
 				  </div>
-				</div>
-				
-				<!-- Multiple Checkboxes -->
-				<div class="form-group">
-				  <label class="col-md-4 control-label orange" for="audience">Intended Audience <span data-toggle="tooltip" title="Which audiences is this project designed to support?" class="glyphicon glyphicon-info-sign"></span></label>
-				  <div class="col-md-6">
-				  <div class="checkbox">
-				    <label for="audience-teachers">
-				      <input type="checkbox" name="audience-teachers" id="audience-teachers" value="Educators / Teachers">
-				      Educators / Teachers
-				    </label>
-					</div>
-				  <div class="checkbox">
-				    <label for="audience-museum">
-				      <input type="checkbox" name="audience-museum" id="audience-museum" value="Museum / ISE Professionals">
-				      Museum / ISE Professionals
-				    </label>
-					</div>
-				  <div class="checkbox">
-				    <label for="audience-administration">
-				      <input type="checkbox" name="audience-administration" id="audience-administration" value="Administration / Leadership / Policymakers">
-				      Administration / Leadership / Policymakers
-				    </label>
-					</div>
-				  <div class="checkbox">
-				    <label for="audience-scientists">
-				      <input type="checkbox" name="audience-scientists" id="audience-scientists" value="Scientists">
-				      Scientists
-				    </label>
-					</div>
-				  <div class="checkbox">
-				    <label for="audience-evaluators">
-				      <input type="checkbox" name="audience-evaluators" id="audience-evaluators" value="Evaluators">
-				      Evaluators
-				    </label>
-					</div>
-				  <div class="checkbox">
-				    <label for="audience-public">
-				      <input type="checkbox" name="audience-public" id="audience-public" value="General Public">
-				      General Public
-				    </label>
-					</div>
-				  </div>
-				</div>
+				</div>				
 				
 				<!-- Textarea -->
 				<div class="form-group">
