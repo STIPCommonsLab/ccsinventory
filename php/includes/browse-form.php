@@ -471,18 +471,6 @@
 		  	<span>&nbsp;</span>
 		  </dd>
 		</dl>
-		<dl class="dl-horizontal" id="m-audiences">
-		  <dt>Intended Audience</dt>
-		  <dd>
-		  	<span class="label label-success bool-labels" id="m-audience_teachers">Educators / Teachers</span>
-		  	<span class="label label-success bool-labels" id="m-audience_museum">Museum / ISE Professionals</span>
-		  	<span class="label label-success bool-labels" id="m-audience_administration">Administration / Policymakers</span>
-		  	<span class="label label-success bool-labels" id="m-audience_scientists">Scientists</span>
-		  	<span class="label label-success bool-labels" id="m-audience_evaluators">Evaluators</span>
-		  	<span class="label label-success bool-labels" id="m-audience_public">General Public</span>
-		  	<span>&nbsp;</span>
-		  </dd>
-		</dl>
 		<dl class="dl-horizontal" id="m-participation_type">
 		  <dt>Participation Type</dt>
 		  <dd>
