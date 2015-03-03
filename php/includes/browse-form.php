@@ -28,34 +28,142 @@
 		      <div class="panel-body">
 				  <div class="checkbox">				 
 				    <label for="field-of-science-0">
-				      <input type="checkbox" name="field_of_science" id="field-of-science-0" value="Life Sciences">
-				      Life Sciences
+				      <input type="checkbox" name="field_of_science" id="field-of-science-0" value="Animals">
+				      Animals
 				    </label>
 					</div>
 				  <div class="checkbox">
 				    <label for="field-of-science-1">
-				      <input type="checkbox" name="field_of_science" id="field-of-science-1" value="Physical Sciences and Mathematics">
-				      Physical Sciences and Mathematics
+				      <input type="checkbox" name="field_of_science" id="field-of-science-1" value="Archeology">
+				      Archeology
 				    </label>
 					</div>
 				  <div class="checkbox">
 				    <label for="field-of-science-2">
-				      <input type="checkbox" name="field_of_science" id="field-of-science-2" value="Engineering">
-				      Engineering
+				      <input type="checkbox" name="field_of_science" id="field-of-science-2" value="Astronomy & Space">
+				      Astronomy & Space
 				    </label>
 					</div>
 				  <div class="checkbox">
 				    <label for="field-of-science-3">
-				      <input type="checkbox" name="field_of_science" id="field-of-science-3" value="Social and Behavioral Sciences">
-				      Social and Behavioral Sciences
+				      <input type="checkbox" name="field_of_science" id="field-of-science-3" value="Awards">
+				      Awards
 				    </label>
 					</div>
 				  <div class="checkbox">
 				    <label for="field-of-science-4">
-				      <input type="checkbox" name="field_of_science" id="field-of-science-4" value="Arts and Humanities">
-				      Arts and Humanities
+				      <input type="checkbox" name="field_of_science" id="field-of-science-4" value="Biology">
+				      Biology
 				    </label>
 					</div>
+				  <div class="checkbox">
+				    <label for="field-of-science-5">
+				      <input type="checkbox" name="field_of_science" id="field-of-science-5" value="Birds">
+				      Birds
+				    </label>
+					</div>
+				  <div class="checkbox">
+				    <label for="field-of-science-6">
+				      <input type="checkbox" name="field_of_science" id="field-of-science-6" value="Chemistry">
+				      Chemistry
+				    </label>
+                  </div>
+				  <div class="checkbox">
+				    <label for="field-of-science-7">
+				      <input type="checkbox" name="field_of_science" id="field-of-science-7" value="Climate & Weather">
+				      Climate & Weather
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label for="field-of-science-8">
+				      <input type="checkbox" name="field_of_science" id="field-of-science-8" value="Computers & Technology">
+				      Computers & Technology
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label for="field-of-science-9">
+				      <input type="checkbox" name="field_of_science" id="field-of-science-9" value="Crowd Funding">
+				      Crowd Funding
+				    </label>
+				  </div>																								
+				  <div class="checkbox">
+				    <label for="field-of-science-10">
+				      <input type="checkbox" name="field_of_science" id="field-of-science-10" value="Ecology & Environment">
+				      Ecology & Environment
+				    </label>
+				  </div>																						
+				  <div class="checkbox">
+				    <label for="field-of-science-11">
+				      <input type="checkbox" name="field_of_science" id="field-of-science-11" value="Education">
+				      Education
+				    </label>
+				  </div>																								
+				  <div class="checkbox">
+				    <label for="field-of-science-12">
+				      <input type="checkbox" name="field_of_science" id="field-of-science-12" value="Food">
+				      Food
+				    </label>
+				  </div>																								
+				  <div class="checkbox">
+				    <label for="field-of-science-13">
+				      <input type="checkbox" name="field_of_science" id="field-of-science-13" value="Geology & Earth Science">
+				      Geology & Earth Science
+				    </label>
+				  </div>																								
+				  <div class="checkbox">
+				    <label for="field-of-science-14">
+				      <input type="checkbox" name="field_of_science" id="field-of-science-14" value="Health & Medicine">
+				      Health & Medicine
+				    </label>
+				  </div>																								
+				  <div class="checkbox">
+				    <label for="field-of-science-15">
+				      <input type="checkbox" name="field_of_science" id="field-of-science-15" value="Insects">
+				      Insects
+				    </label>
+				  </div>																								
+				  <div class="checkbox">
+				    <label for="field-of-science-16">
+				      <input type="checkbox" name="field_of_science" id="field-of-science-16" value="Nature & Outdoors">
+				      Nature & Outdoors
+				    </label>
+				  </div>																								
+				  <div class="checkbox">
+				    <label for="field-of-science-17">
+				      <input type="checkbox" name="field_of_science" id="field-of-science-17" value="Ocean & Water">
+				      Ocean & Water
+				    </label>
+				  </div>																								
+				  <div class="checkbox">
+				    <label for="field-of-science-18">
+				      <input type="checkbox" name="field_of_science" id="field-of-science-18" value="Physics">
+				      Physics
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label for="field-of-science-19">
+				      <input type="checkbox" name="field_of_science" id="field-of-science-19" value="Psychology">
+				      Psychology
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label for="field-of-science-20">
+				      <input type="checkbox" name="field_of_science" id="field-of-science-20" value="Science Policy">
+				      Science Policy
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label for="field-of-science-21">
+				      <input type="checkbox" name="field_of_science" id="field-of-science-21" value="Sound">
+				      Sound
+				    </label>
+				  </div>				  				  				  				  
+				  <div class="checkbox">
+				    <label for="field-of-science-22">
+				      <input type="checkbox" name="field_of_science" id="field-of-science-22" value="Transportation">
+				      Transportation
+				    </label>
+				  </div>			  				  				  				  				  
 		      </div>
 		    </div>
 		  </div>
