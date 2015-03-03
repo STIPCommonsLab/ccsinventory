@@ -392,56 +392,6 @@
 		      </div>
 		    </div>
 		  </div>
-		  <div class="panel panel-default" id="audience">
-		    <div class="panel-heading">
-		      <h4 class="panel-title">
-		        <a data-toggle="collapse" href="#collapseSix">
-		          Intended Audience
-		        </a>
-		      </h4>
-		    </div>
-		    <div id="collapseSix" class="panel-collapse collapse">
-		      <div class="panel-body">
-				  <div class="checkbox">
-				    <label for="audience-0">
-				      <input type="checkbox" name="audience_teachers" id="audience-0" value="1">
-				      Educators / Teachers
-				    </label>
-					</div>
-				  <div class="checkbox">
-				    <label for="audience-1">
-				      <input type="checkbox" name="audience_museum" id="audience-1" value="1">
-				      Museum / ISE Professionals
-				    </label>
-					</div>
-				  <div class="checkbox">
-				    <label for="audience-2">
-				      <input type="checkbox" name="audience_administration" id="audience-2" value="1">
-				      Administration / Leadership / Policymakers
-				    </label>
-					</div>
-				  <div class="checkbox">
-				    <label for="audience-3">
-				      <input type="checkbox" name="audience_scientists" id="audience-3" value="1">
-				      Scientists
-				    </label>
-					</div>
-				  <div class="checkbox">
-				    <label for="audience-4">
-				      <input type="checkbox" name="audience_evaluators" id="audience-4" value="1">
-				      Evaluators
-				    </label>
-					</div>
-				  <div class="checkbox">
-				    <label for="audience-5">
-				      <input type="checkbox" name="audience_public" id="audience-5" value="1">
-				      General Public
-				    </label>
-					</div>
-
-		      </div>
-		    </div>
-		  </div>
 		</div>
 	</div> <!-- end left side -->
 	<div class="col-xs-8">
