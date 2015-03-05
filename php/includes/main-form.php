@@ -139,11 +139,28 @@
 				  <label class="col-md-4 control-label orange" for="field-of-science">Field of Science <span data-toggle="tooltip" title="Please select one of the five categories that best defines your project. Following this field you will be able to enter keywords to further define your project." class="glyphicon glyphicon-info-sign"></span></label>
 				  <div class="col-md-6">
 				    <select id="field-of-science" name="field-of-science" class="form-control">
-				      <option value="Life Sciences">Life Sciences</option>
-				      <option value="Physical Sciences and Mathematics">Physical Sciences and Mathematics</option>
-				      <option value="Engineering">Engineering</option>
-				      <option value="Social and Behavioral Sciences">Social and Behavioral Sciences</option>
-				      <option value="Arts and Humanities">Arts and Humanities</option>
+				      <option value="Animals">Animals</option>
+				      <option value="Archeology">Archeology</option>
+				      <option value="Astronomy & Space">Astronomy & Space</option>
+				      <option value="Awards">Awards</option>
+				      <option value="Biology">Biology</option>
+				      <option value="Birds">Birds</option>
+				      <option value="Chemistry">Chemistry</option>
+				      <option value="Climate & Weather">Climate & Weather</option>
+				      <option value="Computers & Technology">Computers & Technology</option>
+				      <option value="Crowd Funding">Crowd Funding</option>
+				      <option value="Ecology & Environment">Ecology & Environment</option>
+				      <option value="Education">Education</option>
+				      <option value="Food">Food</option>
+				      <option value="Geology & Earth Science">Geology & Earth Science</option>
+				      <option value="Health & Medicine">Health & Medicine</option>				      				          <option value="Insects">Insects</option>
+				      <option value="Nature & Outdoors">Nature & Outdoors</option>
+				      <option value="Ocean & Water">Ocean & Water</option>
+				      <option value="Physics">Physics</option>
+				      <option value="Psychology">Psychology</option>			      
+				      <option value="Science Policy">Science Policy</option>
+				      <option value="Sound">Sound</option>
+				      <option value="Transportation">Transportation</option>				      
 				    </select>
 				  </div>
 				</div>
