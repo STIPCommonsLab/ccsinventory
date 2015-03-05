@@ -254,6 +254,14 @@
 				      <option value="Other executive branch agency">Other executive branch agency</option>
 				      <option value="Other judicial branch agency">Other judicial branch agency</option>
 				      <option value="Other Independent agency">Other Independent agency</option>
+				      <option value="State or Local Government">State or Local Government</option>
+				      <option value="Formal Non-Profit/NGO">Formal Non-Profit/NGO</option>
+				      <option value="Community Group">Community Group</option>
+				      <option value="College or University">College or University</option>
+				      <option value="K-12 Education">K-12 Education</option>
+				      <option value="Museum">Museum</option>
+				      <option value="For-Profit">For-Profit</option>			      
+				      <option value="Other">Other</option>				      
 				    </select>
 				  </div>
 				</div>
