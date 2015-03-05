@@ -227,91 +227,91 @@
 				      <input type="checkbox" name="agency_partner" id="agency-partner-0" value="Bureau of Land Management (BLM)">
 				      BLM
 				    </label>
-					</div>
+				  </div>
 				  <div class="checkbox">
 				    <label for="agency-partner-1">
 				      <input type="checkbox" name="agency_partner" id="agency-partner-1" value="Department of Homeland Security (DHS)">
 				      DHS
 				    </label>
-					</div>
+				  </div>
 				  <div class="checkbox">
 				    <label for="agency-partner-2">
 				      <input type="checkbox" name="agency_partner" id="agency-partner-2" value="U.S. Department of the Interior (DOI)">
 				      DOI
 				    </label>
-					</div>
+				  </div>
 				  <div class="checkbox">
 				    <label for="agency-partner-3">
 				      <input type="checkbox" name="agency_partner" id="agency-partner-3" value="U.S. Environmental Protection Agency (EPA)">
 				      EPA
 				    </label>
-					</div>
+				  </div>
 				  <div class="checkbox">
 				    <label for="agency-partner-4">
 				      <input type="checkbox" name="agency_partner" id="agency-partner-4" value="United States Department of Health and Human Services (HHS)">
 				      HHS
 				    </label>
-					</div>
+				  </div>
 				  <div class="checkbox">
 				    <label for="agency-partner-5">
 				      <input type="checkbox" name="agency_partner" id="agency-partner-5" value="National Archives and Records Administration (NARA)">
 				      NARA
 				    </label>
-					</div>
+				  </div>
 				  <div class="checkbox">
 				    <label for="agency-partner-6">
 				      <input type="checkbox" name="agency_partner" id="agency-partner-6" value="National Aeronautics and Space Administration (NASA)">
 				      NASA
 				    </label>
-					</div>
+				  </div>
 				  <div class="checkbox">
 				    <label for="agency-partner-7">
 				      <input type="checkbox" name="agency_partner" id="agency-partner-7" value="National Institutes of Health (NIH)">
 				      NIH
 				    </label>
-					</div>
+			      </div>
 				  <div class="checkbox">
 				    <label for="agency-partner-8">
 				      <input type="checkbox" name="agency_partner" id="agency-partner-8" value="National Oceanic and Atmospheric Administration (NOAA)">
 				      NOAA
 				    </label>
-					</div>
+			      </div>
 				  <div class="checkbox">
 				    <label for="agency-partner-9">
 				      <input type="checkbox" name="agency_partner" id="agency-partner-9" value="National Science Foundation (NSF)">
 				      NSF
 				    </label>
-					</div>
+				  </div>
 				  <div class="checkbox">
 				    <label for="agency-partner-10">
 				      <input type="checkbox" name="agency_partner" id="agency-partner-10" value="U.S. National Park Service (NPS)">
 				      NPS
 				    </label>
-					</div>
+				  </div>
 				  <div class="checkbox">
 				    <label for="agency-partner-11">
 				      <input type="checkbox" name="agency_partner" id="agency-partner-11" value="The United States Social Security Administration (SSA)">
 				      SSA
 				    </label>
-					</div>
+			      </div>
 				  <div class="checkbox">
 				    <label for="agency-partner-12">
 				      <input type="checkbox" name="agency_partner" id="agency-partner-12" value="U.S Department of State">
 				      State
 				    </label>
-					</div>
+				  </div>
 				  <div class="checkbox">
 				    <label for="agency-partner-13">
 				      <input type="checkbox" name="agency_partner" id="agency-partner-13" value="U.S. Department of Agriculture">
 				      USDA
 				    </label>
-					</div>
+				  </div>
 				  <div class="checkbox">
 				    <label for="agency-partner-14">
 				      <input type="checkbox" name="agency_partner" id="agency-partner-14" value="U.S. Agency for International Development (USAID)">
 				      USAID
 				    </label>
-					</div>
+				  </div>
 				  <div class="checkbox">
 				    <label for="agency-partner-15">
 				      <input type="checkbox" name="agency_partner" id="agency-partner-15" value="U.S. Geological Survey (USGS)">
@@ -323,31 +323,79 @@
 				      <input type="checkbox" name="agency_partner" id="agency-partner-16" value="Smithsonian Institution (SI)">
 				      Smithsonian Institution (SI)
 				    </label>
-					</div>				  
-					<div class="checkbox">
+				  </div>				  
+				  <div class="checkbox">
 				    <label for="agency-partner-17">
-				      <input type="checkbox" name="agency_partner" id="agency-partner-16" value="Other legislative branch agency">
+				      <input type="checkbox" name="agency_partner" id="agency-partner-17" value="Other legislative branch agency">
 				      Other legislative branch agency
 				    </label>
-					</div>
+				  </div>
 				  <div class="checkbox">
 				    <label for="agency-partner-18">
-				      <input type="checkbox" name="agency_partner" id="agency-partner-17" value="Other executive branch agency">
+				      <input type="checkbox" name="agency_partner" id="agency-partner-18" value="Other executive branch agency">
 				      Other executive branch agency
 				    </label>
-					</div>
+				  </div>
 				  <div class="checkbox">
 				    <label for="agency-partner-19">
-				      <input type="checkbox" name="agency_partner" id="agency-partner-18" value="Other judicial branch agency">
+				      <input type="checkbox" name="agency_partner" id="agency-partner-19" value="Other judicial branch agency">
 				      Other judicial branch agency
 				    </label>
-					</div>
+				  </div>
 				  <div class="checkbox">
 				    <label for="agency-partner-20">
-				      <input type="checkbox" name="agency_partner" id="agency-partner-19" value="Other Independent agency">
+				      <input type="checkbox" name="agency_partner" id="agency-partner-20" value="Other Independent agency">
 				      Other Independent agency
 				    </label>
-					</div>
+				  </div>
+				  <div class="checkbox">
+				    <label for="agency-partner-21">
+				      <input type="checkbox" name="agency_partner" id="agency-partner-21" value="State or Local Government">
+				      State or Local Government
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label for="agency-partner-22">
+				      <input type="checkbox" name="agency_partner" id="agency-partner-22" value="Formal Non-Profit/NGO">
+				      Formal Non-Profit/NGO
+				    </label>
+			      </div>
+				  <div class="checkbox">
+				    <label for="agency-partner-23">
+				      <input type="checkbox" name="agency_partner" id="agency-partner-23" value="Community Group">
+				      Community Group
+				    </label>
+			      </div>	
+				  <div class="checkbox">
+				    <label for="agency-partner-24">
+				      <input type="checkbox" name="agency_partner" id="agency-partner-24" value="College or University">
+				      College or University
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label for="agency-partner-25">
+				      <input type="checkbox" name="agency_partner" id="agency-partner-25" value="K-12 Education">
+				      K-12 Education
+				    </label>
+                  </div>
+				  <div class="checkbox">
+				    <label for="agency-partner-26">
+				      <input type="checkbox" name="agency_partner" id="agency-partner-26" value="Museum">
+				      Museum
+				    </label>
+                  </div>              
+				  <div class="checkbox">
+				    <label for="agency-partner-27">
+				      <input type="checkbox" name="agency_partner" id="agency-partner-27" value="For-Profit">
+				      For-Profit
+				    </label>
+                  </div>
+				  <div class="checkbox">
+				    <label for="agency-partner-28">
+				      <input type="checkbox" name="agency_partner" id="agency-partner-28" value="Other">
+				      Other
+				    </label>
+                  </div>                                    
 		      </div>
 		    </div>
 		  </div>
