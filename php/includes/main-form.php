@@ -197,34 +197,137 @@
 				  </div>
 				</div>
 				
-				<!-- Text input-->
+				<!-- Multiple Checkboxes -->
 				<div class="form-group">
-				  <label class="col-md-4 control-label orange" for="agency-sponsor">Agency Sponsor <span data-toggle="tooltip" title="What federal agency (or agencies) offers either primary or partial fiscal support of this project?" class="glyphicon glyphicon-info-sign"></span></label>  
+				  <label class="col-md-4 control-label orange" for="sponsors">Agency Sponsor <span data-toggle="tooltip" title="What federal agency (or agencies) offers either primary or partial fiscal support of this project?" class="glyphicon glyphicon-info-sign" class="glyphicon glyphicon-info-sign"></span></label>
 				  <div class="col-md-6">
-				    <select id="agency-sponsor" name="agency-sponsor" class="form-control">
-				      <option value="">Choose an Agency</option>
-				      <option value="Bureau of Land Management (BLM)">Bureau of Land Management (BLM)</option>
-				      <option value="Department of Homeland Security (DHS)">Department of Homeland Security (DHS)</option>
-				      <option value="U.S. Department of the Interior (DOI)">U.S. Department of the Interior (DOI)</option>
-				      <option value="U.S. Environmental Protection Agency (EPA)">U.S. Environmental Protection Agency (EPA)</option>
-				      <option value="United States Department of Health and Human Services (HHS)">United States Department of Health and Human Services (HHS)</option>
-				      <option value="National Archives and Records Administration (NARA)">National Archives and Records Administration (NARA)</option>
-				      <option value="National Aeronautics and Space Administration (NASA)">National Aeronautics and Space Administration (NASA)</option>
-				      <option value="National Institutes of Health (NIH)">National Institutes of Health (NIH)</option>
-				      <option value="National Oceanic and Atmospheric Administration (NOAA)">National Oceanic and Atmospheric Administration (NOAA)</option>
-				      <option value="National Science Foundation (NSF)">National Science Foundation (NSF)</option>
-				      <option value="U.S. National Park Service (NPS)">U.S. National Park Service (NPS)</option>
-				      <option value="The United States Social Security Administration (SSA)">The United States Social Security Administration (SSA)</option>
-				      <option value="U.S Department of State">U.S Department of State</option>
-				      <option value="U.S. Department of Agriculture">U.S. Department of Agriculture</option>
-				      <option value="U.S. Agency for International Development (USAID)">U.S. Agency for International Development (USAID)</option>
-				      <option value="U.S. Geological Survey (USGS)">U.S. Geological Survey (USGS)</option>
-				      <option value="Other legislative branch agency">Other legislative branch agency</option>
-				      <option value="Other executive branch agency">Other executive branch agency</option>
-				      <option value="Other judicial branch agency">Other judicial branch agency</option>
-				      <option value="Other Independent agency">Other Independent agency</option>
-				    </select>
+				  <div class="checkbox">
+				    <label for="sponsors-blm">
+				      <input type="checkbox" name="sponsors-blm" id="sponsors-blm" value="Bureau of Land Management (BLM)">
+				      Bureau of Land Management (BLM)
+				    </label>
+					</div>
+				  <div class="checkbox">
+				    <label for="sponsors-dhs">
+				      <input type="checkbox" name="sponsors-dhs" id="sponsors-dhs" value="Department of Homeland Security (DHS)">
+				      Department of Homeland Security (DHS)
+				    </label>
+					</div>
+				  <div class="checkbox">
+				    <label for="sponsors-doi">
+				      <input type="checkbox" name="sponsors-doi" id="sponsors-doi" value="U.S. Department of the Interior (DOI)">
+				      U.S. Department of the Interior (DOI)
+				    </label>
+					</div>
+				  <div class="checkbox">
+				    <label for="sponsors-epa">
+				      <input type="checkbox" name="sponsors-epa" id="sponsors-epa" value="U.S. Environmental Protection Agency (EPA)">
+				      U.S. Environmental Protection Agency (EPA)
+				    </label>
+					</div>
+				  <div class="checkbox">
+				    <label for="sponsors-hhs">
+				      <input type="checkbox" name="sponsors-hhs" id="sponsors-hhs" value="United States Department of Health and Human Services (HHS)">
+				      United States Department of Health and Human Services (HHS)
+				    </label>
+					</div>
+				  <div class="checkbox">
+				    <label for="sponsors-nara">
+				      <input type="checkbox" name="sponsors-nara" id="sponsors-nara" value="National Archives and Records Administration (NARA)">
+				      National Archives and Records Administration (NARA)
+				    </label>
+					</div>
+				  <div class="checkbox">
+				    <label for="sponsors-nasa">
+				      <input type="checkbox" name="sponsors-nasa" id="sponsors-nasa" value="National Aeronautics and Space Administration (NASA)">
+				      National Aeronautics and Space Administration (NASA)
+				    </label>
+					</div>
+				  <div class="checkbox">
+				    <label for="sponsors-nih">
+				      <input type="checkbox" name="sponsors-nih" id="sponsors-nih" value="National Institutes of Health (NIH)">
+				      National Institutes of Health (NIH)
+				    </label>
+					</div>
+				  <div class="checkbox">
+				    <label for="sponsors-noaa">
+				      <input type="checkbox" name="sponsors-noaa" id="sponsors-noaa" value="National Oceanic and Atmospheric Administration (NOAA)">
+				      National Oceanic and Atmospheric Administration (NOAA)
+				    </label>
 				  </div>
+				  <div class="checkbox">
+				    <label for="sponsors-nsf">
+				      <input type="checkbox" name="sponsors-nsf" id="sponsors-nsf" value="National Science Foundation (NSF)">
+				      National Science Foundation (NSF)
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label for="sponsors-nps">
+				      <input type="checkbox" name="sponsors-nps" id="sponsors-nps" value="U.S. National Park Service (NPS)">
+				      U.S. National Park Service (NPS)
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label for="sponsors-ssa">
+				      <input type="checkbox" name="sponsors-noaa" id="sponsors-ssa" value="The United States Social Security Administration (SSA)">
+				      The United States Social Security Administration (SSA)
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label for="sponsors-usstate">
+				      <input type="checkbox" name="sponsors-usstate" id="sponsors-usstate" value="U.S Department of State">
+				      U.S Department of State
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label for="sponsors-usagriculture">
+				      <input type="checkbox" name="sponsors-usagriculture" id="sponsors-usagriculture" value="U.S. Department of Agriculture">
+				      U.S. Department of Agriculture
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label for="sponsors-usaid">
+				      <input type="checkbox" name="sponsors-usaid" id="sponsors-usaid" value="U.S. Agency for International Development (USAID)">
+				      U.S. Agency for International Development (USAID)
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label for="sponsors-usgs">
+				      <input type="checkbox" name="sponsors-usgs" id="sponsors-usgs" value="U.S. Geological Survey (USGS)">
+				      U.S. Geological Survey (USGS)
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label for="sponsors-legislative">
+				      <input type="checkbox" name="sponsors-legislative" id="sponsors-legislative" value="Other legislative branch agency">
+				      Other legislative branch agency
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label for="sponsors-executive">
+				      <input type="checkbox" name="sponsors-executive" id="sponsors-executive" value="Other executive branch agency">
+				      Other executive branch agency
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label for="sponsors-judicial">
+				      <input type="checkbox" name="sponsors-judicial" id="sponsors-judicial" value="Other judicial branch agency">
+				      Other judicial branch agency
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label for="sponsors-independent">
+				      <input type="checkbox" name="sponsors-independent" id="sponsors-independent" value="Other Independent agency">
+				      Other Independent agency
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label for="sponsors-usfs">
+				      <input type="checkbox" name="sponsors-usfs" id="sponsors-usfs" value="U.S. Forest Service (USFS)">
+				      U.S. Forest Service (USFS)
+				    </label>
+				  </div>				  				  	  				  			  
+				</div>
 				</div>
 				
 				<!-- Text input-->
