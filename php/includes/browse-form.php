@@ -597,9 +597,34 @@
 		  <dt>Start Date</dt>
 		  <dd>Text</dd>
 		</dl>
-		<dl class="dl-horizontal" id="m-agency_sponsor">
-		  <dt>Agency Sponsor</dt>
-		  <dd>Text</dd>
+		<dl class="dl-horizontal" id="m-sponsors">
+		  <dt>Agency Sponsors</dt>
+		  <dd>
+		  	<span class="label label-warning bool-labels" id="m-sponsors_blm">Bureau of Land Management (BLM)</span>
+		  	<span class="label label-warning bool-labels" id="m-sponsors_dhs">Department of Homeland Security (DHS)</span>
+		  	<span class="label label-warning bool-labels" id="m-sponsors_doi">U.S. Department of the Interior (DOI)</span>
+		  	<span class="label label-warning bool-labels" id="m-sponsors_epa">U.S. Environmental Protection Agency (EPA)</span>
+		  	<span class="label label-warning bool-labels" id="m-sponsors_hhs">United States Department of Health and Human Services (HHS)</span>
+		  	<span class="label label-warning bool-labels" id="m-sponsors_nara">National Archives and Records Administration (NARA)</span>
+		  	<span class="label label-warning bool-labels" id="m-sponsors_nasa">National Aeronautics and Space Administration (NASA)</span>
+		  	<span class="label label-warning bool-labels" id="m-sponsors_nih">National Institutes of Health (NIH)</span>
+		  	<span class="label label-warning bool-labels" id="m-sponsors_noaa">National Oceanic and Atmospheric Administration (NOAA)</span>
+		  	<span class="label label-warning bool-labels" id="m-sponsors_nsf">National Science Foundation (NSF)</span>
+		  	<span class="label label-warning bool-labels" id="m-sponsors_nps">U.S. National Park Service (NPS)</span>
+		  	<span class="label label-warning bool-labels" id="m-sponsors_ssa">The United States Social Security Administration (SSA)</span>
+		  	<span class="label label-warning bool-labels" id="m-sponsors_usstate">U.S Department of State</span>
+		  	<span class="label label-warning bool-labels" id="m-sponsors_usagriculture">U.S. Department of Agriculture</span>
+		  	<span class="label label-warning bool-labels" id="m-sponsors_usaid">U.S. Agency for International Development (USAID)</span>
+		  	<span class="label label-warning bool-labels" id="m-sponsors_usgs">U.S. Geological Survey (USGS)</span>
+		  	
+		  	
+		  	<span class="label label-warning bool-labels" id="m-sponsors_legislative">Other legislative branch agency</span>
+		  	<span class="label label-warning bool-labels" id="m-sponsors_executive">Other executive branch agency</span>
+		  	<span class="label label-warning bool-labels" id="m-sponsors_judicial">Other judicial branch agency</span>
+		  	<span class="label label-warning bool-labels" id="m-sponsors_independent">Other Independent agency</span>
+		  	<span class="label label-warning bool-labels" id="m-sponsors_usfs">U.S. Forest Service (USFS)</span>		  	
+		  	<span>&nbsp;</span>
+		  </dd>
 		</dl>
 		<dl class="dl-horizontal" id="m-agency_partner">
 		  <dt>Agency Partner</dt>

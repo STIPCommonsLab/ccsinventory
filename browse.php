@@ -12,11 +12,18 @@
     
        <script>
     	var cdbAccount = 'inventory';
-		var tableName = 'inventory';
+		var tableName = 'icarto_inventory';
 		var qBase = "select * from " + tableName;
 		var qParams;
 		var lastFeature;
-		var booleans = [ 'age_public', 'age_families', 'age_elementary', 'age_middle', 'age_teens', 'age_seniors', 'outcomes_research', 'outcomes_operational', 'outcomes_regulation', 'outcomes_education', 'outcomes_community', 'outcomes_policy', 'outcomes_proofconcept', 'outcomes_other', 'audience_teachers', 'audience_museum', 'audience_administration', 'audience_scientists', 'audience_evaluators', 'audience_public'];
+        var booleans = [ 'age_public', 'age_families', 'age_elementary', 'age_middle', 'age_teens', 'age_seniors',
+        'outcomes_research', 'outcomes_operational', 'outcomes_regulation', 'outcomes_education', 'outcomes_community', 
+        'outcomes_policy', 'outcomes_proofconcept', 'outcomes_other', 'audience_teachers', 'audience_museum',
+        'audience_administration', 'audience_scientists', 'audience_evaluators', 'audience_public',
+        'sponsors_blm', 'sponsors_dhs', 'sponsors_doi', 'sponsors_epa', 'sponsors_hhs', 'sponsors_nara',
+        'sponsors_nasa', 'sponsors_nih', 'sponsors_noaa', 'sponsors_nsf', 'sponsors_nps', 'sponsors_ssa',
+        'sponsors_usstate', 'sponsors_usagriculture', 'sponsors_usaid', 'sponsors_usgs', 'sponsors_legislative',
+        'sponsors_executive', 'sponsors_judicial', 'sponsors_independent', 'sponsors_usfs'];
 		var contactInfo = ['project_contact', 'affiliation', 'email', 'phone', 'street_address', 'street_address_2', 'city', 'state', 'zip'];
 
 
@@ -29,7 +36,7 @@
 		
 		function initMap() {
 
-			cartodb.createVis('browse-map', 'http://inventory.cartodb.com/api/v2/viz/c74af5f8-0839-11e4-812f-0e73339ffa50/viz.json', {
+			cartodb.createVis('browse-map', 'http://inventory.cartodb.com/api/v2/viz/5f803e6a-c693-11e4-9078-0e853d047bba/viz.json', {
 				tiles_loader: true,
 				center_lat: 36,
 				center_lon: -97,
@@ -97,7 +104,7 @@
 					type: "GET",
 					dataType: "jsonp",
 					contentType: "application/json",
-					url: 'http://inventory.cartodb.com/api/v2/sql?q=SELECT * FROM inventory WHERE cartodb_id=' + lastFeature,
+					url: 'http://inventory.cartodb.com/api/v2/sql?q=SELECT * FROM icarto_inventory WHERE cartodb_id=' + lastFeature,
 					success: function(data) {
 						if(data) {
 							$('span.bool-labels').hide();
