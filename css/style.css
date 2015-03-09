@@ -204,3 +204,12 @@ font-weight: 400;
 .modal {
 	z-index: 1000009;
 }
+
+.aright {
+    text-align: right;
+}
+
+.add_project {
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
