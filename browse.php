@@ -121,7 +121,7 @@
 									}
 								}
 								else if( $.inArray(key, booleans)!==-1 && value == 1) {
-									$('#m-' + key).show();
+									$('#m-' + key).css('display', 'inline-block');
 								}
 								else if( $.inArray(key, contactInfo)!==-1) {
 									if(value) {
