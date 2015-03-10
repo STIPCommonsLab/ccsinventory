@@ -1,12 +1,4 @@
 <div class="row">
- <div class="col-xs-8">
-    <h4>Search input:</h4>
- </div>
- <div class="col-xs-4 aright">
-    <a class="btn btn-primary add_project" href="index">Add project</a>
- </div>
-</div>
-<div class="row">
 	<div class="col-xs-4" id="browse-form">
 		<!-- Search input-->
 <!--
@@ -557,6 +549,9 @@
 		    </div>
 		  </div>
 		</div>
+		<div class="acenter">
+	        <a class="btn btn-primary add_project" href="index">Add project</a>
+	    </div>
 	</div> <!-- end left side -->
 	<div class="col-xs-8">
 		<div id="browse-map"></div>
