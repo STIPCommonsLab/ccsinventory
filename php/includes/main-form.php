@@ -34,12 +34,12 @@
 			  'sponsors_usstate' => isset($_POST['sponsors-usstate']) ? '1' : '0',
 			  'sponsors_usagriculture' => isset($_POST['sponsors-usagriculture']) ? '1' : '0',
 			  'sponsors_usaid' => isset($_POST['sponsors-usaid']) ? '1' : '0',
+              'sponsors_usfs' => isset($_POST['sponsors-usfs']) ? '1' : '0',
 			  'sponsors_usgs' => isset($_POST['sponsors-usgs']) ? '1' : '0',
 			  'sponsors_legislative' => isset($_POST['sponsors-legislative']) ? '1' : '0',
 			  'sponsors_executive' => isset($_POST['sponsors-executive']) ? '1' : '0',
 			  'sponsors_judicial' => isset($_POST['sponsors-judicial']) ? '1' : '0',
 			  'sponsors_independent' => isset($_POST['sponsors-independent']) ? '1' : '0',
-			  'sponsors_usfs' => isset($_POST['sponsors-usfs']) ? '1' : '0',
 			  'agency_partner' => "'" . sanitizeInput($_POST['agency-partner']) . "'",
 			  'geographic_scope' => "'" . sanitizeInput($_POST['geographic-scope']) . "'",
 			  'age_public' => isset($_POST['age-public']) ? '1' : '0',
@@ -311,6 +311,12 @@
 				      U.S. Agency for International Development (USAID)
 				    </label>
 				  </div>
+                  <div class="checkbox">
+				    <label for="sponsors-usfs">
+				      <input type="checkbox" name="sponsors-usfs" id="sponsors-usfs" value="U.S. Forest Service (USFS)">
+				      U.S. Forest Service (USFS)
+				    </label>
+				  </div>
 				  <div class="checkbox">
 				    <label for="sponsors-usgs">
 				      <input type="checkbox" name="sponsors-usgs" id="sponsors-usgs" value="U.S. Geological Survey (USGS)">
@@ -339,12 +345,6 @@
 				    <label for="sponsors-independent">
 				      <input type="checkbox" name="sponsors-independent" id="sponsors-independent" value="Other Independent agency">
 				      Other Independent agency
-				    </label>
-				  </div>
-				  <div class="checkbox">
-				    <label for="sponsors-usfs">
-				      <input type="checkbox" name="sponsors-usfs" id="sponsors-usfs" value="U.S. Forest Service (USFS)">
-				      U.S. Forest Service (USFS)
 				    </label>
 				  </div>
 				</div>
