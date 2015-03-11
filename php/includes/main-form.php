@@ -356,27 +356,6 @@
 				  <div class="col-md-6">
 				    <select id="agency-partner" name="agency-partner" class="form-control">
 				      <option value="">Choose an Agency</option>
-				      <option value="Bureau of Land Management (BLM)">Bureau of Land Management (BLM)</option>
-				      <option value="Department of Homeland Security (DHS)">Department of Homeland Security (DHS)</option>
-				      <option value="U.S. Department of the Interior (DOI)">U.S. Department of the Interior (DOI)</option>
-				      <option value="U.S. Environmental Protection Agency (EPA)">U.S. Environmental Protection Agency (EPA)</option>
-				      <option value="United States Department of Health and Human Services (HHS)">United States Department of Health and Human Services (HHS)</option>
-				      <option value="National Archives and Records Administration (NARA)">National Archives and Records Administration (NARA)</option>
-				      <option value="National Aeronautics and Space Administration (NASA)">National Aeronautics and Space Administration (NASA)</option>
-				      <option value="National Institutes of Health (NIH)">National Institutes of Health (NIH)</option>
-				      <option value="National Oceanic and Atmospheric Administration (NOAA)">National Oceanic and Atmospheric Administration (NOAA)</option>
-				      <option value="National Science Foundation (NSF)">National Science Foundation (NSF)</option>
-				      <option value="U.S. National Park Service (NPS)">U.S. National Park Service (NPS)</option>
-				      <option value="The United States Social Security Administration (SSA)">The United States Social Security Administration (SSA)</option>
-				      <option value="U.S Department of State">U.S Department of State</option>
-				      <option value="U.S. Department of Agriculture">U.S. Department of Agriculture</option>
-				      <option value="U.S. Agency for International Development (USAID)">U.S. Agency for International Development (USAID)</option>
-				      <option value="U.S. Geological Survey (USGS)">U.S. Geological Survey (USGS)</option>
-				      <option value="Smithsonian Institution (SI)">Smithsonian Institution (SI)</option>
-				      <option value="Other legislative branch agency">Other legislative branch agency</option>
-				      <option value="Other executive branch agency">Other executive branch agency</option>
-				      <option value="Other judicial branch agency">Other judicial branch agency</option>
-				      <option value="Other Independent agency">Other Independent agency</option>
 				      <option value="State or Local Government">State or Local Government</option>
 				      <option value="Formal Non-Profit/NGO">Formal Non-Profit/NGO</option>
 				      <option value="Community Group">Community Group</option>
