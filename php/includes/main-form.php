@@ -1,15 +1,15 @@
 <?php
-    
+
     function sanitizeInput($str) {
         $str = trim($str);
         $str = stripslashes($str);
         $str = str_replace("'", "''", $str);
         return $str;
     }
-    
+
     if (isset($_POST['submit'])) {
             // Set POST variables
-                        
+
             $data = array(
 			  'project_name' => "'" . sanitizeInput($_POST['project-name']) . "'",
 			  'project_url' => "'" . sanitizeInput($_POST['project-url']) . "'",
@@ -39,7 +39,7 @@
 			  'sponsors_executive' => isset($_POST['sponsors-executive']) ? '1' : '0',
 			  'sponsors_judicial' => isset($_POST['sponsors-judicial']) ? '1' : '0',
 			  'sponsors_independent' => isset($_POST['sponsors-independent']) ? '1' : '0',
-			  'sponsors_usfs' => isset($_POST['sponsors-usfs']) ? '1' : '0',			  
+			  'sponsors_usfs' => isset($_POST['sponsors-usfs']) ? '1' : '0',
 			  'agency_partner' => "'" . sanitizeInput($_POST['agency-partner']) . "'",
 			  'geographic_scope' => "'" . sanitizeInput($_POST['geographic-scope']) . "'",
 			  'age_public' => isset($_POST['age-public']) ? '1' : '0',
@@ -68,27 +68,27 @@
 			  'phone' => "'" . sanitizeInput($_POST['phone']) . "'",
 
 			);
-			
+
 			//print_r($data);
-            		
+
 			function insertSQL($table, $data) {
 				$keys = implode(',', array_keys($data));
 				$values = implode(',', array_values($data));
 				$sql = "INSERT INTO $table ($keys) VALUES($values);";
 				return $sql;
 			}
-			
+
 			//CartoDB user name
 			$cartodb_username = "inventory";
-			
+
 			//API Key (https://examples.cartodb.com/your_apps/api_key)
 			$api_key= "INSERT API KEY HERE";
-			
+
 			$table = 'staging';
-			
+
 			$sql = insertSQL($table, $data);
 			//print($sql);
-			
+
 
 			//---------------
 			// Initializing curl
@@ -100,19 +100,19 @@
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 			$result_not_parsed = curl_exec($ch);
 			//----------------
-			
+
 			$result = json_decode($result_not_parsed);
-			
+
 			//echo(print_r($result));
-			
+
 			if($result) {
             	header("Location: success");
             }
 
-            
-            
+
+
     }
-    
+
 
 
 ?>
@@ -124,36 +124,36 @@
 		<form class="form-horizontal" method="post" action="">
 	        <div class="col-xs-12">
 				<fieldset>
-				
+
 				<!-- Form Name -->
 				<legend class="orange"><i class="fa fa-file-text-o"></i>Project Information</legend>
-				
+
 				<!-- Text input-->
 				<div class="form-group">
-				  <label class="col-md-4 control-label orange" for="project-name">Project Name <span data-toggle="tooltip" title="Commonly accepted name for the project" class="glyphicon glyphicon-info-sign"></span></label>  
+				  <label class="col-md-4 control-label orange" for="project-name">Project Name <span data-toggle="tooltip" title="Commonly accepted name for the project" class="glyphicon glyphicon-info-sign"></span></label>
 				  <div class="col-md-6">
 				  <input id="project-name" name="project-name" type="text" placeholder="" class="form-control input-md" required="">
-				    
+
 				  </div>
 				</div>
-				
+
 				<!-- Text input-->
 				<div class="form-group">
-				  <label class="col-md-4 control-label orange" for="project-url">Project URL <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="URL for project website"></span></label>  
+				  <label class="col-md-4 control-label orange" for="project-url">Project URL <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="URL for project website"></span></label>
 				  <div class="col-md-6">
 				  <input id="project-url" name="project-url" type="text" placeholder="http://" class="form-control input-md" required="">
-				    
+
 				  </div>
 				</div>
-				
+
 				<!-- Textarea -->
 				<div class="form-group">
 				  <label class="col-md-4 control-label orange" for="project-description">Project Description <span data-toggle="tooltip" title="1-3 sentences defining the mission statement for your project" class="glyphicon glyphicon-info-sign"></span></label>
-				  <div class="col-md-6">                     
+				  <div class="col-md-6">
 				    <textarea class="form-control" id="project-description" name="project-description"></textarea>
 				  </div>
 				</div>
-				
+
 				<!-- Select Basic -->
 				<div class="form-group">
 				  <label class="col-md-4 control-label orange" for="field-of-science">Field of Science <span data-toggle="tooltip" title="Please select one of the five categories that best defines your project. Following this field you will be able to enter keywords to further define your project." class="glyphicon glyphicon-info-sign"></span></label>
@@ -177,23 +177,23 @@
 				      <option value="Nature & Outdoors">Nature & Outdoors</option>
 				      <option value="Ocean & Water">Ocean & Water</option>
 				      <option value="Physics">Physics</option>
-				      <option value="Psychology">Psychology</option>			      
+				      <option value="Psychology">Psychology</option>
 				      <option value="Science Policy">Science Policy</option>
 				      <option value="Sound">Sound</option>
-				      <option value="Transportation">Transportation</option>				      
+				      <option value="Transportation">Transportation</option>
 				    </select>
 				  </div>
 				</div>
-				
+
 				<!-- Text input-->
 				<div class="form-group">
-				  <label class="col-md-4 control-label orange" for="keywords">Project Keywords <span data-toggle="tooltip" title="Please enter descriptive keywords, separated by a comma, which will help someone find your project on the browsable map." class="glyphicon glyphicon-info-sign"></span></label>  
+				  <label class="col-md-4 control-label orange" for="keywords">Project Keywords <span data-toggle="tooltip" title="Please enter descriptive keywords, separated by a comma, which will help someone find your project on the browsable map." class="glyphicon glyphicon-info-sign"></span></label>
 				  <div class="col-md-6">
 				  <input id="keywords" name="keywords" type="text" placeholder="" class="form-control input-md">
-				    
+
 				  </div>
 				</div>
-				
+
 				<!-- Select Basic -->
 				<div class="form-group">
 				  <label class="col-md-4 control-label orange" for="status">Project Status <span data-toggle="tooltip" title="What is the current status of this project?" class="glyphicon glyphicon-info-sign"></span></label>
@@ -207,16 +207,16 @@
 				    </select>
 				  </div>
 				</div>
-				
+
 				<!-- Text input-->
 				<div class="form-group">
-				  <label class="col-md-4 control-label orange" for="start-date">Project Start Date <span data-toggle="tooltip" title="Approximately when was the grant issued, or project launched?" class="glyphicon glyphicon-info-sign"></span></label>  
+				  <label class="col-md-4 control-label orange" for="start-date">Project Start Date <span data-toggle="tooltip" title="Approximately when was the grant issued, or project launched?" class="glyphicon glyphicon-info-sign"></span></label>
 				  <div class="col-md-6">
 				  <input id="start-date" name="start-date" type="text" placeholder="yyyy-mm-dd" class="form-control input-md">
-				    
+
 				  </div>
 				</div>
-				
+
 				<!-- Multiple Checkboxes -->
 				<div class="form-group">
 				  <label class="col-md-4 control-label orange" for="sponsors">Agency Sponsor <span data-toggle="tooltip" title="What federal agency (or agencies) offers either primary or partial fiscal support of this project?" class="glyphicon glyphicon-info-sign" class="glyphicon glyphicon-info-sign"></span></label>
@@ -346,13 +346,13 @@
 				      <input type="checkbox" name="sponsors-usfs" id="sponsors-usfs" value="U.S. Forest Service (USFS)">
 				      U.S. Forest Service (USFS)
 				    </label>
-				  </div>				  				  	  				  			  
+				  </div>
 				</div>
 				</div>
-				
+
 				<!-- Text input-->
 				<div class="form-group">
-				  <label class="col-md-4 control-label orange" for="agency-partner">Agency Partner <span data-toggle="tooltip" title="A federal agency offering partial support" class="glyphicon glyphicon-info-sign"></span></label>  
+				  <label class="col-md-4 control-label orange" for="agency-partner">Agency Partner <span data-toggle="tooltip" title="A federal agency offering partial support" class="glyphicon glyphicon-info-sign"></span></label>
 				  <div class="col-md-6">
 				    <select id="agency-partner" name="agency-partner" class="form-control">
 				      <option value="">Choose an Agency</option>
@@ -383,12 +383,12 @@
 				      <option value="College or University">College or University</option>
 				      <option value="K-12 Education">K-12 Education</option>
 				      <option value="Museum">Museum</option>
-				      <option value="For-Profit">For-Profit</option>			      
-				      <option value="Other">Other</option>				      
+				      <option value="For-Profit">For-Profit</option>
+				      <option value="Other">Other</option>
 				    </select>
 				  </div>
 				</div>
-				
+
 				<!-- Select Basic -->
 				<div class="form-group">
 				  <label class="col-md-4 control-label orange" for="geographic-scope">Geographic Scope <span data-toggle="tooltip" title="Please select the best definition for your projects geographic scope." class="glyphicon glyphicon-info-sign"></span></label>
@@ -401,7 +401,7 @@
 				    </select>
 				  </div>
 				</div>
-				
+
 				<!-- Multiple Checkboxes -->
 				<div class="form-group">
 				  <label class="col-md-4 control-label orange" for="participant-age">Participant Age <span data-toggle="tooltip" title="Target age of participants" class="glyphicon glyphicon-info-sign"></span></label>
@@ -444,7 +444,7 @@
 							</div>
 					  </div>
 				</div>
-				
+
 				<!-- Multiple Checkboxes -->
 				<div class="form-group">
 				  <label class="col-md-4 control-label orange" for="outcomes">Intended Outcomes <span data-toggle="tooltip" title="Desired outcomes of project" class="glyphicon glyphicon-info-sign"></span></label>
@@ -498,24 +498,24 @@
 				    </label>
 					</div>
 				  </div>
-				</div>				
-				
+				</div>
+
 				<!-- Textarea -->
 				<div class="form-group">
 				  <label class="col-md-4 control-label orange" for="participation-type">Participation Type <span data-toggle="tooltip" title="Description of volunteer activities" class="glyphicon glyphicon-info-sign"></span></label>
-				  <div class="col-md-6">                     
+				  <div class="col-md-6">
 				    <textarea class="form-control" id="participation-type" name="participation-type"></textarea>
 				  </div>
 				</div>
-				
+
 				</fieldset>
-	
+
 	        </div>
 	        <!--second column -->
 
 	        <div class="col-xs-12">
 
-				<fieldset>				
+				<fieldset>
 				<!-- Form Name -->
 				<legend class="blue"><i class="fa fa-map-marker"></i>Location Information</legend>
 
@@ -528,36 +528,36 @@
 				<div class="row">
 					<div class="col-md-6" id="input-map">
 						map
-					</div>	
-					
+					</div>
+
 					<div class="col-md-6" id="address">
 						<!-- Text input-->
 						<div class="form-group">
-						  <label class="col-md-4 control-label light-blue" for="street-address">Street Address <span data-toggle="tooltip" title="Physical contact address" class="glyphicon glyphicon-info-sign"></span></label>  
+						  <label class="col-md-4 control-label light-blue" for="street-address">Street Address <span data-toggle="tooltip" title="Physical contact address" class="glyphicon glyphicon-info-sign"></span></label>
 						  <div class="col-md-6">
 						  <input id="street-address" name="street-address" type="text" placeholder="" class="form-control input-md">
-						    
+
 						  </div>
 						</div>
-						
+
 						<!-- Text input-->
 						<div class="form-group">
-						  <label class="col-md-4 control-label light-blue" for="street-address-2"></label>  
+						  <label class="col-md-4 control-label light-blue" for="street-address-2"></label>
 						  <div class="col-md-6">
 						  <input id="street-address-2" name="street-address-2" type="text" placeholder="" class="form-control input-md">
-						    
+
 						  </div>
 						</div>
-						
+
 						<!-- Text input-->
 						<div class="form-group">
-						  <label class="col-md-4 control-label light-blue" for="city">City</label>  
+						  <label class="col-md-4 control-label light-blue" for="city">City</label>
 						  <div class="col-md-6">
 						  <input id="city" name="city" type="text" placeholder="" class="form-control input-md">
-						    
+
 						  </div>
 						</div>
-						
+
 						<!-- Select Basic -->
 						<div class="form-group">
 						  <label class="col-md-4 control-label light-blue" for="state">State</label>
@@ -620,72 +620,72 @@
 						    </select>
 						  </div>
 						</div>
-						
+
 						<!-- Text input-->
 						<div class="form-group">
-						  <label class="col-md-4 control-label light-blue" for="zip">Zip Code</label>  
+						  <label class="col-md-4 control-label light-blue" for="zip">Zip Code</label>
 						  <div class="col-md-6">
 						  <input id="zip" name="zip" type="text" placeholder="" class="form-control input-md">
-						    
+
 						  </div>
 						</div>
-						
+
 						<div class="form-group">
 						  <div class="col-md-4 col-md-offset-4">
 						    <button type="button" id="geocode" name="geocode" class="btn btn-primary">Geocode Address</button>
 						  </div>
 						</div>
-						
+
 					</div>
-					
-					
+
+
 				</div>
 				<input type="hidden" name="latlng" id="latlng" value="">
-				
-				<legend class="light-blue"><i class="fa fa-phone"></i>Contact Information</legend>				
-				
-				<!-- Text input-->
-				<div class="form-group">
-				  <label class="col-md-4 control-label light-blue" for="project-contact">Project Contact <span data-toggle="tooltip" title="Name of project contact" class="glyphicon glyphicon-info-sign"></span></label>  
-				  <div class="col-md-6">
-				  <input id="project-contact" name="project-contact" type="text" placeholder="" class="form-control input-md" required="">
-				    
-				  </div>
-				</div>
-				
-				<!-- Text input-->
-				<div class="form-group">
-				  <label class="col-md-4 control-label light-blue" for="affiliation">Contact Affiliation <span data-toggle="tooltip" title="Affiliation of project contact" class="glyphicon glyphicon-info-sign"></span></label>  
-				  <div class="col-md-6">
-				  <input id="affiliation" name="affiliation" type="text" placeholder="" class="form-control input-md">
-				    
-				  </div>
-				</div>
-				
+
+				<legend class="light-blue"><i class="fa fa-phone"></i>Contact Information</legend>
 
 				<!-- Text input-->
 				<div class="form-group">
-				  <label class="col-md-4 control-label light-blue" for="email">Contact Email <span data-toggle="tooltip" title="Contact email address" class="glyphicon glyphicon-info-sign"></span></label>  
+				  <label class="col-md-4 control-label light-blue" for="project-contact">Project Contact <span data-toggle="tooltip" title="Name of project contact" class="glyphicon glyphicon-info-sign"></span></label>
 				  <div class="col-md-6">
-				  <input id="email" name="email" type="text" placeholder="" class="form-control input-md">
-				    
+				  <input id="project-contact" name="project-contact" type="text" placeholder="" class="form-control input-md" required="">
+
 				  </div>
 				</div>
-				
+
 				<!-- Text input-->
 				<div class="form-group">
-				  <label class="col-md-4 control-label light-blue" for="phone">Contact Phone <span data-toggle="tooltip" title="Contact phone number" class="glyphicon glyphicon-info-sign"></span></label>  
+				  <label class="col-md-4 control-label light-blue" for="affiliation">Contact Affiliation <span data-toggle="tooltip" title="Affiliation of project contact" class="glyphicon glyphicon-info-sign"></span></label>
 				  <div class="col-md-6">
-				  <input id="phone" name="phone" type="text" placeholder="123-456-7890" class="form-control input-md">
-				    
+				  <input id="affiliation" name="affiliation" type="text" placeholder="" class="form-control input-md">
+
 				  </div>
 				</div>
-				
+
+
+				<!-- Text input-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label light-blue" for="email">Contact Email <span data-toggle="tooltip" title="Contact email address" class="glyphicon glyphicon-info-sign"></span></label>
+				  <div class="col-md-6">
+				  <input id="email" name="email" type="text" placeholder="" class="form-control input-md">
+
+				  </div>
+				</div>
+
+				<!-- Text input-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label light-blue" for="phone">Contact Phone <span data-toggle="tooltip" title="Contact phone number" class="glyphicon glyphicon-info-sign"></span></label>
+				  <div class="col-md-6">
+				  <input id="phone" name="phone" type="text" placeholder="123-456-7890" class="form-control input-md">
+
+				  </div>
+				</div>
+
 				<div class="panel panel-info">
 				  <div class="panel-heading">
 				    <h3 class="panel-title text-center">That's everything!</h3>
 				  </div>
-				</div>				
+				</div>
 
 				<!-- Button -->
 					<div class="form-group">
@@ -693,11 +693,9 @@
 					    <button id="submit" name="submit" class="btn btn-primary">Submit Entire Form</button>
 					  </div>
 					</div>
-				
+
 				</fieldset>
-		        
+
 	        </div>
 		</form>
       <!-- removing row </div> -->
-
-    

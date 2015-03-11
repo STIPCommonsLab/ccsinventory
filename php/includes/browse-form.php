@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-xs-4" id="browse-form">
-		<!-- Search input-->
+ 		<!-- Search input-->
 <!--
 		<form class="form" role="search">
 	        <div class="form-group">
@@ -13,7 +13,7 @@
 	        </div>
 	    </form>
 -->
-	    
+
 	    <h4>Filter by: <a href="#" data-toggle="tooltip" data-placement="bottom" title="You may browse for projects with specific attributes including field of science, project status, intended age group, and many others."><span class="glyphicon glyphicon-info-sign"></span></a></h4>
 		<div class="panel-group" id="accordion">
 		  <div class="panel panel-default" id="field_of_science">
@@ -26,7 +26,7 @@
 		    </div>
 		    <div id="collapseOne" class="panel-collapse collapse">
 		      <div class="panel-body">
-				  <div class="checkbox">				 
+				  <div class="checkbox">
 				    <label for="field-of-science-0">
 				      <input type="checkbox" name="field_of_science" id="field-of-science-0" value="Animals">
 				      Animals
@@ -85,55 +85,55 @@
 				      <input type="checkbox" name="field_of_science" id="field-of-science-9" value="Crowd Funding">
 				      Crowd Funding
 				    </label>
-				  </div>																								
+				  </div>
 				  <div class="checkbox">
 				    <label for="field-of-science-10">
 				      <input type="checkbox" name="field_of_science" id="field-of-science-10" value="Ecology & Environment">
 				      Ecology & Environment
 				    </label>
-				  </div>																						
+				  </div>
 				  <div class="checkbox">
 				    <label for="field-of-science-11">
 				      <input type="checkbox" name="field_of_science" id="field-of-science-11" value="Education">
 				      Education
 				    </label>
-				  </div>																								
+				  </div>
 				  <div class="checkbox">
 				    <label for="field-of-science-12">
 				      <input type="checkbox" name="field_of_science" id="field-of-science-12" value="Food">
 				      Food
 				    </label>
-				  </div>																								
+				  </div>
 				  <div class="checkbox">
 				    <label for="field-of-science-13">
 				      <input type="checkbox" name="field_of_science" id="field-of-science-13" value="Geology & Earth Science">
 				      Geology & Earth Science
 				    </label>
-				  </div>																								
+				  </div>
 				  <div class="checkbox">
 				    <label for="field-of-science-14">
 				      <input type="checkbox" name="field_of_science" id="field-of-science-14" value="Health & Medicine">
 				      Health & Medicine
 				    </label>
-				  </div>																								
+				  </div>
 				  <div class="checkbox">
 				    <label for="field-of-science-15">
 				      <input type="checkbox" name="field_of_science" id="field-of-science-15" value="Insects">
 				      Insects
 				    </label>
-				  </div>																								
+				  </div>
 				  <div class="checkbox">
 				    <label for="field-of-science-16">
 				      <input type="checkbox" name="field_of_science" id="field-of-science-16" value="Nature & Outdoors">
 				      Nature & Outdoors
 				    </label>
-				  </div>																								
+				  </div>
 				  <div class="checkbox">
 				    <label for="field-of-science-17">
 				      <input type="checkbox" name="field_of_science" id="field-of-science-17" value="Ocean & Water">
 				      Ocean & Water
 				    </label>
-				  </div>																								
+				  </div>
 				  <div class="checkbox">
 				    <label for="field-of-science-18">
 				      <input type="checkbox" name="field_of_science" id="field-of-science-18" value="Physics">
@@ -157,13 +157,13 @@
 				      <input type="checkbox" name="field_of_science" id="field-of-science-21" value="Sound">
 				      Sound
 				    </label>
-				  </div>				  				  				  				  
+				  </div>
 				  <div class="checkbox">
 				    <label for="field-of-science-22">
 				      <input type="checkbox" name="field_of_science" id="field-of-science-22" value="Transportation">
 				      Transportation
 				    </label>
-				  </div>			  				  				  				  				  
+				  </div>
 		      </div>
 		    </div>
 		  </div>
@@ -323,7 +323,7 @@
 				      <input type="checkbox" name="agency_partner" id="agency-partner-16" value="Smithsonian Institution (SI)">
 				      Smithsonian Institution (SI)
 				    </label>
-				  </div>				  
+				  </div>
 				  <div class="checkbox">
 				    <label for="agency-partner-17">
 				      <input type="checkbox" name="agency_partner" id="agency-partner-17" value="Other legislative branch agency">
@@ -365,7 +365,7 @@
 				      <input type="checkbox" name="agency_partner" id="agency-partner-23" value="Community Group">
 				      Community Group
 				    </label>
-			      </div>	
+			      </div>
 				  <div class="checkbox">
 				    <label for="agency-partner-24">
 				      <input type="checkbox" name="agency_partner" id="agency-partner-24" value="College or University">
@@ -383,7 +383,7 @@
 				      <input type="checkbox" name="agency_partner" id="agency-partner-26" value="Museum">
 				      Museum
 				    </label>
-                  </div>              
+                  </div>
 				  <div class="checkbox">
 				    <label for="agency-partner-27">
 				      <input type="checkbox" name="agency_partner" id="agency-partner-27" value="For-Profit">
@@ -395,7 +395,7 @@
 				      <input type="checkbox" name="agency_partner" id="agency-partner-28" value="Other">
 				      Other
 				    </label>
-                  </div>                                    
+                  </div>
 		      </div>
 		    </div>
 		  </div>
@@ -611,13 +611,13 @@
 		  	<span class="label label-warning bool-labels" id="m-sponsors_usagriculture">U.S. Department of Agriculture</span>
 		  	<span class="label label-warning bool-labels" id="m-sponsors_usaid">U.S. Agency for International Development (USAID)</span>
 		  	<span class="label label-warning bool-labels" id="m-sponsors_usgs">U.S. Geological Survey (USGS)</span>
-		  	
-		  	
+
+
 		  	<span class="label label-warning bool-labels" id="m-sponsors_legislative">Other legislative branch agency</span>
 		  	<span class="label label-warning bool-labels" id="m-sponsors_executive">Other executive branch agency</span>
 		  	<span class="label label-warning bool-labels" id="m-sponsors_judicial">Other judicial branch agency</span>
 		  	<span class="label label-warning bool-labels" id="m-sponsors_independent">Other Independent agency</span>
-		  	<span class="label label-warning bool-labels" id="m-sponsors_usfs">U.S. Forest Service (USFS)</span>		  	
+		  	<span class="label label-warning bool-labels" id="m-sponsors_usfs">U.S. Forest Service (USFS)</span>
 		  	<span>&nbsp;</span>
 		  </dd>
 		</dl>
