@@ -423,9 +423,6 @@
 		    </div>
 		  </div>
 		</div>
-		<div class="acenter">
-	        <a class="btn btn-primary add_project" href="index">Add project</a>
-	    </div>
 	</div> <!-- end left side -->
 	<div class="col-xs-8">
 		<div id="browse-map"></div>
