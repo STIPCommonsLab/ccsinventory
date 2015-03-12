@@ -35,7 +35,7 @@
 				<a href="http://wilsoncenter.org/inventory-federal-crowdsourcing-and-citizen-science-projects" type="button" class="btn btn-about">About</a>
 			</div>
 			<div class="col-xs-1 col-xs-offset-0 text-right">
-				<a href="index" type="button" class="btn btn-about">Add project</a>
+				<a href="index" type="button" class="btn btn-primary">Add project</a>
 			</div>			
 		</div>
 	</div>
