@@ -12,7 +12,7 @@
     
        <script>
     	var cdbAccount = 'inventory';
-		var tableName = 'icarto_inventory';
+		var tableName = 'inventory';
 		var qBase = "select * from " + tableName;
 		var qParams;
 		var lastFeature;
@@ -32,11 +32,17 @@
     	$( document ).ready(function() {
 			initMap();
 			$("[data-toggle='tooltip']").tooltip();
+			
+            $("#searchinput").keyup(function(){
+                $("#searchclear").toggle(Boolean($(this).val()));
+            });
+             
+            $("#searchclear").toggle(Boolean($("#searchinput").val()));
 		});
 		
 		function initMap() {
 
-			cartodb.createVis('browse-map', 'http://inventory.cartodb.com/api/v2/viz/5f803e6a-c693-11e4-9078-0e853d047bba/viz.json', {
+			cartodb.createVis('browse-map', 'http://inventory.cartodb.com/api/v2/viz/c74af5f8-0839-11e4-812f-0e73339ffa50/viz.json', {
 				tiles_loader: true,
 				center_lat: 36,
 				center_lon: -97,
@@ -65,11 +71,38 @@
 	          
 	          qParams = '';
 	          getCheckboxes();
-	          
 	          layer.setSQL(qBase + qParams);
 	          
 	          //console.log(qBase + qParams);
 	        });
+	        
+            $("#filter-btn").click(function() {
+                    qParams = '';
+                    qParams = ' WHERE (LOWER(project_name) LIKE ' + "LOWER('%" + $('#searchinput').val() + "%') ";
+                    qParams += 'OR LOWER(project_description) LIKE ' + "LOWER('%" + $('#searchinput').val() + "%') ";
+                    qParams += 'OR LOWER(keywords) LIKE ' + "LOWER('%" + $('#searchinput').val() + "%')";
+                    qParams += ')';
+                    layer.setSQL(qBase + qParams);
+            });	        
+	        
+            $('#searchinput').bind("keypress", function (e) {
+
+                if (e.keyCode == 13) {
+                    qParams = '';
+                    qParams = ' WHERE (LOWER(project_name) LIKE ' + "LOWER('%" + $('#searchinput').val() + "%') ";
+                    qParams += 'OR LOWER(project_description) LIKE ' + "LOWER('%" + $('#searchinput').val() + "%') ";
+                    qParams += 'OR LOWER(keywords) LIKE ' + "LOWER('%" + $('#searchinput').val() + "%')";
+                    qParams += ')';
+                    layer.setSQL(qBase + qParams);
+                }
+            });
+
+            $("#searchclear").click(function(){
+                    $("#searchinput").val('').focus();
+                    $(this).hide();
+                    layer.setSQL(qBase);
+            });         
+            
 	      }
 	      
 	      function getCheckboxes() {

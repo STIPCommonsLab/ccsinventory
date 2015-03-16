@@ -13,7 +13,12 @@
 	        </div>
 	    </form>
 -->
-
+        <div class="input-group">
+         <input id="searchinput" class="form-control" placeholder="Search for..." value="" type="search"> <span id="searchclear" class="glyphicon glyphicon-remove-circle"></span>
+        <span class="input-group-btn">
+           <button id="filter-btn" class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+        </span>
+        </div>
 	    <h4>Filter by: <a href="#" data-toggle="tooltip" data-placement="bottom" title="You may browse for projects with specific attributes including field of science, project status, intended age group, and many others."><span class="glyphicon glyphicon-info-sign"></span></a></h4>
 		<div class="panel-group" id="accordion">
 		  <div class="panel panel-default" id="field_of_science">
