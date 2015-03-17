@@ -13,6 +13,7 @@
 	        </div>
 	    </form>
 -->
+        <h4>Find Projects: <a href="#" data-toggle="tooltip" data-placement="bottom" title="Search by project name, description and keywords. Leave blank to show all"><span class="glyphicon glyphicon-info-sign"></span></a></h4>
         <div class="input-group">
          <input id="searchinput" class="form-control" placeholder="Search for..." value="" type="search"> <span id="searchclear" class="glyphicon glyphicon-remove-circle"></span>
         <span class="input-group-btn">

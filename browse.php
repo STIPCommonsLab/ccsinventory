@@ -8,11 +8,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/vendor/bootstrap.min.js"></script>
+    <!-- Include jQuery Text Change Event plugin-->
+    <script src="js/vendor/jquery.textchange.min.js"></script>    
     <script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
     
        <script>
     	var cdbAccount = 'inventory';
-		var tableName = 'inventory';
+		var tableName = 'icarto_inventory';
 		var qBase = "select * from " + tableName;
 		var qParams;
 		var lastFeature;
@@ -42,7 +44,7 @@
 		
 		function initMap() {
 
-			cartodb.createVis('browse-map', 'http://inventory.cartodb.com/api/v2/viz/c74af5f8-0839-11e4-812f-0e73339ffa50/viz.json', {
+			cartodb.createVis('browse-map', 'http://inventory.cartodb.com/api/v2/viz/5f803e6a-c693-11e4-9078-0e853d047bba/viz.json', {
 				tiles_loader: true,
 				center_lat: 36,
 				center_lon: -97,
@@ -70,7 +72,9 @@
 	        $options.change(function(e) {
 	          
 	          qParams = '';
-	          getCheckboxes();
+              getSearchinput();
+              getCheckboxes();
+              qParams = " WHERE " + qParams;
 	          layer.setSQL(qBase + qParams);
 	          
 	          //console.log(qBase + qParams);
@@ -78,31 +82,42 @@
 	        
             $("#filter-btn").click(function() {
                     qParams = '';
-                    qParams = ' WHERE (LOWER(project_name) LIKE ' + "LOWER('%" + $('#searchinput').val() + "%') ";
-                    qParams += 'OR LOWER(project_description) LIKE ' + "LOWER('%" + $('#searchinput').val() + "%') ";
-                    qParams += 'OR LOWER(keywords) LIKE ' + "LOWER('%" + $('#searchinput').val() + "%')";
-                    qParams += ')';
+                    getSearchinput();
+                    getCheckboxes();
+                    qParams = " WHERE " + qParams;
                     layer.setSQL(qBase + qParams);
-            });	        
+            });
 	        
             $('#searchinput').bind("keypress", function (e) {
 
                 if (e.keyCode == 13) {
                     qParams = '';
-                    qParams = ' WHERE (LOWER(project_name) LIKE ' + "LOWER('%" + $('#searchinput').val() + "%') ";
-                    qParams += 'OR LOWER(project_description) LIKE ' + "LOWER('%" + $('#searchinput').val() + "%') ";
-                    qParams += 'OR LOWER(keywords) LIKE ' + "LOWER('%" + $('#searchinput').val() + "%')";
-                    qParams += ')';
+                    getSearchinput();
+                    getCheckboxes();
+                    qParams = " WHERE " + qParams;
                     layer.setSQL(qBase + qParams);
                 }
+                
             });
 
             $("#searchclear").click(function(){
                     $("#searchinput").val('').focus();
                     $(this).hide();
-                    layer.setSQL(qBase);
-            });         
-            
+                    qParams = '';
+                    getSearchinput();
+                    getCheckboxes();
+                    qParams = " WHERE " + qParams;
+                    layer.setSQL(qBase + qParams);
+            });
+
+            $('#searchinput').bind('notext', function () {
+                    qParams = '';
+                    getSearchinput();
+                    getCheckboxes();
+                    qParams = " WHERE " + qParams;
+                    layer.setSQL(qBase + qParams);               
+            });
+                      
 	      }
 	      
 	      function getCheckboxes() {
@@ -113,10 +128,10 @@
 				  var groupInc = false;
 			      $('#' + divId + ' :checkbox:checked').each(function() {
 					  if (groups == 0 && paramNum == 0) {
-						  qParams += ' WHERE (';
+						  qParams += ' AND (';
 					  }
 					  else if (groups > 0 && paramNum == 0) {
-						  qParams += ' AND (';
+						  qParams += ' AND ';
 					  }
 				      if (paramNum > 0) qParams += ' OR ';
 				      qParams += this.name + '=' + "'" + this.value + "'";
@@ -130,6 +145,13 @@
 			      } 
 			  });
 	      }
+	      
+          function getSearchinput() {
+            qParams += '(LOWER(project_name) LIKE ' + "LOWER('%" + $('#searchinput').val() + "%') ";
+            qParams += 'OR LOWER(project_description) LIKE ' + "LOWER('%" + $('#searchinput').val() + "%') ";
+            qParams += 'OR LOWER(keywords) LIKE ' + "LOWER('%" + $('#searchinput').val() + "%')";
+            qParams += ')';
+          }
 	      
 	      function showModal() {
 		      console.log(lastFeature);
