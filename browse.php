@@ -66,42 +66,42 @@
 
 	     }
 
-	     function createSelector(layer) {
+	     function createSelector(points, cluster) {
 	        var sql = new cartodb.SQL({ user: cdbAccount });
 
 	        var $options = $(':checkbox');
 	        $options.change(function(e) {
-                    filterPoints(layer);
-                    filterCluster(layer);
+                    filterPoints(points);
+                    filterCluster(cluster);
 	        });
 
             $("#filter-btn").click(function() {
-                    filterPoints(layer);
-                    filterCluster(layer);
+                    filterPoints(points);
+                    filterCluster(cluster);
             });
 
             $('#searchinput').bind("keypress", function (e) {
                 if (e.keyCode == 13) {
-                    filterPoints(layer);
-                    filterCluster(layer);
+                    filterPoints(points);
+                    filterCluster(cluster);
                 }
             });
 
             $("#searchclear").click(function(){
                     $("#searchinput").val('').focus();
                     $(this).hide();
-                    filterPoints(layer);
-                    filterCluster(layer);
+                    filterPoints(points);
+                    filterCluster(cluster);
             });
 
             $('#searchinput').bind('notext', function () {
-                filterPoints(layer);
-                filterCluster(layer);
+                filterPoints(points);
+                filterCluster(cluster);
             });
 
 	      }
 
-          function filterPoints(layers){
+          function filterPoints(layer){
 	          qParams = '';
               getSearchinput();
               getCheckboxes();
