@@ -52,7 +52,7 @@
 			})
 			.done(function(vis, layers) {
 				// layer 0 is the base layer, layer 1 is cartodb layer
-				createSelector(layers[1);
+				createSelector(layers[1]);
 				var points = layers[1].getSubLayer(0);
 				points.on('featureClick', function(e, latlng, pos, data, subLayerIndex) {
 					console.log("clicked: " + data.cartodb_id);

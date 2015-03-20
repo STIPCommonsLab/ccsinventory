@@ -15,7 +15,29 @@
 			  'project_url' => "'" . sanitizeInput($_POST['project-url']) . "'",
 			  'the_geom' => sanitizeInput($_POST['latlng']),
 			  'project_description' => "'" . sanitizeInput($_POST['project-description']) . "'",
-			  'field_of_science' => "'" . sanitizeInput($_POST['field-of-science']) . "'",
+			  'field_animals' => isset($_POST['field_animals']) ? '1' : '0',
+			  'field_archeology' => isset($_POST['field-archeology']) ? '1' : '0',
+			  'field_astronomy_space' => isset($_POST['field-astronomy-space']) ? '1' : '0',
+			  'field_awards' => isset($_POST['field-awards']) ? '1' : '0',
+			  'field_biology' => isset($_POST['field-biology']) ? '1' : '0',
+			  'field_birds' => isset($_POST['field-birds']) ? '1' : '0',
+			  'field_chemistry' => isset($_POST['field-chemistry']) ? '1' : '0',
+			  'field_climate_weather' => isset($_POST['field-climate-weather']) ? '1' : '0',
+			  'field_computers_technology' => isset($_POST['field-computers-technology']) ? '1' : '0',
+			  'field_crowd_funding' => isset($_POST['field-crowd-funding']) ? '1' : '0',
+			  'field_ecology_environment' => isset($_POST['field-ecology-environment']) ? '1' : '0',
+			  'field_education' => isset($_POST['field-education']) ? '1' : '0',
+			  'field_food' => isset($_POST['field-food']) ? '1' : '0',
+			  'field_geology_earth_science' => isset($_POST['field-geology-earth-science']) ? '1' : '0',
+			  'field_health_medicine' => isset($_POST['field-health-medicine']) ? '1' : '0',
+              'field_insects' => isset($_POST['field-insects']) ? '1' : '0',
+			  'field_nature_outdoors' => isset($_POST['field-nature-outdoors']) ? '1' : '0',
+			  'field_ocean_water' => isset($_POST['field-ocean-water']) ? '1' : '0',
+			  'field_physics' => isset($_POST['field-physics']) ? '1' : '0',
+			  'field_psychology' => isset($_POST['field-psychology']) ? '1' : '0',
+			  'field_science_policy' => isset($_POST['field-science-policy']) ? '1' : '0',
+			  'field_sound' => isset($_POST['field-sound']) ? '1' : '0',
+			  'field_transportation' => isset($_POST['field-transportation']) ? '1' : '0',			  
 			  'keywords' => "'" . sanitizeInput($_POST['keywords']) . "'",
 			  'status' => "'" . sanitizeInput($_POST['status']) . "'",
 			  'start_date' => "'" . sanitizeInput($_POST['start-date']) . "'",
@@ -153,37 +175,153 @@
 				    <textarea class="form-control" id="project-description" name="project-description"></textarea>
 				  </div>
 				</div>
-
-				<!-- Select Basic -->
+				
+				<!-- Multiple Checkboxes -->
 				<div class="form-group">
-				  <label class="col-md-4 control-label orange" for="field-of-science">Field of Science <span data-toggle="tooltip" title="Please select one of the five categories that best defines your project. Following this field you will be able to enter keywords to further define your project." class="glyphicon glyphicon-info-sign"></span></label>
-				  <div class="col-md-6">
-				    <select id="field-of-science" name="field-of-science" class="form-control">
-				      <option value="Animals">Animals</option>
-				      <option value="Archeology">Archeology</option>
-				      <option value="Astronomy & Space">Astronomy & Space</option>
-				      <option value="Awards">Awards</option>
-				      <option value="Biology">Biology</option>
-				      <option value="Birds">Birds</option>
-				      <option value="Chemistry">Chemistry</option>
-				      <option value="Climate & Weather">Climate & Weather</option>
-				      <option value="Computers & Technology">Computers & Technology</option>
-				      <option value="Crowd Funding">Crowd Funding</option>
-				      <option value="Ecology & Environment">Ecology & Environment</option>
-				      <option value="Education">Education</option>
-				      <option value="Food">Food</option>
-				      <option value="Geology & Earth Science">Geology & Earth Science</option>
-				      <option value="Health & Medicine">Health & Medicine</option>				      				          <option value="Insects">Insects</option>
-				      <option value="Nature & Outdoors">Nature & Outdoors</option>
-				      <option value="Ocean & Water">Ocean & Water</option>
-				      <option value="Physics">Physics</option>
-				      <option value="Psychology">Psychology</option>
-				      <option value="Science Policy">Science Policy</option>
-				      <option value="Sound">Sound</option>
-				      <option value="Transportation">Transportation</option>
-				    </select>
+				  <label class="col-md-4 control-label orange" for="field">Field of Science <span data-toggle="tooltip" title="What federal agency (or agencies) offers either primary or partial fiscal support of this project?" class="glyphicon glyphicon-info-sign" class="glyphicon glyphicon-info-sign"></span></label>
+				  <div class="col-md-4">
+				  <div class="checkbox">
+				    <label for="field-animals">
+				      <input type="checkbox" name="field-animals" id="field-animals" value="Animals">
+				      Animals
+				    </label>
+					</div>
+				  <div class="checkbox">
+				    <label for="field-archeology">
+				      <input type="checkbox" name="field-archeology" id="field-archeology" value="Archeology">
+				      Archeology
+				    </label>
+					</div>
+				  <div class="checkbox">
+				    <label for="field-astronomy-space">
+				      <input type="checkbox" name="field-astronomy-space" id="field-astronomy-space" value="Astronomy & Space">
+				      Astronomy & Space
+				    </label>
+					</div>
+				  <div class="checkbox">
+				    <label for="field-awards">
+				      <input type="checkbox" name="field-awards" id="field-awards" value="Awards">
+				      Awards
+				    </label>
+					</div>
+				  <div class="checkbox">
+				    <label for="field-biology">
+				      <input type="checkbox" name="field-biology" id="field-biology" value="Biology">
+				      Biology
+				    </label>
+					</div>
+				  <div class="checkbox">
+				    <label for="field-birds">
+				      <input type="checkbox" name="field-birds" id="field-birds" value="Birds">
+				      Birds
+				    </label>
+					</div>
+				  <div class="checkbox">
+				    <label for="field-chemistry">
+				      <input type="checkbox" name="field-chemistry" id="field-chemistry" value="Chemistry">
+				      Chemistry
+				    </label>
+					</div>
+				  <div class="checkbox">
+				    <label for="field-climate-weather">
+				      <input type="checkbox" name="field-climate-weather" id="field-climate-weather" value="Climate & Weather">
+				      Climate & Weather
+				    </label>
 				  </div>
+				  <div class="checkbox">
+				    <label for="field-computers-technology">
+				      <input type="checkbox" name="field-computers-technology" id="field-computers-technology" value="Computers & Technology">
+				      Computers & Technology
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label for="field-crowd-funding">
+				      <input type="checkbox" name="field-crowd-funding" id="field-crowd-funding" value="Crowd Funding">
+				      Crowd Funding
+				    </label>
+					</div>
+				  <div class="checkbox">
+				    <label for="field-ecology-environment">
+				      <input type="checkbox" name="field-ecology-environment" id="field-ecology-environment" value="Ecology & Environment">
+				      Ecology & Environment
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label for="field-education">
+				      <input type="checkbox" name="field-education" id="field-education" value="Education">
+				      Education
+				    </label>
+				  </div>				  					
+				  </div>
+   				  <div class="col-md-4">				  
+				  <div class="checkbox">
+				    <label for="field-food">
+				      <input type="checkbox" name="field-food" id="field-food" value="Food">
+				      Food
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label for="field-geology-earth-Science">
+				      <input type="checkbox" name="field-geology-earth-Science" id="field-geology-earth-Science" value="Geology & Earth Science">
+				      Geology & Earth Science
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label for="field-health-medicine">
+				      <input type="checkbox" name="field-health-medicine" id="field-health-medicine" value="Health & Medicine">
+				      Health & Medicine
+				    </label>
+				  </div>
+                  <div class="checkbox">
+				    <label for="field-insects">
+				      <input type="checkbox" name="field-insects" id="field-insects" value="Insects">
+				      Insects
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label for="field-nature-outdoors">
+				      <input type="checkbox" name="field-nature-outdoors" id="field-nature-outdoors" value="Nature & Outdoors">
+				      Nature & Outdoors
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label for="field-ocean-water">
+				      <input type="checkbox" name="field-ocean-water" id="field-ocean-water" value="Ocean & Water">
+				      Ocean & Water
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label for="field-physics">
+				      <input type="checkbox" name="field-physics" id="field-physics" value="Physics">
+				      Physics
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label for="field-psychology">
+				      <input type="checkbox" name="field-psychology" id="field-psychology" value="Psychology">
+				      Psychology
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label for="field-science-policy">
+				      <input type="checkbox" name="field-science-policy" id="field-science-policy" value="Science Policy">
+				      Science Policy
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label for="field-sound">
+				      <input type="checkbox" name="field-sound" id="field-sound" value="Sound">
+				      Sound
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label for="field-transportation">
+				      <input type="checkbox" name="field-transportation" id="field-transportation" value="Transportation">
+				      Transportation
+				    </label>
+				  </div>				  
 				</div>
+				</div>				
 
 				<!-- Text input-->
 				<div class="form-group">
@@ -220,7 +358,7 @@
 				<!-- Multiple Checkboxes -->
 				<div class="form-group">
 				  <label class="col-md-4 control-label orange" for="sponsors">Agency Sponsor <span data-toggle="tooltip" title="What federal agency (or agencies) offers either primary or partial fiscal support of this project?" class="glyphicon glyphicon-info-sign" class="glyphicon glyphicon-info-sign"></span></label>
-				  <div class="col-md-6">
+				  <div class="col-md-4">
 				  <div class="checkbox">
 				    <label for="sponsors-blm">
 				      <input type="checkbox" name="sponsors-blm" id="sponsors-blm" value="Bureau of Land Management (BLM)">
@@ -281,6 +419,8 @@
 				      National Science Foundation (NSF)
 				    </label>
 				  </div>
+				  </div>
+   				  <div class="col-md-4">				  
 				  <div class="checkbox">
 				    <label for="sponsors-nps">
 				      <input type="checkbox" name="sponsors-nps" id="sponsors-nps" value="U.S. National Park Service (NPS)">
