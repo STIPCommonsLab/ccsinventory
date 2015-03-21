@@ -18,15 +18,8 @@
 		var qBase = "select * from " + tableName;
 		var qParams;
 		var lastFeature;
-        var booleans = [ 'age_public', 'age_families', 'age_elementary', 'age_middle', 'age_teens', 'age_seniors',
-        'outcomes_research', 'outcomes_operational', 'outcomes_regulation', 'outcomes_education', 'outcomes_community',
-        'outcomes_policy', 'outcomes_proofconcept', 'outcomes_other', 'audience_teachers', 'audience_museum',
-        'audience_administration', 'audience_scientists', 'audience_evaluators', 'audience_public',
-        'sponsors_blm', 'sponsors_dhs', 'sponsors_doi', 'sponsors_epa', 'sponsors_hhs', 'sponsors_nara',
-        'sponsors_nasa', 'sponsors_nih', 'sponsors_noaa', 'sponsors_nsf', 'sponsors_nps', 'sponsors_ssa',
-        'sponsors_usstate', 'sponsors_usagriculture', 'sponsors_usaid', 'sponsors_usgs', 'sponsors_legislative',
-        'sponsors_executive', 'sponsors_judicial', 'sponsors_independent', 'sponsors_usfs'];
-		var contactInfo = ['project_contact', 'affiliation', 'email', 'phone', 'street_address', 'street_address_2', 'city', 'state', 'zip'];
+        var booleans = [ 'age_public', 'age_families', 'age_elementary', 'age_middle', 'age_teens','age_seniors', 'outcomes_research', 'outcomes_operational', 'outcomes_regulation', 'outcomes_education', 'outcomes_community', 'outcomes_policy', 'outcomes_proofconcept', 'outcomes_other', 'audience_teachers', 'audience_museum','audience_administration', 'audience_scientists', 'audience_evaluators', 'audience_public', 'sponsors_blm', 'sponsors_dhs', 'sponsors_doi', 'sponsors_epa', 'sponsors_hhs', 'sponsors_nara', 'sponsors_nasa', 'sponsors_nih', 'sponsors_noaa', 'sponsors_nsf', 'sponsors_nps', 'sponsors_ssa', 'sponsors_usstate', 'sponsors_usagriculture', 'sponsors_usaid', 'sponsors_usgs', 'sponsors_legislative', 'sponsors_executive', 'sponsors_judicial', 'sponsors_independent', 'sponsors_usfs', 'field_animals', 'field_archeology', 'field_astronomy_space', 'field_awards', 'field_biology', 'field_birds', 'field_chemistry', 'field_climate_weather', 'field_computers_technology', 'field_crowd_funding', 'field_ecology_environment', 'field_education', 'field_food', 'field_geology_earth_science', 'field_health_medicine', 'field_insects', 'field_nature_outdoors', 'field_ocean_water', 'field_physics', 'field_psychology', 'field_science_policy', 'field_sound', 'field_transportation'];
+		var contactInfo = ['project_contact', 'affiliation', 'email', 'phone', 'street_address',  'street_address_2', 'city', 'state', 'zip'];
 
 
 		// create new where parameters variable
@@ -53,7 +46,7 @@
 			.done(function(vis, layers) {
 				// layer 0 is the base layer, layer 1 is cartodb layer
 				createSelector(layers[1]);
-				var points = layers[1].getSubLayer(0);
+				var points = layers[1].getSubLayer(1);
 				points.on('featureClick', function(e, latlng, pos, data, subLayerIndex) {
 					console.log("clicked: " + data.cartodb_id);
 					lastFeature = data.cartodb_id;
@@ -97,8 +90,8 @@
 
           function filterMap(layers){
               fillWhere(); // set global var qParams
-              var points = layers.getSubLayer(0);
-              var cluster = layers.getSubLayer(1);
+              var points = layers.getSubLayer(1);
+              var cluster = layers.getSubLayer(0);
               points.setSQL(qBase + " WHERE " + qParams);
               cluster && filterCluster(cluster, " WHERE " + qParams);
           }

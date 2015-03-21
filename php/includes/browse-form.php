@@ -34,139 +34,139 @@
 		      <div class="panel-body">
 				  <div class="checkbox">
 				    <label for="field-of-science-0">
-				      <input type="checkbox" name="field_of_science" id="field-of-science-0" value="Animals">
+				      <input type="checkbox" name="field_animals" id="field-of-science-0" value="1">
 				      Animals
 				    </label>
 					</div>
 				  <div class="checkbox">
 				    <label for="field-of-science-1">
-				      <input type="checkbox" name="field_of_science" id="field-of-science-1" value="Archeology">
+				      <input type="checkbox" name="field_archeology" id="field-of-science-1" value="1">
 				      Archeology
 				    </label>
 					</div>
 				  <div class="checkbox">
 				    <label for="field-of-science-2">
-				      <input type="checkbox" name="field_of_science" id="field-of-science-2" value="Astronomy & Space">
+				      <input type="checkbox" name="field_astronomy_space" id="field-of-science-2" value="1">
 				      Astronomy & Space
 				    </label>
 					</div>
 				  <div class="checkbox">
 				    <label for="field-of-science-3">
-				      <input type="checkbox" name="field_of_science" id="field-of-science-3" value="Awards">
+				      <input type="checkbox" name="field_awards" id="field-of-science-3" value="1">
 				      Awards
 				    </label>
 					</div>
 				  <div class="checkbox">
 				    <label for="field-of-science-4">
-				      <input type="checkbox" name="field_of_science" id="field-of-science-4" value="Biology">
+				      <input type="checkbox" name="field_biology" id="field-of-science-4" value="1">
 				      Biology
 				    </label>
 					</div>
 				  <div class="checkbox">
 				    <label for="field-of-science-5">
-				      <input type="checkbox" name="field_of_science" id="field-of-science-5" value="Birds">
+				      <input type="checkbox" name="field_birds" id="field-of-science-5" value="1">
 				      Birds
 				    </label>
 					</div>
 				  <div class="checkbox">
 				    <label for="field-of-science-6">
-				      <input type="checkbox" name="field_of_science" id="field-of-science-6" value="Chemistry">
+				      <input type="checkbox" name="field_chemistry" id="field-of-science-6" value="1">
 				      Chemistry
 				    </label>
                   </div>
 				  <div class="checkbox">
 				    <label for="field-of-science-7">
-				      <input type="checkbox" name="field_of_science" id="field-of-science-7" value="Climate & Weather">
+				      <input type="checkbox" name="field_climate_weather" id="field-of-science-7" value="1">
 				      Climate & Weather
 				    </label>
 				  </div>
 				  <div class="checkbox">
 				    <label for="field-of-science-8">
-				      <input type="checkbox" name="field_of_science" id="field-of-science-8" value="Computers & Technology">
+				      <input type="checkbox" name="field_computers_technology" id="field-of-science-8" value="1">
 				      Computers & Technology
 				    </label>
 				  </div>
 				  <div class="checkbox">
 				    <label for="field-of-science-9">
-				      <input type="checkbox" name="field_of_science" id="field-of-science-9" value="Crowd Funding">
+				      <input type="checkbox" name="field_crowd_funding" id="field-of-science-9" value="1">
 				      Crowd Funding
 				    </label>
 				  </div>
 				  <div class="checkbox">
 				    <label for="field-of-science-10">
-				      <input type="checkbox" name="field_of_science" id="field-of-science-10" value="Ecology & Environment">
+				      <input type="checkbox" name="field_ecology_environment" id="field-of-science-10" value="1">
 				      Ecology & Environment
 				    </label>
 				  </div>
 				  <div class="checkbox">
 				    <label for="field-of-science-11">
-				      <input type="checkbox" name="field_of_science" id="field-of-science-11" value="Education">
+				      <input type="checkbox" name="field_education" id="field-of-science-11" value="1">
 				      Education
 				    </label>
 				  </div>
 				  <div class="checkbox">
 				    <label for="field-of-science-12">
-				      <input type="checkbox" name="field_of_science" id="field-of-science-12" value="Food">
+				      <input type="checkbox" name="field_food" id="field-of-science-12" value="1">
 				      Food
 				    </label>
 				  </div>
 				  <div class="checkbox">
 				    <label for="field-of-science-13">
-				      <input type="checkbox" name="field_of_science" id="field-of-science-13" value="Geology & Earth Science">
+				      <input type="checkbox" name="field_geology_earth_science" id="field-of-science-13" value="1">
 				      Geology & Earth Science
 				    </label>
 				  </div>
 				  <div class="checkbox">
 				    <label for="field-of-science-14">
-				      <input type="checkbox" name="field_of_science" id="field-of-science-14" value="Health & Medicine">
+				      <input type="checkbox" name="field_health_medicine" id="field-of-science-14" value="1">
 				      Health & Medicine
 				    </label>
 				  </div>
 				  <div class="checkbox">
 				    <label for="field-of-science-15">
-				      <input type="checkbox" name="field_of_science" id="field-of-science-15" value="Insects">
+				      <input type="checkbox" name="field_insects" id="field-of-science-15" value="1">
 				      Insects
 				    </label>
 				  </div>
 				  <div class="checkbox">
 				    <label for="field-of-science-16">
-				      <input type="checkbox" name="field_of_science" id="field-of-science-16" value="Nature & Outdoors">
+				      <input type="checkbox" name="field_nature_outdoors" id="field-of-science-16" value="1">
 				      Nature & Outdoors
 				    </label>
 				  </div>
 				  <div class="checkbox">
 				    <label for="field-of-science-17">
-				      <input type="checkbox" name="field_of_science" id="field-of-science-17" value="Ocean & Water">
+				      <input type="checkbox" name="field_ocean_water" id="field-of-science-17" value="1">
 				      Ocean & Water
 				    </label>
 				  </div>
 				  <div class="checkbox">
 				    <label for="field-of-science-18">
-				      <input type="checkbox" name="field_of_science" id="field-of-science-18" value="Physics">
+				      <input type="checkbox" name="field_physics" id="field-of-science-18" value="1">
 				      Physics
 				    </label>
 				  </div>
 				  <div class="checkbox">
 				    <label for="field-of-science-19">
-				      <input type="checkbox" name="field_of_science" id="field-of-science-19" value="Psychology">
+				      <input type="checkbox" name="field_psychology" id="field-of-science-19" value="1">
 				      Psychology
 				    </label>
 				  </div>
 				  <div class="checkbox">
 				    <label for="field-of-science-20">
-				      <input type="checkbox" name="field_of_science" id="field-of-science-20" value="Science Policy">
+				      <input type="checkbox" name="field_science_policy" id="field-of-science-20" value="1">
 				      Science Policy
 				    </label>
 				  </div>
 				  <div class="checkbox">
 				    <label for="field-of-science-21">
-				      <input type="checkbox" name="field_of_science" id="field-of-science-21" value="Sound">
+				      <input type="checkbox" name="field_sound" id="field-of-science-21" value="1">
 				      Sound
 				    </label>
 				  </div>
 				  <div class="checkbox">
 				    <label for="field-of-science-22">
-				      <input type="checkbox" name="field_of_science" id="field-of-science-22" value="Transportation">
+				      <input type="checkbox" name="field_transportation" id="field-of-science-22" value="1">
 				      Transportation
 				    </label>
 				  </div>
@@ -445,10 +445,37 @@
         <h4 class="modal-title" id="modalLabel">hi</h4>
       </div>
       <div class="modal-body">
-		<dl class="dl-horizontal" id="m-field_of_science">
+		<dl class="dl-horizontal" id="m-field">
 		  <dt>Field of Science</dt>
-		  <dd>Text</dd>
-		</dl>
+		  <dd>
+		  	<span class="label label-warning bool-labels" id="m-field_animals">Animals</span>
+		  	<span class="label label-warning bool-labels" id="m-field_archeology">Archeology</span>
+		  	<span class="label label-warning bool-labels" id="m-field_astronomy_space">Astronomy & Space</span>
+		  	<span class="label label-warning bool-labels" id="m-field_awards">Awards</span>
+		  	<span class="label label-warning bool-labels" id="m-field_biology">Biology</span>
+		  	<span class="label label-warning bool-labels" id="m-field_birds">Birds</span>
+		  	<span class="label label-warning bool-labels" id="m-field_chemistry">Chemistry</span>
+		  	<span class="label label-warning bool-labels" id="m-field_climate_weather">Climate & Weather</span>
+		  	<span class="label label-warning bool-labels" id="m-field_computers_technology">Computers & Technology</span>
+		  	<span class="label label-warning bool-labels" id="m-field_crowd_funding">Crowd Funding </span>
+		  	<span class="label label-warning bool-labels" id="m-field_ecology_environment">Ecology & Environment</span>
+		  	<span class="label label-warning bool-labels" id="m-field_education">Education</span>
+		  	<span class="label label-warning bool-labels" id="m-field_food">Food</span>
+		  	<span class="label label-warning bool-labels" id="m-field_geology_earth_science">Geology & Earth Science</span>
+		  	<span class="label label-warning bool-labels" id="m-field_health_medicine">Health & Medicine</span>
+		  	<span class="label label-warning bool-labels" id="m-field_insects">Insects</span>
+
+
+		  	<span class="label label-warning bool-labels" id="m-field_nature_outdoors">Nature & Outdoors</span>
+		  	<span class="label label-warning bool-labels" id="m-field_ocean_water">Ocean & Water</span>
+		  	<span class="label label-warning bool-labels" id="m-field_physics">Physics</span>
+		  	<span class="label label-warning bool-labels" id="m-field_psychology">Psychology</span>
+		  	<span class="label label-warning bool-labels" id="m-field_science_policy">Science Policy</span>
+		  	<span class="label label-warning bool-labels" id="m-field_sound">Sound</span>
+		  	<span class="label label-warning bool-labels" id="m-field_transportation">Transportation</span>
+		  	<span>&nbsp;</span>
+		  </dd>
+		</dl>		
 		<dl class="dl-horizontal" id="m-project_url">
 		  <dt>URL</dt>
 		  <dd>Text</dd>
