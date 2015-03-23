@@ -515,7 +515,7 @@
 		  	<span class="label label-warning bool-labels" id="m-sponsors_usagriculture">U.S. Department of Agriculture</span>
 		  	<span class="label label-warning bool-labels" id="m-sponsors_usaid">U.S. Agency for International Development (USAID)</span>
 		  	<span class="label label-warning bool-labels" id="m-sponsors_usgs">U.S. Geological Survey (USGS)</span>
-
+		  	<span class="label label-warning bool-labels" id="m-sponsors_si">Smithsonian Institute (SI)</span>
 
 		  	<span class="label label-warning bool-labels" id="m-sponsors_legislative">Other legislative branch agency</span>
 		  	<span class="label label-warning bool-labels" id="m-sponsors_executive">Other executive branch agency</span>

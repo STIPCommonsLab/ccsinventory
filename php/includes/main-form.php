@@ -58,6 +58,7 @@
 			  'sponsors_usaid' => isset($_POST['sponsors-usaid']) ? '1' : '0',
               'sponsors_usfs' => isset($_POST['sponsors-usfs']) ? '1' : '0',
 			  'sponsors_usgs' => isset($_POST['sponsors-usgs']) ? '1' : '0',
+			  'sponsors_si' => isset($_POST['sponsors-si']) ? '1' : '0',			  
 			  'sponsors_legislative' => isset($_POST['sponsors-legislative']) ? '1' : '0',
 			  'sponsors_executive' => isset($_POST['sponsors-executive']) ? '1' : '0',
 			  'sponsors_judicial' => isset($_POST['sponsors-judicial']) ? '1' : '0',
@@ -470,6 +471,12 @@
 				      U.S. Geological Survey (USGS)
 				    </label>
 				  </div>
+				  <div class="checkbox">
+				    <label for="sponsors-si">
+				      <input type="checkbox" name="sponsors-si" id="sponsors-si" value="Smithsonian Institute (SI)">
+				      Smithsonian Institute (SI)
+				    </label>
+				  </div>				  
 				  <div class="checkbox">
 				    <label for="sponsors-legislative">
 				      <input type="checkbox" name="sponsors-legislative" id="sponsors-legislative" value="Other legislative branch agency">
