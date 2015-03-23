@@ -218,7 +218,7 @@
 		    </div>
 		  </div>
 
-		  <div class="panel panel-default" id="agency_partner">
+		  <div class="panel panel-default" id="partners">
 		    <div class="panel-heading">
 		      <h4 class="panel-title">
 		        <a data-toggle="collapse" href="#collapseThree">
@@ -230,49 +230,49 @@
 		      <div class="panel-body">
 				  <div class="checkbox">
 				    <label for="agency-partner-0">
-				      <input type="checkbox" name="agency_partner" id="agency-partner-0" value="State or Local Government">
+				      <input type="checkbox" name="partners_state_local_government" id="agency-partner-0" value="1">
 				      State or Local Government
 				    </label>
 				  </div>
 				  <div class="checkbox">
 				    <label for="agency-partner-1">
-				      <input type="checkbox" name="agency_partner" id="agency-partner-1" value="Formal Non-Profit/NGO">
+				      <input type="checkbox" name="partners_formal_nonprofit_ngo" id="agency-partner-1" value="1">
 				      Formal Non-Profit/NGO
 				    </label>
 			      </div>
 				  <div class="checkbox">
 				    <label for="agency-partner-2">
-				      <input type="checkbox" name="agency_partner" id="agency-partner-2" value="Community Group">
+				      <input type="checkbox" name="partners_community_group" id="agency-partner-2" value="1">
 				      Community Group
 				    </label>
 			      </div>
 				  <div class="checkbox">
 				    <label for="agency-partner-3">
-				      <input type="checkbox" name="agency_partner" id="agency-partner-3" value="College or University">
+				      <input type="checkbox" name="partners_college_university" id="agency-partner-3" value="1">
 				      College or University
 				    </label>
 				  </div>
 				  <div class="checkbox">
 				    <label for="agency-partner-4">
-				      <input type="checkbox" name="agency_partner" id="agency-partner-4" value="K-12 Education">
+				      <input type="checkbox" name="partners_k12education" id="agency-partner-4" value="1">
 				      K-12 Education
 				    </label>
                   </div>
 				  <div class="checkbox">
 				    <label for="agency-partner-5">
-				      <input type="checkbox" name="agency_partner" id="agency-partner-5" value="Museum">
+				      <input type="checkbox" name="partners_museum" id="agency-partner-5" value="1">
 				      Museum
 				    </label>
                   </div>
 				  <div class="checkbox">
 				    <label for="agency-partner-6">
-				      <input type="checkbox" name="agency_partner" id="agency-partner-6" value="For-Profit">
+				      <input type="checkbox" name="partners_forprofit" id="agency-partner-6" value="1">
 				      For-Profit
 				    </label>
                   </div>
 				  <div class="checkbox">
 				    <label for="agency-partner-7">
-				      <input type="checkbox" name="agency_partner" id="agency-partner-7" value="Other">
+				      <input type="checkbox" name="partners_other" id="agency-partner-7" value="1">
 				      Other
 				    </label>
                   </div>
@@ -525,10 +525,19 @@
 		  	<span>&nbsp;</span>
 		  </dd>
 		</dl>
-		<dl class="dl-horizontal" id="m-agency_partner">
+		<dl class="dl-horizontal" id="m-partners"> <!--TODO-->
 		  <dt>Agency Partner</dt>
-		  <dd>Text</dd>
-		</dl>
+		  <dd>
+		  	<span class="label label-info bool-labels" id="m-partners_state_local_government">State or Local Government</span>
+		  	<span class="label label-info bool-labels" id="m-partners_formal_nonprofit_ngo">Formal Non-Profit/NGO</span>
+		  	<span class="label label-info bool-labels" id="m-partners_community_group">Community Group</span>
+		  	<span class="label label-info bool-labels" id="m-partners_college_university">College or University</span>
+		  	<span class="label label-info bool-labels" id="m-partners_k12education">K-12 Education</span>
+		  	<span class="label label-info bool-labels" id="m-partners_forprofit">For-Profit</span>
+		  	<span class="label label-info bool-labels" id="m-partners_other">Other</span>		  	
+		  	<span>&nbsp;</span>
+		  </dd>
+		</dl>		
 		<dl class="dl-horizontal" id="m-geographic_scope">
 		  <dt>Geographic Scope</dt>
 		  <dd>Text</dd>
