@@ -217,6 +217,152 @@
 		      </div>
 		    </div>
 		  </div>
+		  
+		  <div class="panel panel-default" id="sponsors">
+		    <div class="panel-heading">
+		      <h4 class="panel-title">
+		        <a data-toggle="collapse" href="#collapseThree">
+		          Agency Sponsor
+		        </a>
+		      </h4>
+		    </div>
+		    <div id="collapseThree" class="panel-collapse collapse">
+		      <div class="panel-body">
+				  <div class="checkbox">
+				    <label for="agency-sponsor-0">
+				      <input type="checkbox" name="sponsors_blm" id="agency-sponsor-0" value="1">
+				      Bureau of Land Management (BLM)
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label for="agency-sponsor-1">
+				      <input type="checkbox" name="sponsors_dhs" id="agency-sponsor-1" value="1">
+				      Department of Homeland Security (DHS)
+				    </label>
+			      </div>
+				  <div class="checkbox">
+				    <label for="agency-sponsor-2">
+				      <input type="checkbox" name="sponsors_doi" id="agency-sponsor-2" value="1">
+				      U.S. Department of the Interior (DOI)
+				    </label>
+			      </div>
+				  <div class="checkbox">
+				    <label for="agency-sponsor-3">
+				      <input type="checkbox" name="sponsors_epa" id="agency-sponsor-3" value="1">
+				      U.S. Environmental Protection Agency (EPA)
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label for="agency-sponsor-4">
+				      <input type="checkbox" name="sponsors_hhs" id="agency-sponsor-4" value="1">
+				      United States Department of Health and Human Services (HHS)
+				    </label>
+                  </div>
+				  <div class="checkbox">
+				    <label for="agency-sponsor-5">
+				      <input type="checkbox" name="sponsors_nara" id="agency-sponsor-5" value="1">
+				      National Archives and Records Administration (NARA)
+				    </label>
+                  </div>
+				  <div class="checkbox">
+				    <label for="agency-sponsor-6">
+				      <input type="checkbox" name="sponsors_nasa" id="agency-sponsor-6" value="1">
+				      National Aeronautics and Space Administration (NASA)
+				    </label>
+                  </div>
+				  <div class="checkbox">
+				    <label for="agency-sponsor-7">
+				      <input type="checkbox" name="sponsors_nih" id="agency-sponsor-7" value="1">
+				      National Institutes of Health (NIH)
+				    </label>
+                  </div>
+				  <div class="checkbox">
+				    <label for="agency-sponsor-8">
+				      <input type="checkbox" name="sponsors_noaa" id="agency-sponsor-8" value="1">
+				      National Oceanic and Atmospheric Administration (NOAA)
+				    </label>
+                  </div>
+				  <div class="checkbox">
+				    <label for="agency-sponsor-9">
+				      <input type="checkbox" name="sponsors_nsf" id="agency-sponsor-9" value="1">
+				      National Science Foundation (NSF)
+				    </label>
+                  </div>
+				  <div class="checkbox">
+				    <label for="agency-sponsor-10">
+				      <input type="checkbox" name="sponsors_nps" id="agency-sponsor-10" value="1">
+				      U.S. National Park Service (NPS)
+				    </label>
+                  </div>
+				  <div class="checkbox">
+				    <label for="agency-sponsor-11">
+				      <input type="checkbox" name="sponsors_ssa" id="agency-sponsor-11" value="1">
+				      The United States Social Security Administration (SSA)
+				    </label>
+                  </div>
+				  <div class="checkbox">
+				    <label for="agency-sponsor-12">
+				      <input type="checkbox" name="sponsors_usstate" id="agency-sponsor-12" value="1">
+				      U.S Department of State
+				    </label>
+                  </div>
+				  <div class="checkbox">
+				    <label for="agency-sponsor-13">
+				      <input type="checkbox" name="sponsors_usagriculture" id="agency-sponsor-13" value="1">
+				      U.S. Department of Agriculture
+				    </label>
+                  </div>
+				  <div class="checkbox">
+				    <label for="agency-sponsor-14">
+				      <input type="checkbox" name="sponsors_usaid" id="agency-sponsor-14" value="1">
+				      U.S. Agency for International Development (USAID)
+				    </label>
+                  </div>
+				  <div class="checkbox">
+				    <label for="agency-sponsor-15">
+				      <input type="checkbox" name="sponsors_usfs" id="agency-sponsor-15" value="1">
+				      U.S. Forest Service (USFS)
+				    </label>
+                  </div>
+				  <div class="checkbox">
+				    <label for="agency-sponsor-16">
+				      <input type="checkbox" name="sponsors_usgs" id="agency-sponsor-16" value="1">
+				      U.S. Geological Survey (USGS)
+				    </label>
+                  </div>
+				  <div class="checkbox">
+				    <label for="agency-sponsor-17">
+				      <input type="checkbox" name="sponsors_si" id="agency-sponsor-17" value="1">
+				      Smithsonian Institute (SI)
+				    </label>
+                  </div>
+				  <div class="checkbox">
+				    <label for="agency-sponsor-18">
+				      <input type="checkbox" name="sponsors_legislative" id="agency-sponsor-18" value="1">
+				      Other legislative branch agency
+				    </label>
+                  </div>
+				  <div class="checkbox">
+				    <label for="agency-sponsor-19">
+				      <input type="checkbox" name="sponsors_executive" id="agency-sponsor-19" value="1">
+				      Other executive branch agency
+				    </label>
+                  </div>
+				  <div class="checkbox">
+				    <label for="agency-sponsor-20">
+				      <input type="checkbox" name="sponsors_judicial" id="agency-sponsor-20" value="1">
+				      Other judicial branch agency
+				    </label>
+                  </div>
+				  <div class="checkbox">
+				    <label for="agency-sponsor-21">
+				      <input type="checkbox" name="sponsors_independent" id="agency-sponsor-21" value="1">
+				      Other Independent agency
+				    </label>
+                  </div>                  
+		      </div>
+		    </div>
+		  </div>		  
 
 		  <div class="panel panel-default" id="partners">
 		    <div class="panel-heading">
