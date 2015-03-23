@@ -1,5 +1,10 @@
 <?php
 	ob_start();
+	if (file_exists('config.php')) {
+	    require('config.php');
+	}else{
+	    exit("Add config.php");
+	}
 	require('php/includes/header.php');
 	require('php/includes/main-form.php');
 	require('php/includes/footer.php');

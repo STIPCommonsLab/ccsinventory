@@ -1,4 +1,9 @@
 <?php
+	if (file_exists('config.php')) {
+	    require('config.php');
+	}else{
+	    exit("Add config.php");
+	}
 	require('php/includes/header.php');
 	require('php/includes/browse-form.php');
 	require('php/includes/footer.php');
@@ -13,8 +18,8 @@
     <script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
 
        <script>
-    	var cdbAccount = 'inventory';
-		var tableName = 'icarto_inventory';
+    	var cdbAccount = <?php echo "'" . $cartodb_username . "'"; ?>;
+		var tableName = <?php echo "'" . $table . "'"; ?>;
 		var qBase = "select * from " + tableName;
 		var qParams;
 		var lastFeature;
@@ -37,7 +42,7 @@
 
 		function initMap() {
 
-			cartodb.createVis('browse-map', 'http://inventory.cartodb.com/api/v2/viz/5f803e6a-c693-11e4-9078-0e853d047bba/viz.json', {
+			cartodb.createVis('browse-map', <?php echo "'" . $json_viz . "'"; ?>, {
 				tiles_loader: true,
 				center_lat: 36,
 				center_lon: -97,

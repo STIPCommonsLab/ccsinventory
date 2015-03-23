@@ -101,22 +101,14 @@
 
 			//print_r($data);
 
-			function insertSQL($table, $data) {
+			function insertSQL($staging_table, $data) {
 				$keys = implode(',', array_keys($data));
 				$values = implode(',', array_values($data));
 				$sql = "INSERT INTO $table ($keys) VALUES($values);";
 				return $sql;
 			}
 
-			//CartoDB user name
-			$cartodb_username = "inventory";
-
-			//API Key (https://examples.cartodb.com/your_apps/api_key)
-			$api_key= "INSERT API KEY HERE";
-
-			$table = 'staging';
-
-			$sql = insertSQL($table, $data);
+			$sql = insertSQL($staging_table, $data);
 			//print($sql);
 
 
