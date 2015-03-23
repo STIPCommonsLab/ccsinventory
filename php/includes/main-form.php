@@ -62,7 +62,14 @@
 			  'sponsors_executive' => isset($_POST['sponsors-executive']) ? '1' : '0',
 			  'sponsors_judicial' => isset($_POST['sponsors-judicial']) ? '1' : '0',
 			  'sponsors_independent' => isset($_POST['sponsors-independent']) ? '1' : '0',
-			  'agency_partner' => "'" . sanitizeInput($_POST['agency-partner']) . "'",
+			  'partners_state_local_government' => isset($_POST['partners-state-local-government']) ? '1' : '0',
+			  'partners_formal_nonprofit_ngo' => isset($_POST['partners-formal-nonprofit-ngo']) ? '1' : '0',
+			  'partners_community_group' => isset($_POST['partners-community-group']) ? '1' : '0',
+			  'partners_college_university' => isset($_POST['partners-college-university']) ? '1' : '0',
+              'partners_k12education' => isset($_POST['partners-k12education']) ? '1' : '0',
+			  'partners_museum' => isset($_POST['partners-museum']) ? '1' : '0',
+			  'partners_forprofit' => isset($_POST['partners-forprofit']) ? '1' : '0',
+			  'partners_other' => isset($_POST['partners-other']) ? '1' : '0',
 			  'geographic_scope' => "'" . sanitizeInput($_POST['geographic-scope']) . "'",
 			  'age_public' => isset($_POST['age-public']) ? '1' : '0',
 			  'age_families' => isset($_POST['age-families']) ? '1' : '0',
@@ -489,23 +496,60 @@
 				  </div>
 				</div>
 				</div>
-
-				<!-- Text input-->
+				
+				<!-- Multiple Checkboxes -->
 				<div class="form-group">
-				  <label class="col-md-4 control-label orange" for="agency-partner">Agency Partner <span data-toggle="tooltip" title="A federal agency offering partial support" class="glyphicon glyphicon-info-sign"></span></label>
-				  <div class="col-md-6">
-				    <select id="agency-partner" name="agency-partner" class="form-control">
-				      <option value="">Choose an Agency</option>
-				      <option value="State or Local Government">State or Local Government</option>
-				      <option value="Formal Non-Profit/NGO">Formal Non-Profit/NGO</option>
-				      <option value="Community Group">Community Group</option>
-				      <option value="College or University">College or University</option>
-				      <option value="K-12 Education">K-12 Education</option>
-				      <option value="Museum">Museum</option>
-				      <option value="For-Profit">For-Profit</option>
-				      <option value="Other">Other</option>
-				    </select>
-				  </div>
+				  <label class="col-md-4 control-label orange" for="partners">Agency Partner <span data-toggle="tooltip" title="A federal agency offering partial support" class="glyphicon glyphicon-info-sign"></span></label>
+					  <div class="col-md-6">
+						  <div class="checkbox">
+						    <label for="partners-state-local-government">
+						      <input type="checkbox" name="partners-state-local-government" id="partners-state-local-government" value="State or Local Government">
+						      State or Local Government
+						    </label>
+							</div>
+						  <div class="checkbox">
+						    <label for="partners-formal-nonprofit-ngo">
+						      <input type="checkbox" name="partners-formal-nonprofit-ngo" id="partners-formal-nonprofit-ngo" value="Formal Non-Profit/NGO">
+						      Formal Non-Profit/NGO
+						    </label>
+							</div>
+						  <div class="checkbox">
+						    <label for="partners-community-group">
+						      <input type="checkbox" name="partners-community-group" id="partners-community-group" value="Community Group">
+						      Community Group
+						    </label>
+							</div>
+						  <div class="checkbox">
+						    <label for="partners-college-university">
+						      <input type="checkbox" name="partners-college-university" id="partners-college-university" value="College or University">
+						      College or University
+						    </label>
+							</div>
+						  <div class="checkbox">
+						    <label for="partners-k12education">
+						      <input type="checkbox" name="partners-k12education" id="partners-k12education" value="K-12 Education">
+						      K-12 Education
+						    </label>
+							</div>
+						  <div class="checkbox">
+						    <label for="partners-museum">
+						      <input type="checkbox" name="partners-museum" id="partners-museum" value="Museum">
+						      Museum
+						    </label>
+							</div>
+						  <div class="checkbox">
+						    <label for="partners-forprofit">
+						      <input type="checkbox" name="partners-forprofit" id="partners-forprofit" value="For-Profit">
+						      For-Profit
+						    </label>
+							</div>
+						  <div class="checkbox">
+						    <label for="partners-other">
+						      <input type="checkbox" name="partners-other" id="partners-other" value="Other">
+						      Other
+						    </label>
+							</div>													
+					  </div>
 				</div>
 
 				<!-- Select Basic -->
