@@ -104,7 +104,7 @@
 			function insertSQL($staging_table, $data) {
 				$keys = implode(',', array_keys($data));
 				$values = implode(',', array_values($data));
-				$sql = "INSERT INTO $table ($keys) VALUES($values);";
+				$sql = "INSERT INTO $staging_table ($keys) VALUES($values);";
 				return $sql;
 			}
 
