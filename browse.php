@@ -122,7 +122,7 @@
 						  qParams += ' AND (';
 					  }
 					  else if (groups > 0 && paramNum == 0) {
-						  qParams += ' AND ';
+						  qParams += ' AND (';
 					  }
 				      if (paramNum > 0) qParams += ' OR ';
 				      qParams += this.name + '=' + "'" + this.value + "'";

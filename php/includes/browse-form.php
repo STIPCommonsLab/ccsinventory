@@ -197,20 +197,20 @@
 				    </label>
 					</div>
 				  <div class="checkbox">
-				    <label for="status-1">
-				      <input type="checkbox" name="status" id="status-1" value="Active but Seasonal">
+				    <label for="status-2">
+				      <input type="checkbox" name="status" id="status-2" value="Active but Seasonal">
 				      Active but Seasonal
 				    </label>
 					</div>
 				  <div class="checkbox">
-				    <label for="status-2">
-				      <input type="checkbox" name="status" id="status-2" value="Complete">
+				    <label for="status-3">
+				      <input type="checkbox" name="status" id="status-3" value="Complete">
 				      Complete
 				    </label>
 					</div>
 				  <div class="checkbox">
-				    <label for="status-3">
-				      <input type="checkbox" name="status" id="status-3" value="Hiatus">
+				    <label for="status-4">
+				      <input type="checkbox" name="status" id="status-4" value="Hiatus">
 				      Hiatus
 				    </label>
 					</div>
@@ -367,12 +367,12 @@
 		  <div class="panel panel-default" id="partners">
 		    <div class="panel-heading">
 		      <h4 class="panel-title">
-		        <a data-toggle="collapse" href="#collapseThree">
+		        <a data-toggle="collapse" href="#collapsePartners">
 		          Agency Partner
 		        </a>
 		      </h4>
 		    </div>
-		    <div id="collapseThree" class="panel-collapse collapse">
+		    <div id="collapsePartners" class="panel-collapse collapse">
 		      <div class="panel-body">
 				  <div class="checkbox">
 				    <label for="agency-partner-0">

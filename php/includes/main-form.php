@@ -15,7 +15,7 @@
 			  'project_url' => "'" . sanitizeInput($_POST['project-url']) . "'",
 			  'the_geom' => sanitizeInput($_POST['latlng']),
 			  'project_description' => "'" . sanitizeInput($_POST['project-description']) . "'",
-			  'field_animals' => isset($_POST['field_animals']) ? '1' : '0',
+			  'field_animals' => isset($_POST['field-animals']) ? '1' : '0',
 			  'field_archeology' => isset($_POST['field-archeology']) ? '1' : '0',
 			  'field_astronomy_space' => isset($_POST['field-astronomy-space']) ? '1' : '0',
 			  'field_awards' => isset($_POST['field-awards']) ? '1' : '0',
@@ -261,8 +261,8 @@
 				    </label>
 				  </div>
 				  <div class="checkbox">
-				    <label for="field-geology-earth-Science">
-				      <input type="checkbox" name="field-geology-earth-Science" id="field-geology-earth-Science" value="Geology & Earth Science">
+				    <label for="field-geology-earth-science">
+				      <input type="checkbox" name="field-geology-earth-science" id="field-geology-earth-science" value="Geology & Earth Science">
 				      Geology & Earth Science
 				    </label>
 				  </div>
@@ -429,7 +429,7 @@
 				  </div>
 				  <div class="checkbox">
 				    <label for="sponsors-ssa">
-				      <input type="checkbox" name="sponsors-noaa" id="sponsors-ssa" value="The United States Social Security Administration (SSA)">
+				      <input type="checkbox" name="sponsors-ssa" id="sponsors-ssa" value="The United States Social Security Administration (SSA)">
 				      The United States Social Security Administration (SSA)
 				    </label>
 				  </div>
