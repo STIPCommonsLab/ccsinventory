@@ -31,12 +31,9 @@
 				<a href="/"><h1>Commons Lab Inventory</h1></a>
 	    	<p class="light-grey">An Inventory of Federal Crowdsourcing and Citizen Science Projects</p>
 			</div>
-			<div class="col-xs-1 col-xs-offset-1 text-right">
-				<a href="http://wilsoncenter.org/inventory-federal-crowdsourcing-and-citizen-science-projects" type="button" class="btn btn-about">About</a>
-			</div>
-			<div class="col-xs-1 col-xs-offset-0 text-right">
+			<div class="col-xs-2 col-xs-offset-1 text-right">
 				<a href="index" type="button" class="btn btn-primary">Add project</a>
-			</div>			
+			</div>
 		</div>
 	</div>
 	<div class="container Site-content">

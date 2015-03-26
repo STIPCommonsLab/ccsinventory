@@ -106,8 +106,7 @@ legend i{
   background-repeat: no-repeat;
   z-index:1;
   height:240px;
-  padding:48px;
-
+  padding-top: 20px;
 }
 
 .Site {
@@ -160,8 +159,8 @@ legend i{
 }
 
 .form-horizontal .control-label {
-text-align: right;
-font-weight: 400;
+  text-align: right;
+  font-weight: 400;
 }
 
 /* Buttons */
@@ -172,6 +171,7 @@ font-weight: 400;
   border-color:#FE8433;
   padding:10px 24px;
   border-radius: 24px;
+  margin-top: 20px;
 }
 
 .btn-primary:hover,
@@ -248,4 +248,30 @@ font-weight: 400;
     color:#ccc;
     z-index:3;
     margin-top: 15px;
+}
+
+.footer-menu {
+    margin-bottom: 48px;
+}
+
+.footer-menu ul {
+    margin-top: 10px;
+}
+
+.footer-menu li {
+    float: none;
+    margin-bottom: 10px;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.footer-menu a {
+    display: inline-block;
+    text-decoration: none;
+    color: #FFF;
+    font-weight:600 !important;      
+}
+
+.footer-logo {
+    margin-top: 10px;
 }
