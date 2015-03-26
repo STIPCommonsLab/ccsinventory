@@ -27,11 +27,11 @@
   
   <div class="page-header feature">
 		<div class="row Site-content">
-			<div class="col-xs-7 col-xs-offset-2 text-center">
+			<div class="col-xs-8 col-xs-offset-2 text-center">
 				<a href="/"><h1>Commons Lab Inventory</h1></a>
 	    	<p class="light-grey">An Inventory of Federal Crowdsourcing and Citizen Science Projects</p>
 			</div>
-			<div class="col-xs-2 col-xs-offset-1 text-right">
+			<div class="col-xs-1 col-xs-offset-1 text-right">
 				<a href="index" type="button" class="btn btn-primary">Add project</a>
 			</div>
 		</div>

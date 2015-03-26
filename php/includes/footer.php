@@ -1,7 +1,6 @@
     </div> <!-- /container -->
     
     <div class="footer">
-    <div class>
     <div class="row footer-menu">
         <div class="col-xs-2 col-xs-offset-2 text-left">
             <nav>

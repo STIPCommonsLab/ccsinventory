@@ -107,6 +107,7 @@ legend i{
   z-index:1;
   height:240px;
   padding-top: 20px;
+  padding-right: 48px;
 }
 
 .Site {
@@ -256,6 +257,7 @@ legend i{
 
 .footer-menu ul {
     margin-top: 10px;
+    padding-left: 15px;
 }
 
 .footer-menu li {
