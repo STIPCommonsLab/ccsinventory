@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Commons Lab Inventory</title>
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <section class="filters">
+
+      <div id="project_topic">
+        <h4 >Project Topic</h4>
+      </div>
+
+      <div id="project_status">
+        <h4 >Project Status</h4>
+      </div>
+
+      <div id="agency_sponsor">
+        <h4 >Agency sponsor</h4>
+      </div>
+
+      <div id="agency_partner">
+        <h4 >Agency partner</h4>
+      </div>
+
+      <div id="geographic_scope">
+        <h4>Geographic scope</h4>
+      </div>
+
+      <div id="participant_age">
+        <h4>Participant age</h4>
+      </div>
+
+      <div id="intended_outcome">
+        <h4>Intended outcome</h4>
+      </div>
+
+    </section>
+
+    <section class="projects">
+      <ul>
+        <li><a href="">Titulo de proyecto</a></li>
+        <li><a href="">Titulo de proyecto</a></li>
+        <li><a href="">Titulo de proyecto</a></li>
+        <li><a href="">Titulo de proyecto</a></li>
+        <li><a href="">Titulo de proyecto</a></li>
+        <li><a href="">Titulo de proyecto</a></li>
+        <li><a href="">Titulo de proyecto</a></li>
+        <li><a href="">Titulo de proyecto</a></li>
+      </ul>
+    </section>
+
+    <!-- templates -->
+    <script type="text/template" id="filter-checkbox-tmpl">
+      <div class="checkbox">
+        <label for="<%- property_category %>_<%- property_code %>">
+          <input type="checkbox" id="<%- property_code %>" />
+          <%- property_name %>
+        </label>
+      </div>
+    </script>
+
+    <script src="js/libs/json2.js"></script>
+    <script src="js/libs/jquery-min-1.11.3.js"></script>
+    <script src="js/libs/underscore-min-1.8.2.js"></script>
+    <script src="js/libs/backbone-min-1.2.1.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/CCSI.js"></script>
+
+  </body>
+</html>
