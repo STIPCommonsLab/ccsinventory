@@ -4,661 +4,773 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <title>Crowdsourcing and Citizen Science Inventory, by Commons Lab - Wilson Center</title>
+    <title>Inventory of federal crowdsourcing and citizen science projects, by Commons Lab - Wilson Center</title>
     <link rel="shortcut icon" href="http://cartodb.com/assets/favicon.ico" />
     <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.14/themes/css/cartodb.css" />
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
   </head>
-  <body>
+  <body class="container-fluid">
 
-    <header class="links-panel">
-      <image xlink:href="img/commons_logo.svg" src="img/commons_logo.png"
-             width="260" height="40" />
-      <image xlink:href="img/wilson_logo.svg" src="img/wilson_logo.png"
-             width="260" height="40" />
-      <span><a href="#">Privacy policy</a></span>
-      <span><a href="#">Data policy</a></span>
-      <span><a href="#">About</a></span>
+    <header class="row">
+      <nav class="col-md-12">
+        <image xlink:href="img/commons_logo.svg" src="img/commons_logo.png"
+               width="260" height="40" />
+        <image xlink:href="img/wilson_logo.svg" src="img/wilson_logo.png"
+               width="260" height="40" />
+        <span><a href="http://www.wilsoncenter.org/privacy-policy">Privacy policy</a></span>
+        <span data-toggle="modal" data-target="#dataModal"><a href="#">Data policy</a></span>
+        <span data-toggle="modal" data-target="#aboutModal"><a href="#">About</a></span>
+      </nav>
+      <section id="hero-intro" class="col-md-12">
+        <h2>Inventory of federal crowdsourcing and citizen science projects</h2>
+      </section>
     </header>
 
-    <section class="container-fluid">
-      <div class="row">
+    <main class="row">
 
-        <section id="filters" class="col-md-2">
-          <h2>filters</h2>
+      <section id="filters" class="col-md-2">
+        <div class="input-group">
+          <input id="searchinput" class="form-control" placeholder="Search for..." value="" type="search"> <span id="searchclear" class="glyphicon glyphicon-remove-circle" style="display: none;"></span>
+          <span class="input-group-btn">
+            <button id="filter-btn" class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+          </span>
+        </div>
 
-          <div class="input-group">
-            <input id="searchinput" class="form-control" placeholder="Search for..." value="" type="search"> <span id="searchclear" class="glyphicon glyphicon-remove-circle" style="display: none;"></span>
-            <span class="input-group-btn">
-              <button id="filter-btn" class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
-            </span>
-          </div>
-
-          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-            <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="headingOne">
-                <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Project Topic
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                <div class="panel-body">
-                  <div class="checkbox">
-                    <label for="field-of-science-0">
-                      <input type="checkbox" name="field_animals" id="field-of-science-0" value="1">
-                      Animals
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="field-of-science-1">
-                      <input type="checkbox" name="field_archeology" id="field-of-science-1" value="1">
-                      Archeology
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="field-of-science-2">
-                      <input type="checkbox" name="field_astronomy_space" id="field-of-science-2" value="1">
-                      Astronomy & Space
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="field-of-science-4">
-                      <input type="checkbox" name="field_biology" id="field-of-science-4" value="1">
-                      Biology
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="field-of-science-5">
-                      <input type="checkbox" name="field_birds" id="field-of-science-5" value="1">
-                      Birds
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="field-of-science-6">
-                      <input type="checkbox" name="field_chemistry" id="field-of-science-6" value="1">
-                      Chemistry
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="field-of-science-7">
-                      <input type="checkbox" name="field_climate_weather" id="field-of-science-7" value="1">
-                      Climate & Weather
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="field-of-science-8">
-                      <input type="checkbox" name="field_computers_technology" id="field-of-science-8" value="1">
-                      Computers & Technology
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="field-of-science-9">
-                      <input type="checkbox" name="field_disaster_response" id="field-of-science-9" value="1">
-                      Disaster Response
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="field-of-science-10">
-                      <input type="checkbox" name="field_ecology_environment" id="field-of-science-10" value="1">
-                      Ecology & Environment
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="field-of-science-11">
-                      <input type="checkbox" name="field_education" id="field-of-science-11" value="1">
-                      Education
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="field-of-science-12">
-                      <input type="checkbox" name="field_food" id="field-of-science-12" value="1">
-                      Food
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="field-of-science-13">
-                      <input type="checkbox" name="field_geology_earth_science" id="field-of-science-13" value="1">
-                      Geology & Earth Science
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="field-of-science-14">
-                      <input type="checkbox" name="field_health_medicine" id="field-of-science-14" value="1">
-                      Health & Medicine
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="field-of-science-15">
-                      <input type="checkbox" name="field_insects" id="field-of-science-15" value="1">
-                      Insects
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="field-of-science-16">
-                      <input type="checkbox" name="field_nature_outdoors" id="field-of-science-16" value="1">
-                      Nature & Outdoors
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="field-of-science-17">
-                      <input type="checkbox" name="field_ocean_water" id="field-of-science-17" value="1">
-                      Ocean & Water
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="field-of-science-18">
-                      <input type="checkbox" name="field_physics" id="field-of-science-18" value="1">
-                      Physics
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="field-of-science-19">
-                      <input type="checkbox" name="field_psychology" id="field-of-science-19" value="1">
-                      Psychology
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="field-of-science-20">
-                      <input type="checkbox" name="field_science_policy" id="field-of-science-20" value="1">
-                      Science Policy
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="field-of-science-22">
-                      <input type="checkbox" name="field_transportation" id="field-of-science-22" value="1">
-                      Transportation
-                    </label>
-                  </div>
-                </div>
-              </div>
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Project Topic
+                </a>
+              </h4>
             </div>
-            <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="headingTwo">
-                <h4 class="panel-title">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Project Status
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                <div class="panel-body">
-                  <div class="checkbox">
-                    <label for="status-0">
-                      <input type="checkbox" name="status" id="status-0" value="Pending">
-                      Pending
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="status-1">
-                      <input type="checkbox" name="status" id="status-1" value="Active">
-                      Active
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="status-2">
-                      <input type="checkbox" name="status" id="status-2" value="Active but Seasonal">
-                      Active but Seasonal
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="status-3">
-                      <input type="checkbox" name="status" id="status-3" value="Complete">
-                      Complete
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="status-4">
-                      <input type="checkbox" name="status" id="status-4" value="Hiatus">
-                      Hiatus
-                    </label>
-                  </div>
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+              <div class="panel-body">
+                <div class="checkbox">
+                  <label for="field-of-science-0">
+                    <input type="checkbox" name="field_animals" id="field-of-science-0" value="1">
+                    Animals
+                  </label>
                 </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="headingThree">
-                <h4 class="panel-title">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Agency Sponsor
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                <div class="panel-body">
-                  <div class="checkbox">
-                    <label for="agency-sponsor-0">
-                      <input type="checkbox" name="sponsors_blm" id="agency-sponsor-0" value="1">
-                      Bureau of Land Management (BLM)
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="agency-sponsor-1">
-                      <input type="checkbox" name="sponsors_dod" id="agency-sponsor-1" value="1">
-                      Department of Defense (DOD)
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="agency-sponsor-1">
-                      <input type="checkbox" name="sponsors_doe" id="agency-sponsor-1" value="1">
-                      Department of Energy (DOE)
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="agency-sponsor-2">
-                      <input type="checkbox" name="sponsors_doi" id="agency-sponsor-2" value="1">
-                      U.S. Department of the Interior (DOI)
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="agency-sponsor-3">
-                      <input type="checkbox" name="sponsors_epa" id="agency-sponsor-3" value="1">
-                      U.S. Environmental Protection Agency (EPA)
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="agency-sponsor-4">
-                      <input type="checkbox" name="sponsors_hhs" id="agency-sponsor-4" value="1">
-                      United States Department of Health and Human Services (HHS)
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="agency-sponsor-5">
-                      <input type="checkbox" name="sponsors_nara" id="agency-sponsor-5" value="1">
-                      National Archives and Records Administration (NARA)
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="agency-sponsor-6">
-                      <input type="checkbox" name="sponsors_nasa" id="agency-sponsor-6" value="1">
-                      National Aeronautics and Space Administration (NASA)
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="agency-sponsor-7">
-                      <input type="checkbox" name="sponsors_nih" id="agency-sponsor-7" value="1">
-                      National Institutes of Health (NIH)
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="agency-sponsor-8">
-                      <input type="checkbox" name="sponsors_noaa" id="agency-sponsor-8" value="1">
-                      National Oceanic and Atmospheric Administration (NOAA)
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="agency-sponsor-9">
-                      <input type="checkbox" name="sponsors_nsf" id="agency-sponsor-9" value="1">
-                      National Science Foundation (NSF)
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="agency-sponsor-10">
-                      <input type="checkbox" name="sponsors_nps" id="agency-sponsor-10" value="1">
-                      U.S. National Park Service (NPS)
-                    </label>
-                  </div>
-
-                  <div class="checkbox">
-                    <label for="agency-sponsor-12">
-                      <input type="checkbox" name="sponsors_usstate" id="agency-sponsor-12" value="1">
-                      U.S Department of State
-                    </label>
-                  </div>
-
-                  <div class="checkbox">
-                    <label for="agency-sponsor-14">
-                      <input type="checkbox" name="sponsors_usaid" id="agency-sponsor-14" value="1">
-                      U.S. Agency for International Development (USAID)
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="agency-sponsor-15">
-                      <input type="checkbox" name="sponsors_usfs" id="agency-sponsor-15" value="1">
-                      U.S. Forest Service (USFS)
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="agency-sponsor-16">
-                      <input type="checkbox" name="sponsors_usgs" id="agency-sponsor-16" value="1">
-                      U.S. Geological Survey (USGS)
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="agency-sponsor-17">
-                      <input type="checkbox" name="sponsors_si" id="agency-sponsor-17" value="1">
-                      Smithsonian Institute (SI)
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="agency-sponsor-18">
-                      <input type="checkbox" name="sponsors_legislative" id="agency-sponsor-18" value="1">
-                      Other legislative branch agency
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="agency-sponsor-19">
-                      <input type="checkbox" name="sponsors_executive" id="agency-sponsor-19" value="1">
-                      Other executive branch agency
-                    </label>
-                  </div>
-
-                  <div class="checkbox">
-                    <label for="agency-sponsor-21">
-                      <input type="checkbox" name="sponsors_independent" id="agency-sponsor-21" value="1">
-                      Other Independent agency
-                    </label>
-                  </div>
+                <div class="checkbox">
+                  <label for="field-of-science-1">
+                    <input type="checkbox" name="field_archeology" id="field-of-science-1" value="1">
+                    Archeology
+                  </label>
                 </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="headingFour">
-                <h4 class="panel-title">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                    Agency Partner
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-                <div class="panel-body">
-                  <div class="checkbox">
-                    <label for="agency-partner-0">
-                      <input type="checkbox" name="partners_state_local_government" id="agency-partner-0" value="1">
-                      State or Local Government
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="agency-partner-1">
-                      <input type="checkbox" name="partners_formal_nonprofit_ngo" id="agency-partner-1" value="1">
-                      Formal Non-Profit/NGO
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="agency-partner-2">
-                      <input type="checkbox" name="partners_community_group" id="agency-partner-2" value="1">
-                      Community Group
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="agency-partner-3">
-                      <input type="checkbox" name="partners_college_university" id="agency-partner-3" value="1">
-                      College or University
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="agency-partner-4">
-                      <input type="checkbox" name="partners_k12education" id="agency-partner-4" value="1">
-                      K-12 Education
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="agency-partner-5">
-                      <input type="checkbox" name="partners_museum" id="agency-partner-5" value="1">
-                      Museum
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="agency-partner-6">
-                      <input type="checkbox" name="partners_forprofit" id="agency-partner-6" value="1">
-                      For-Profit
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="agency-partner-7">
-                      <input type="checkbox" name="partners_other" id="agency-partner-7" value="1">
-                      Other
-                    </label>
-                  </div>
+                <div class="checkbox">
+                  <label for="field-of-science-2">
+                    <input type="checkbox" name="field_astronomy_space" id="field-of-science-2" value="1">
+                    Astronomy & Space
+                  </label>
                 </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="headingFive">
-                <h4 class="panel-title">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                    Geographic scope
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-                <div class="panel-body">
-                  <div class="checkbox">
-                    <label for="geographic-scope-0">
-                      <input type="checkbox" name="geographic_scope" id="geographic-scope-0" value="International">
-                      International
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="geographic-scope-1">
-                      <input type="checkbox" name="geographic_scope" id="geographic-scope-1" value="National">
-                      National
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="geographic-scope-2">
-                      <input type="checkbox" name="geographic_scope" id="geographic-scope-2" value="Regional">
-                      Regional
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="geographic-scope-3">
-                      <input type="checkbox" name="geographic_scope" id="geographic-scope-3" value="Local">
-                      Local
-                    </label>
-                  </div>
+                <div class="checkbox">
+                  <label for="field-of-science-4">
+                    <input type="checkbox" name="field_biology" id="field-of-science-4" value="1">
+                    Biology
+                  </label>
                 </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="headingSix">
-                <h4 class="panel-title">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                    Participant Age
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
-                <div class="panel-body">
-                  <div class="checkbox">
-                    <label for="participant-age-0">
-                      <input type="checkbox" name="age_public" id="participant-age-0" value="1">
-                      General Public
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="participant-age-1">
-                      <input type="checkbox" name="age_families" id="participant-age-1" value="1">
-                      Families
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="participant-age-2">
-                      <input type="checkbox" name="age_elementary" id="participant-age-2" value="1">
-                      Elementary School Children
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="participant-age-3">
-                      <input type="checkbox" name="age_middle" id="participant-age-3" value="1">
-                      Middle School Children
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="participant-age-4">
-                      <input type="checkbox" name="age_teens" id="participant-age-4" value="1">
-                      Teens
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="participant-age-5">
-                      <input type="checkbox" name="age_seniors" id="participant-age-5" value="1">
-                      Seniors
-                    </label>
-                  </div>
+                <div class="checkbox">
+                  <label for="field-of-science-5">
+                    <input type="checkbox" name="field_birds" id="field-of-science-5" value="1">
+                    Birds
+                  </label>
                 </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="headingSeven">
-                <h4 class="panel-title">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                    Intended Outcomes
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
-                <div class="panel-body">
-                  <div class="checkbox">
-                    <label for="outcomes-0">
-                      <input type="checkbox" name="outcomes_research" id="outcomes-0" value="1">
-                      Research Advancement
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="outcomes-1">
-                      <input type="checkbox" name="outcomes_operational" id="outcomes-1" value="1">
-                      Operational Integration or Use
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="outcomes-2">
-                      <input type="checkbox" name="outcomes_regulation" id="outcomes-2" value="1">
-                      Regulation
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="outcomes-3">
-                      <input type="checkbox" name="outcomes_education" id="outcomes-3" value="1">
-                      Education
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="outcomes-4">
-                      <input type="checkbox" name="outcomes_community" id="outcomes-4" value="1">
-                      Community Engagement / Outreach
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="outcomes-5">
-                      <input type="checkbox" name="outcomes_policy" id="outcomes-5" value="1">
-                      Inform Public Policy
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="outcomes-6">
-                      <input type="checkbox" name="outcomes_proofconcept" id="outcomes-6" value="1">
-                      Proof of Concept
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label for="outcomes-7">
-                      <input type="checkbox" name="outcomes_other" id="outcomes-7" value="1">
-                      Other
-                    </label>
-                  </div>
+                <div class="checkbox">
+                  <label for="field-of-science-6">
+                    <input type="checkbox" name="field_chemistry" id="field-of-science-6" value="1">
+                    Chemistry
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="field-of-science-7">
+                    <input type="checkbox" name="field_climate_weather" id="field-of-science-7" value="1">
+                    Climate & Weather
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="field-of-science-8">
+                    <input type="checkbox" name="field_computers_technology" id="field-of-science-8" value="1">
+                    Computers & Technology
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="field-of-science-9">
+                    <input type="checkbox" name="field_disaster_response" id="field-of-science-9" value="1">
+                    Disaster Response
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="field-of-science-10">
+                    <input type="checkbox" name="field_ecology_environment" id="field-of-science-10" value="1">
+                    Ecology & Environment
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="field-of-science-11">
+                    <input type="checkbox" name="field_education" id="field-of-science-11" value="1">
+                    Education
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="field-of-science-12">
+                    <input type="checkbox" name="field_food" id="field-of-science-12" value="1">
+                    Food
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="field-of-science-13">
+                    <input type="checkbox" name="field_geology_earth_science" id="field-of-science-13" value="1">
+                    Geology & Earth Science
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="field-of-science-14">
+                    <input type="checkbox" name="field_health_medicine" id="field-of-science-14" value="1">
+                    Health & Medicine
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="field-of-science-15">
+                    <input type="checkbox" name="field_insects" id="field-of-science-15" value="1">
+                    Insects
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="field-of-science-16">
+                    <input type="checkbox" name="field_nature_outdoors" id="field-of-science-16" value="1">
+                    Nature & Outdoors
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="field-of-science-17">
+                    <input type="checkbox" name="field_ocean_water" id="field-of-science-17" value="1">
+                    Ocean & Water
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="field-of-science-18">
+                    <input type="checkbox" name="field_physics" id="field-of-science-18" value="1">
+                    Physics
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="field-of-science-19">
+                    <input type="checkbox" name="field_psychology" id="field-of-science-19" value="1">
+                    Psychology
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="field-of-science-20">
+                    <input type="checkbox" name="field_science_policy" id="field-of-science-20" value="1">
+                    Science Policy
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="field-of-science-22">
+                    <input type="checkbox" name="field_transportation" id="field-of-science-22" value="1">
+                    Transportation
+                  </label>
                 </div>
               </div>
             </div>
           </div>
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingTwo">
+              <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Project Status
+                </a>
+              </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+              <div class="panel-body">
+                <div class="checkbox">
+                  <label for="status-0">
+                    <input type="checkbox" name="status" id="status-0" value="Pending">
+                    Pending
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="status-1">
+                    <input type="checkbox" name="status" id="status-1" value="Active">
+                    Active
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="status-2">
+                    <input type="checkbox" name="status" id="status-2" value="Active but Seasonal">
+                    Active but Seasonal
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="status-3">
+                    <input type="checkbox" name="status" id="status-3" value="Complete">
+                    Complete
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="status-4">
+                    <input type="checkbox" name="status" id="status-4" value="Hiatus">
+                    Hiatus
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+              <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Agency Sponsor
+                </a>
+              </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+              <div class="panel-body">
+                <div class="checkbox">
+                  <label for="agency-sponsor-0">
+                    <input type="checkbox" name="sponsors_blm" id="agency-sponsor-0" value="1">
+                    Bureau of Land Management (BLM)
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="agency-sponsor-1">
+                    <input type="checkbox" name="sponsors_dod" id="agency-sponsor-1" value="1">
+                    Department of Defense (DOD)
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="agency-sponsor-1">
+                    <input type="checkbox" name="sponsors_doe" id="agency-sponsor-1" value="1">
+                    Department of Energy (DOE)
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="agency-sponsor-2">
+                    <input type="checkbox" name="sponsors_doi" id="agency-sponsor-2" value="1">
+                    U.S. Department of the Interior (DOI)
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="agency-sponsor-3">
+                    <input type="checkbox" name="sponsors_epa" id="agency-sponsor-3" value="1">
+                    U.S. Environmental Protection Agency (EPA)
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="agency-sponsor-4">
+                    <input type="checkbox" name="sponsors_hhs" id="agency-sponsor-4" value="1">
+                    United States Department of Health and Human Services (HHS)
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="agency-sponsor-5">
+                    <input type="checkbox" name="sponsors_nara" id="agency-sponsor-5" value="1">
+                    National Archives and Records Administration (NARA)
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="agency-sponsor-6">
+                    <input type="checkbox" name="sponsors_nasa" id="agency-sponsor-6" value="1">
+                    National Aeronautics and Space Administration (NASA)
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="agency-sponsor-7">
+                    <input type="checkbox" name="sponsors_nih" id="agency-sponsor-7" value="1">
+                    National Institutes of Health (NIH)
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="agency-sponsor-8">
+                    <input type="checkbox" name="sponsors_noaa" id="agency-sponsor-8" value="1">
+                    National Oceanic and Atmospheric Administration (NOAA)
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="agency-sponsor-9">
+                    <input type="checkbox" name="sponsors_nsf" id="agency-sponsor-9" value="1">
+                    National Science Foundation (NSF)
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="agency-sponsor-10">
+                    <input type="checkbox" name="sponsors_nps" id="agency-sponsor-10" value="1">
+                    U.S. National Park Service (NPS)
+                  </label>
+                </div>
 
-        </section>
+                <div class="checkbox">
+                  <label for="agency-sponsor-12">
+                    <input type="checkbox" name="sponsors_usstate" id="agency-sponsor-12" value="1">
+                    U.S Department of State
+                  </label>
+                </div>
 
-        <section id="projects" class="col-md-2">
-          <h2>999 projects</h2>
-          <ul class="list-unstyled">
-            <li><a href="#">IDAH2O Master Water Stewards</a></li>
-            <li><a href="#">National Weather Service Cooperative Observer Program</a></li>
-            <li><a href="#">Sea Ice for Walrus Outlook (SIWO)</a></li>
-            <li><a href="#">MapGive</a></li>
-            <li><a href="#">Ironbound Community Corporation (ICC) Environmental Monitoring</a></li>
-            <li><a href="#">The Costa Rica Science Exchange</a></li>
-            <li><a href="#">Did You Feel It?</a></li>
-            <li><a href="#">Alaska Volcano Observatory Citizen Network Ash Collection and Observation Program</a></li>
-            <li><a href="#">Student Watershed Research Project</a></li>
-            <li><a href="#">IDAH2O Master Water Stewards</a></li>
-            <li><a href="#">National Weather Service Cooperative Observer Program</a></li>
-            <li><a href="#">Sea Ice for Walrus Outlook (SIWO)</a></li>
-            <li><a href="#">MapGive</a></li>
-            <li><a href="#">Ironbound Community Corporation (ICC) Environmental Monitoring</a></li>
-            <li><a href="#">The Costa Rica Science Exchange</a></li>
-            <li><a href="#">Did You Feel It?</a></li>
-            <li><a href="#">Alaska Volcano Observatory Citizen Network Ash Collection and Observation Program</a></li>
-            <li><a href="#">Student Watershed Research Project</a></li>
-            <li><a href="#">IDAH2O Master Water Stewards</a></li>
-            <li><a href="#">National Weather Service Cooperative Observer Program</a></li>
-            <li><a href="#">Sea Ice for Walrus Outlook (SIWO)</a></li>
-            <li><a href="#">MapGive</a></li>
-            <li><a href="#">Ironbound Community Corporation (ICC) Environmental Monitoring</a></li>
-            <li><a href="#">The Costa Rica Science Exchange</a></li>
-            <li><a href="#">Did You Feel It?</a></li>
-            <li><a href="#">Alaska Volcano Observatory Citizen Network Ash Collection and Observation Program</a></li>
-            <li><a href="#">Student Watershed Research Project</a></li>
-            <li><a href="#">IDAH2O Master Water Stewards</a></li>
-            <li><a href="#">National Weather Service Cooperative Observer Program</a></li>
-            <li><a href="#">Sea Ice for Walrus Outlook (SIWO)</a></li>
-            <li><a href="#">MapGive</a></li>
-            <li><a href="#">Ironbound Community Corporation (ICC) Environmental Monitoring</a></li>
-            <li><a href="#">The Costa Rica Science Exchange</a></li>
-            <li><a href="#">Did You Feel It?</a></li>
-            <li><a href="#">Alaska Volcano Observatory Citizen Network Ash Collection and Observation Program</a></li>
-            <li><a href="#">Student Watershed Research Project</a></li>
-            <li><a href="#">IDAH2O Master Water Stewards</a></li>
-            <li><a href="#">National Weather Service Cooperative Observer Program</a></li>
-            <li><a href="#">Sea Ice for Walrus Outlook (SIWO)</a></li>
-            <li><a href="#">MapGive</a></li>
-            <li><a href="#">Ironbound Community Corporation (ICC) Environmental Monitoring</a></li>
-            <li><a href="#">The Costa Rica Science Exchange</a></li>
-            <li><a href="#">Did You Feel It?</a></li>
-            <li><a href="#">Alaska Volcano Observatory Citizen Network Ash Collection and Observation Program</a></li>
-            <li><a href="#">Student Watershed Research Project</a></li>
-            <li><a href="#">IDAH2O Master Water Stewards</a></li>
-            <li><a href="#">National Weather Service Cooperative Observer Program</a></li>
-            <li><a href="#">Sea Ice for Walrus Outlook (SIWO)</a></li>
-            <li><a href="#">MapGive</a></li>
-            <li><a href="#">Ironbound Community Corporation (ICC) Environmental Monitoring</a></li>
-            <li><a href="#">The Costa Rica Science Exchange</a></li>
-            <li><a href="#">Did You Feel It?</a></li>
-            <li><a href="#">Alaska Volcano Observatory Citizen Network Ash Collection and Observation Program</a></li>
-            <li><a href="#">Student Watershed Research Project</a></li>
-            <li><a href="#">IDAH2O Master Water Stewards</a></li>
-            <li><a href="#">National Weather Service Cooperative Observer Program</a></li>
-            <li><a href="#">Sea Ice for Walrus Outlook (SIWO)</a></li>
-            <li><a href="#">MapGive</a></li>
-            <li><a href="#">Ironbound Community Corporation (ICC) Environmental Monitoring</a></li>
-            <li><a href="#">The Costa Rica Science Exchange</a></li>
-            <li><a href="#">Did You Feel It?</a></li>
-            <li><a href="#">Alaska Volcano Observatory Citizen Network Ash Collection and Observation Program</a></li>
-            <li><a href="#">Student Watershed Research Project</a></li>
-            <li><a href="#">IDAH2O Master Water Stewards</a></li>
-            <li><a href="#">National Weather Service Cooperative Observer Program</a></li>
-            <li><a href="#">Sea Ice for Walrus Outlook (SIWO)</a></li>
-            <li><a href="#">MapGive</a></li>
-            <li><a href="#">Ironbound Community Corporation (ICC) Environmental Monitoring</a></li>
-            <li><a href="#">The Costa Rica Science Exchange</a></li>
-            <li><a href="#">Did You Feel It?</a></li>
-            <li><a href="#">Alaska Volcano Observatory Citizen Network Ash Collection and Observation Program</a></li>
-            <li><a href="#">Student Watershed Research Project</a></li>
-            <li><a href="#">IDAH2O Master Water Stewards</a></li>
-            <li><a href="#">National Weather Service Cooperative Observer Program</a></li>
-            <li><a href="#">Sea Ice for Walrus Outlook (SIWO)</a></li>
-            <li><a href="#">MapGive</a></li>
-            <li><a href="#">Ironbound Community Corporation (ICC) Environmental Monitoring</a></li>
-            <li><a href="#">The Costa Rica Science Exchange</a></li>
-            <li><a href="#">Did You Feel It?</a></li>
-            <li><a href="#">Alaska Volcano Observatory Citizen Network Ash Collection and Observation Program</a></li>
-            <li><a href="#">Student Watershed Research Project</a></li>
-          </ul>
-        </section>
+                <div class="checkbox">
+                  <label for="agency-sponsor-14">
+                    <input type="checkbox" name="sponsors_usaid" id="agency-sponsor-14" value="1">
+                    U.S. Agency for International Development (USAID)
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="agency-sponsor-15">
+                    <input type="checkbox" name="sponsors_usfs" id="agency-sponsor-15" value="1">
+                    U.S. Forest Service (USFS)
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="agency-sponsor-16">
+                    <input type="checkbox" name="sponsors_usgs" id="agency-sponsor-16" value="1">
+                    U.S. Geological Survey (USGS)
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="agency-sponsor-17">
+                    <input type="checkbox" name="sponsors_si" id="agency-sponsor-17" value="1">
+                    Smithsonian Institute (SI)
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="agency-sponsor-18">
+                    <input type="checkbox" name="sponsors_legislative" id="agency-sponsor-18" value="1">
+                    Other legislative branch agency
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="agency-sponsor-19">
+                    <input type="checkbox" name="sponsors_executive" id="agency-sponsor-19" value="1">
+                    Other executive branch agency
+                  </label>
+                </div>
 
-        <section id="map-container" class="col-md-8">
-          <div id="map" class="row"></div>
-        </section>
+                <div class="checkbox">
+                  <label for="agency-sponsor-21">
+                    <input type="checkbox" name="sponsors_independent" id="agency-sponsor-21" value="1">
+                    Other Independent agency
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingFour">
+              <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  Agency Partner
+                </a>
+              </h4>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+              <div class="panel-body">
+                <div class="checkbox">
+                  <label for="agency-partner-0">
+                    <input type="checkbox" name="partners_state_local_government" id="agency-partner-0" value="1">
+                    State or Local Government
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="agency-partner-1">
+                    <input type="checkbox" name="partners_formal_nonprofit_ngo" id="agency-partner-1" value="1">
+                    Formal Non-Profit/NGO
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="agency-partner-2">
+                    <input type="checkbox" name="partners_community_group" id="agency-partner-2" value="1">
+                    Community Group
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="agency-partner-3">
+                    <input type="checkbox" name="partners_college_university" id="agency-partner-3" value="1">
+                    College or University
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="agency-partner-4">
+                    <input type="checkbox" name="partners_k12education" id="agency-partner-4" value="1">
+                    K-12 Education
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="agency-partner-5">
+                    <input type="checkbox" name="partners_museum" id="agency-partner-5" value="1">
+                    Museum
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="agency-partner-6">
+                    <input type="checkbox" name="partners_forprofit" id="agency-partner-6" value="1">
+                    For-Profit
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="agency-partner-7">
+                    <input type="checkbox" name="partners_other" id="agency-partner-7" value="1">
+                    Other
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingFive">
+              <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                  Geographic scope
+                </a>
+              </h4>
+            </div>
+            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+              <div class="panel-body">
+                <div class="checkbox">
+                  <label for="geographic-scope-0">
+                    <input type="checkbox" name="geographic_scope" id="geographic-scope-0" value="International">
+                    International
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="geographic-scope-1">
+                    <input type="checkbox" name="geographic_scope" id="geographic-scope-1" value="National">
+                    National
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="geographic-scope-2">
+                    <input type="checkbox" name="geographic_scope" id="geographic-scope-2" value="Regional">
+                    Regional
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="geographic-scope-3">
+                    <input type="checkbox" name="geographic_scope" id="geographic-scope-3" value="Local">
+                    Local
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingSix">
+              <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                  Participant Age
+                </a>
+              </h4>
+            </div>
+            <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+              <div class="panel-body">
+                <div class="checkbox">
+                  <label for="participant-age-0">
+                    <input type="checkbox" name="age_public" id="participant-age-0" value="1">
+                    General Public
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="participant-age-1">
+                    <input type="checkbox" name="age_families" id="participant-age-1" value="1">
+                    Families
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="participant-age-2">
+                    <input type="checkbox" name="age_elementary" id="participant-age-2" value="1">
+                    Elementary School Children
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="participant-age-3">
+                    <input type="checkbox" name="age_middle" id="participant-age-3" value="1">
+                    Middle School Children
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="participant-age-4">
+                    <input type="checkbox" name="age_teens" id="participant-age-4" value="1">
+                    Teens
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="participant-age-5">
+                    <input type="checkbox" name="age_seniors" id="participant-age-5" value="1">
+                    Seniors
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingSeven">
+              <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                  Intended Outcomes
+                </a>
+              </h4>
+            </div>
+            <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+              <div class="panel-body">
+                <div class="checkbox">
+                  <label for="outcomes-0">
+                    <input type="checkbox" name="outcomes_research" id="outcomes-0" value="1">
+                    Research Advancement
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="outcomes-1">
+                    <input type="checkbox" name="outcomes_operational" id="outcomes-1" value="1">
+                    Operational Integration or Use
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="outcomes-2">
+                    <input type="checkbox" name="outcomes_regulation" id="outcomes-2" value="1">
+                    Regulation
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="outcomes-3">
+                    <input type="checkbox" name="outcomes_education" id="outcomes-3" value="1">
+                    Education
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="outcomes-4">
+                    <input type="checkbox" name="outcomes_community" id="outcomes-4" value="1">
+                    Community Engagement / Outreach
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="outcomes-5">
+                    <input type="checkbox" name="outcomes_policy" id="outcomes-5" value="1">
+                    Inform Public Policy
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="outcomes-6">
+                    <input type="checkbox" name="outcomes_proofconcept" id="outcomes-6" value="1">
+                    Proof of Concept
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="outcomes-7">
+                    <input type="checkbox" name="outcomes_other" id="outcomes-7" value="1">
+                    Other
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <section id="projects" class="col-md-2">
+        <h2>732 projects</h2>
+        <ul class="list-unstyled">
+          <li><a href="#">IDAH2O Master Water Stewards</a></li>
+          <li><a href="#">National Weather Service Cooperative Observer Program</a></li>
+          <li><a href="#">Sea Ice for Walrus Outlook (SIWO)</a></li>
+          <li><a href="#">MapGive</a></li>
+          <li><a href="#">Ironbound Community Corporation (ICC) Environmental Monitoring</a></li>
+          <li><a href="#">The Costa Rica Science Exchange</a></li>
+          <li><a href="#">Did You Feel It?</a></li>
+          <li><a href="#">Alaska Volcano Observatory Citizen Network Ash Collection and Observation Program</a></li>
+          <li><a href="#">Student Watershed Research Project</a></li>
+          <li><a href="#">IDAH2O Master Water Stewards</a></li>
+          <li><a href="#">National Weather Service Cooperative Observer Program</a></li>
+          <li><a href="#">Sea Ice for Walrus Outlook (SIWO)</a></li>
+          <li><a href="#">MapGive</a></li>
+          <li><a href="#">Ironbound Community Corporation (ICC) Environmental Monitoring</a></li>
+          <li><a href="#">The Costa Rica Science Exchange</a></li>
+          <li><a href="#">Did You Feel It?</a></li>
+          <li><a href="#">Alaska Volcano Observatory Citizen Network Ash Collection and Observation Program</a></li>
+          <li><a href="#">Student Watershed Research Project</a></li>
+          <li><a href="#">IDAH2O Master Water Stewards</a></li>
+          <li><a href="#">National Weather Service Cooperative Observer Program</a></li>
+          <li><a href="#">Sea Ice for Walrus Outlook (SIWO)</a></li>
+          <li><a href="#">MapGive</a></li>
+          <li><a href="#">Ironbound Community Corporation (ICC) Environmental Monitoring</a></li>
+          <li><a href="#">The Costa Rica Science Exchange</a></li>
+          <li><a href="#">Did You Feel It?</a></li>
+          <li><a href="#">Alaska Volcano Observatory Citizen Network Ash Collection and Observation Program</a></li>
+          <li><a href="#">Student Watershed Research Project</a></li>
+          <li><a href="#">IDAH2O Master Water Stewards</a></li>
+          <li><a href="#">National Weather Service Cooperative Observer Program</a></li>
+          <li><a href="#">Sea Ice for Walrus Outlook (SIWO)</a></li>
+          <li><a href="#">MapGive</a></li>
+          <li><a href="#">Ironbound Community Corporation (ICC) Environmental Monitoring</a></li>
+          <li><a href="#">The Costa Rica Science Exchange</a></li>
+          <li><a href="#">Did You Feel It?</a></li>
+          <li><a href="#">Alaska Volcano Observatory Citizen Network Ash Collection and Observation Program</a></li>
+          <li><a href="#">Student Watershed Research Project</a></li>
+          <li><a href="#">IDAH2O Master Water Stewards</a></li>
+          <li><a href="#">National Weather Service Cooperative Observer Program</a></li>
+          <li><a href="#">Sea Ice for Walrus Outlook (SIWO)</a></li>
+          <li><a href="#">MapGive</a></li>
+          <li><a href="#">Ironbound Community Corporation (ICC) Environmental Monitoring</a></li>
+          <li><a href="#">The Costa Rica Science Exchange</a></li>
+          <li><a href="#">Did You Feel It?</a></li>
+          <li><a href="#">Alaska Volcano Observatory Citizen Network Ash Collection and Observation Program</a></li>
+          <li><a href="#">Student Watershed Research Project</a></li>
+          <li><a href="#">IDAH2O Master Water Stewards</a></li>
+          <li><a href="#">National Weather Service Cooperative Observer Program</a></li>
+          <li><a href="#">Sea Ice for Walrus Outlook (SIWO)</a></li>
+          <li><a href="#">MapGive</a></li>
+          <li><a href="#">Ironbound Community Corporation (ICC) Environmental Monitoring</a></li>
+          <li><a href="#">The Costa Rica Science Exchange</a></li>
+          <li><a href="#">Did You Feel It?</a></li>
+          <li><a href="#">Alaska Volcano Observatory Citizen Network Ash Collection and Observation Program</a></li>
+          <li><a href="#">Student Watershed Research Project</a></li>
+          <li><a href="#">IDAH2O Master Water Stewards</a></li>
+          <li><a href="#">National Weather Service Cooperative Observer Program</a></li>
+          <li><a href="#">Sea Ice for Walrus Outlook (SIWO)</a></li>
+          <li><a href="#">MapGive</a></li>
+          <li><a href="#">Ironbound Community Corporation (ICC) Environmental Monitoring</a></li>
+          <li><a href="#">The Costa Rica Science Exchange</a></li>
+          <li><a href="#">Did You Feel It?</a></li>
+          <li><a href="#">Alaska Volcano Observatory Citizen Network Ash Collection and Observation Program</a></li>
+          <li><a href="#">Student Watershed Research Project</a></li>
+          <li><a href="#">IDAH2O Master Water Stewards</a></li>
+          <li><a href="#">National Weather Service Cooperative Observer Program</a></li>
+          <li><a href="#">Sea Ice for Walrus Outlook (SIWO)</a></li>
+          <li><a href="#">MapGive</a></li>
+          <li><a href="#">Ironbound Community Corporation (ICC) Environmental Monitoring</a></li>
+          <li><a href="#">The Costa Rica Science Exchange</a></li>
+          <li><a href="#">Did You Feel It?</a></li>
+          <li><a href="#">Alaska Volcano Observatory Citizen Network Ash Collection and Observation Program</a></li>
+          <li><a href="#">Student Watershed Research Project</a></li>
+          <li><a href="#">IDAH2O Master Water Stewards</a></li>
+          <li><a href="#">National Weather Service Cooperative Observer Program</a></li>
+          <li><a href="#">Sea Ice for Walrus Outlook (SIWO)</a></li>
+          <li><a href="#">MapGive</a></li>
+          <li><a href="#">Ironbound Community Corporation (ICC) Environmental Monitoring</a></li>
+          <li><a href="#">The Costa Rica Science Exchange</a></li>
+          <li><a href="#">Did You Feel It?</a></li>
+          <li><a href="#">Alaska Volcano Observatory Citizen Network Ash Collection and Observation Program</a></li>
+          <li><a href="#">Student Watershed Research Project</a></li>
+        </ul>
+      </section>
+
+      <section id="map-container" class="col-md-8">
+        <div id="map" class="row"></div>
+      </section>
+
+    </main>
+
+    <!-- Modal about -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="aboutModalLabel">About The Commons Lab Inventory</h4>
+          </div>
+          <div class="modal-body">
+            <h3>Project rationale</h3>
+            <p>
+              Recent policy, including the <a href="https://www.whitehouse.gov/sites/default/files/docs/us_national_action_plan_6p.pdf">Second Open Government National Action
+                Plan</a> published in December 2013, and the OSTP fact sheet released in
+              March 2015, offer important support for federal citizen science and
+              crowdsourcing. These developments will help sustain existing projects,
+              and inspire new initiatives. The Commons Lab Inventory seeks to
+              support federal engagement in citizen science and crowdsourcing
+              by:</p>
+            <ul>
+              <li><em>Characterizing the value and diversity of federal citizen
+                  science</em>
+                . The Commons Lab will provide a web application and publish a policy brief describing the landscape of federal citizen science, highlighting achieved and potential impacts, and demonstrating productive partnership models between agencies and sectors.</li>
+
+              <li><em>Supporting coordination within and between agencies</em>
+                . The Commons Lab Inventory will reduce search costs for agencies seeking collaborators, exemplar projects, research data and results, and other resources.</li>
+
+              <li><em>Facilitating public analysis and engagement</em>
+                . Through our
+                interactive mapping tool, policymakers and the public may explore the
+                range of citizen science and crowdsourcing projects. Individuals may
+                also use this tool to find projects to contribute to.</li>
+            </ul>
+
+            <h3>Methodology</h3>
+            <p>The information in the Commons Lab Inventory comes from a variety of
+              sources.</p>
+            <ul>
+              <li>First, the Commons Lab compiles information from public sources
+                including official websites and project blogs, and also from
+                scientific literature, including journal articles and
+                whitepapers. </li>
+              <li>Second, projects are invited to submit their own information
+                through an interactive web form. This information is verified before
+                it is published in the inventory. </li>
+              <li>Third, the Commons Lab collaborates with employees at federal
+                agencies to obtain information on citizen science and crowdsourcing
+                activities. </li>
+              <li>Fourth, the Commons Lab information data with existing
+                inventories, such as USGS MyScience and Scistarter.com.</li>
+            </ul>
+
+            <h3>What kinds of projects are included?</h3>
+            <p>The Commons Lab Inventory includes
+              <a href="http://www2.epa.gov/innovation/federal-community-practice-crowdsourcing-and-citizen-science">citizen science and crowdsourcing projects</a> that are funded or otherwise supported by federal agencies. For example, projects may be funded directly, or through grants from agencies such as EPA, NIH, and USGS. Some projects also receive in-kind support, such as equipment lending or support from agency personnel.</p>
+
+            <p>Note that the Commons Lab Inventory does <strong>not</strong>
+              include other forms of open innovation, such as prize competitions, or projects funded solely through the National Science Foundation (NSF).</p>
+
+            <h3>Timeline</h3>
+            <p>The majority of data collection will take place between April 1st, 2015 and July 1st, 2015. Following this period, the Commons Lab Inventory will be released to the general public. Information obtained during research will be published in a Wilson Center report describing the landscape of federal citizen science and crowdsourcing.</p>
+
+            <p>If you have questions about the inventory, please contact Anne
+              Bowser at <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=Anne.Bowser@wilsoncenter.org">Anne.Bowser@wilsoncenter.org</a> or 202-691-4031.</p>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
+
+    <!-- Modal data policies -->
+    <div class="modal fade" id="dataModal" tabindex="-1" role="dialog" aria-labelledby="dataModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="dataModalLabel">Data Policies</h4>
+          </div>
+          <div class="modal-body">
+            <p>This page contains a legal disclaimer, terms of use including
+              intellectual property rights of users who submit projects to the
+              Commons Lab Inventory, and contact information for the project
+              director. The Commons Lab Inventory adheres to the same privacy
+              policy as the Wilson Center at large, which can be found <a href="http://wilsoncenter.org/privacy-policy">here</a>.</p>
+
+            <strong>Legal Disclaimer</strong>
+
+            <p>DISCLAIMER: This inventory has been compiled by the Commons Lab within the Science and Technology Innovation Program (the "Commons Lab") at the Woodrow Wilson International Center for Scholars (the "Center"). The material contained in this inventory is for informational purposes only. The Commons Lab has made this material available to stimulate discussion and comment about the emergence of federally supported citizen science and crowdsourcing. The Commons Lab has no formal association with any entry listed in this inventory. Reference to any entry does not reflect the position or policy of the Commons Lab, the Center, nor does inclusion of any entry in this inventory constitute or imply endorsement or criticism of, or commentary on, such entry. Any statements, claims and views expressed by an entry or by any third-party contained in this inventory are solely those of the party making such statement or claim, or expressing such view, and are not attributable to the Inventory.</p>
+
+            <p>This inventory contains "hyperlinks" to other web sites that contain information created, published, maintained, or otherwise posted by entries independent of the Commons Lab, and the copyright and privacy policies of such entries apply to that material (for further clarification, see terms of use below). The Commons Lab does not endorse, approve, certify, or control these other web sites and does not guarantee the accuracy, completeness, efficacy, or timeliness of information located at such sites. The Commons Lab assumes no responsibility for consequences resulting from use of information in this inventory or obtained at linked sites. The Commons Lab is not responsible for, and expressly disclaims all liability for, damages of any kind arising out of use, reference to, reliance on, or performance of such information. All entry names are trademarks or registered trademarks of their respective holder. Use of any trademark in this inventory is for identification purposes only, and is intended to be used only for the purpose of accurately describing the entry to which the trademark applies.</p>
+
+            <strong>Terms of use</strong>
+
+            <p>INTELLECTUAL PROPERTY RIGHTS OF USRES: The Service may provide users with the ability to add, create, upload, submit, distribute, collect, or post ("Submitting" or "Submission") content, videos, audio clips, written forum comments, data, text, photographs, software, scripts, graphics, or other information to the Site(s) (collectively, the "User Submissions"). By Submitting User Submissions on the Site(s) or otherwise through the Service, you:</p>
+
+            <ul>
+              <li>Acknowledge that by Submitting any User Submission to the Site(s), you are publishing that User Submission, and that you may be identified publicly by your User ID in association with any such User Submission; By Submitting any User Submissions through the Site(s) or the Service, you hereby do and shall grant us a worldwide, non-exclusive, perpetual, irrevocable, royalty-free, fully paid, sub licensable and transferable license to use, edit, modify, reproduce, distribute, prepare derivative works of, display, perform, and otherwise fully exploit the User Submissions in connection with the Site(s), the Service and our (and its successors and assignes) business, including without limitation for promoting and redistributing part or all of the Site(s) (and derivative works thereof) or the Service in any media formats and through any media channels (including, without limitation, third party websites). You also hereby do and shall grant each user of the Site(s) and/or the Service a non-exclusive license to access your User Submissions through the Site and the Service, and to use, edit, modify, reproduce, distribute, prepare derivative works of, display and perform such User Submissions solely for personal, non-commercial use. For clarity, the foregoing license grant to Company does not affect your other ownership or license rights in your User Submission(s), including the right to grant additional licenses to the material in your User Submission(s), unless otherwise agreed in writing;</li>
+
+              <li>Represent and warrant, and can demonstrate to our full satisfaction upon request that you (i) own or otherwise control all rights to all content in your User Submissions, or that the content in such User Submissions is in the public domain, (ii) you have full authority to act on behalf of any and all owners of any right, title or interest in and to any content in your User Submissions to use such content as contemplated by these Terms of Use and to grant the license rights set forth above, (iii) you have the permission to use the name and likeness of each identifiable individual person and to use such individuals identifying or personal information as contemplated by these Terms of Use; and (iv) you are authorized to grant all of the aforementioned rights to the User Submissions to Company and all users of the Service; You agree to pay all royalties and other amounts owed to any person or entity due to your Submission of any User Submissions to the Service;</li>
+
+              <li>That the use or other exploitation of such User Submissions by Company and use or other exploitation by users of the Site(s) and Service as contemplated by this Agreement will not infringe or violate the rights of any third party, including without limitation any privacy rights, publicity rights, copyrights, contract rights, or any other intellectual property or proprietary rights; and Understand that we shall have the right to delete, edit, modify, reformat, excerpt, or translate any materials, content or information submitted by you; and that all information publicly posted or privately transmitted through the Site(s) is the sole responsibility of the person from which such content originated and that we will not be liable for any errors or omissions in any content; and that we cannot guarantee the identity of any other users with whom you may interact in the course of using the Service.</li>
+
+              <li>Understand that we shall have the right to delete, edit, modify, reformat, excerpt, or translate any materials, content or information submitted by you; and that all information publicly posted or privately transmitted through the Site(s) is the sole responsibility of the person from which such content originated and that we will not be liable for any errors or omissions in any content; and that we cannot guarantee the identity of any other users with whom you may interact in the course of using the Service.</li>
+            </ul>
+
+            <strong>Contact Information</strong>
+
+            <p>If you have a question about these policies, please contact Anne
+              Bowser at <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=Anne.Bowser@wilsoncenter.org">Anne.Bowser@wilsoncenter.org</a> or 202-691-4031.</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
@@ -666,33 +778,34 @@
     <script>
       var jsonViz = 'http://inventory.cartodb.com/api/v2/viz/ea121efc-d202-11e4-ae08-0e9d821ea90d/viz.json';
       function main() {
-          cartodb.createVis('map', jsonViz, {
-              tiles_loader: true,
-              center_lat: 36,
-              center_lon: -97,
-              zoom: 3
-          })
-          .done(function(vis, layers) {
-              // layer 0 is the base layer, layer 1 is cartodb layer
-              // setInteraction is disabled by default
-              layers[1].setInteraction(true);
-              layers[1].on('featureOver', function(e, latlng, pos, data) {
-                  cartodb.log.log(e, latlng, pos, data);
-              });
+      cartodb.createVis('map', jsonViz, {
+      tiles_loader: true,
+      center_lat: 36,
+      center_lon: -97,
+      zoom: 3
+      })
+      .done(function(vis, layers) {
+      // layer 0 is the base layer, layer 1 is cartodb layer
+      // setInteraction is disabled by default
+      layers[1].setInteraction(true);
+      layers[1].on('featureOver', function(e, latlng, pos, data) {
+      cartodb.log.log(e, latlng, pos, data);
+      });
 
-              // you can get the native map to work with it
-              var map = vis.getNativeMap();
+      // you can get the native map to work with it
+      var map = vis.getNativeMap();
 
-              // now, perform any operations you need
-              // map.setZoom(3);
-              // map.panTo([50.5, 30.5]);
-          })
-          .error(function(err) {
-              console.log(err);
-          });
+      // now, perform any operations you need
+      // map.setZoom(3);
+      // map.panTo([50.5, 30.5]);
+      })
+      .error(function(err) {
+      console.log(err);
+      });
       }
 
       window.onload = main;
     </script>
+
   </body>
 </html>

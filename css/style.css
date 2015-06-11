@@ -1,23 +1,17 @@
-/* structure */
+/* ---- STRUCTURE ---- */
+
+/* height system to have scrolly panels */
 
 html,
-body{
+body,
+.container-fluid{
     height: 100%;
 }
 
-.links-panel{
-    width: 100%;
-    height: 4%;
-    min-height: 40px;
-    margin: 0;
-    padding: 0;
+main{
+    height: 90%;
 }
 
-.container-fluid{
-    height: 96%;
-}
-
-.row,
 #filters,
 #projects,
 #map-container,
@@ -25,69 +19,95 @@ body{
     height: 100%;
 }
 
-#map-container,
-#map{
-    padding: 0;
-    margin: 0;
-}
-
-#map{
-    width: 100%;
-}
-
 #filters,
 #projects {
     overflow-y: scroll;
 }
 
-#projects li {
-    border-bottom: 1px dashed #d3d3d3;
-    margin-bottom: 0.5em;
-    padding: 0.1em 0 0.1em 1em;
+/* managing sections space */
+
+nav{
+    padding: 1em 0 1em 0;
 }
 
-.input-group {
-    margin-bottom: 2em;
-}
 
-/* skin */
+/* ----- MODULES ----- */
 
-.links-panel h2,
-.links-panel h4{
-    display: inline;
-}
-
-.links-panel span{
-    vertical-align: middle;
-    line-height: normal;
-}
-
-.links-panel a {
-    background-color: black;
+/* buttons style for links */
+nav a {
     padding: .3em .9em .3em .9em;
     border-radius: 20px;
     margin: .4% .2% 0% .2%;
     float: right;
 }
 
-/* color scheme */
-
-.links-panel{
-    background-color: gray;
-    color: white;
-}
-.links-panel a{
-    color: white;
-}
-
-#filters{
-    background-color: #d3d3d3;
-}
-
+/* more space above projects & filters sidebar */
+#filters,
 #projects{
-    background-color: #ececec;
+    padding-top: 1em;
+}
+
+/* more space below search box */
+.input-group {
+    margin-bottom: 2em;
+}
+
+/* projects summary: reset margins and give space */
+#projects h2{
+    margin: 0;
+    padding-bottom: .5em;
+}
+
+/* each project stands for itself */
+#projects li {
+    border-bottom: 1px dashed #d3d3d3;
+    margin-bottom: 0.5em;
+    /* padding-bottom: 0.1em; */
+}
+
+/* ----- TYPOGRAPHY ----- */
+
+#hero-intro,
+/* #projects, */
+#projects h2{
+    text-align: center;
+}
+
+/* ----- COLOR SCHEME -----
+
+As the map is the bigger component within the page, it sets the ambient.
+Based on the sea color (blue http://www.colorhexa.com/d8e1ee) we work a palette
+from there: nav and hero sections are a shade variation of the blue sea.
+
+*/
+
+nav{
+    background-color: #36537d;
+}
+
+body,
+#hero-intro{
+    background-color: #486fa6;
+}
+
+main{
+    background-color: white;
 }
 
 #map-container{
-    background-color: #ececec;
+    background-color: #d8e1ee;
+}
+
+header{
+    color: white;
+}
+
+nav a{
+    background-color: #192639;
+    color: white;
+}
+
+nav a:hover{
+    background-color: #486fa6;
+    color: white;
 }
