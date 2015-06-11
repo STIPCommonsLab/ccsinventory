@@ -1,12 +1,93 @@
-section.filters{
-    width: 30%;
-    background-color: #E2E3E4;
-    float: left;
+/* structure */
+
+html,
+body{
+    height: 100%;
 }
 
-section.projects{
-    width: 30%;
-    float: left;
-    background-color: #E2E3E4;
-    margin-left: 5px;
+.links-panel{
+    width: 100%;
+    height: 4%;
+    min-height: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid{
+    height: 96%;
+}
+
+.row,
+#filters,
+#projects,
+#map-container,
+#map{
+    height: 100%;
+}
+
+#map-container,
+#map{
+    padding: 0;
+    margin: 0;
+}
+
+#map{
+    width: 100%;
+}
+
+#filters,
+#projects {
+    overflow-y: scroll;
+}
+
+#projects li {
+    border-bottom: 1px dashed #d3d3d3;
+    margin-bottom: 0.5em;
+    padding: 0.1em 0 0.1em 1em;
+}
+
+.input-group {
+    margin-bottom: 2em;
+}
+
+/* skin */
+
+.links-panel h2,
+.links-panel h4{
+    display: inline;
+}
+
+.links-panel span{
+    vertical-align: middle;
+    line-height: normal;
+}
+
+.links-panel a {
+    background-color: black;
+    padding: .3em .9em .3em .9em;
+    border-radius: 20px;
+    margin: .4% .2% 0% .2%;
+    float: right;
+}
+
+/* color scheme */
+
+.links-panel{
+    background-color: gray;
+    color: white;
+}
+.links-panel a{
+    color: white;
+}
+
+#filters{
+    background-color: #d3d3d3;
+}
+
+#projects{
+    background-color: #ececec;
+}
+
+#map-container{
+    background-color: #ececec;
 }
