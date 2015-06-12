@@ -90,7 +90,8 @@ body,
     background-color: #486fa6;
 }
 
-main{
+#filters,
+#projects{
     background-color: white;
 }
 
