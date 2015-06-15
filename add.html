@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <title>Inventory of federal crowdsourcing and citizen science projects, by Commons Lab - Wilson Center</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/datepicker.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
+    <link href="css/leaflet.draw.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="css/style.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+  </head>
+  <body class="container-fluid">
+
+    <header>
+      <nav class="row">
+        <image xlink:href="img/commons_logo.svg" src="img/commons_logo.png"
+               width="260" height="40" />
+        <image xlink:href="img/wilson_logo.svg" src="img/wilson_logo.png"
+               width="260" height="40" />
+        <span><a href="http://www.wilsoncenter.org/privacy-policy">Privacy policy</a></span>
+        <span data-toggle="modal" data-target="#dataModal"><a href="#">Data policy</a></span>
+        <span data-toggle="modal" data-target="#aboutModal"><a href="#">About</a></span>
+        <span><a class="lead-btn" href="index.html">Home</a></span>
+      </nav>
+      <section id="hero-intro" class="row">
+        <h2>Submit a new project</h2>
+      </section>
+    </header>
+
+    <div id="submit-form" class="col-md-8 col-md-offset-2">
+
+      <div class="well">Welcome to the Federal Inventory of Crowdsourcing and Citizen Science.  Below is a two-part webform for you to fill out entirely. If at any point you do not understand the field, please refer to <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="Hover over this for more instruction"></span> for more instructions.  The information collected will be displayed on a searchable map for the public to use.  To assist in visualizing the final product, explore the <a href="browse">map</a>. For further detail on each field of science category, please visit <a href="http://sites.nationalacademies.org/pga/Resdoc/PGA_044522.htm">this website</a>.</div>
+
+      <form class="form-horizontal" method="post" action="">
+        <fieldset>
+
+          <legend class="orange"><i class="fa fa-file-text-o"></i>Project Information</legend>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label orange" for="project-name">Project Name <span data-toggle="tooltip" title="Commonly accepted name for the project" class="glyphicon glyphicon-info-sign"></span></label>
+            <div class="col-md-6">
+              <input id="project-name" name="project-name" type="text" placeholder="" class="form-control input-md" required="">
+
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label orange" for="project-url">Project URL <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="URL for project website"></span></label>
+            <div class="col-md-6">
+              <input id="project-url" name="project-url" type="text" placeholder="http://" class="form-control input-md" required="">
+
+            </div>
+          </div>
+
+          <!-- Textarea -->
+          <div class="form-group">
+            <label class="col-md-4 control-label orange" for="project-description">Project Description <span data-toggle="tooltip" title="1-3 sentences defining the mission statement for your project" class="glyphicon glyphicon-info-sign"></span></label>
+            <div class="col-md-6">
+              <textarea class="form-control" id="project-description" name="project-description"></textarea>
+            </div>
+          </div>
+
+          <!-- Multiple Checkboxes -->
+          <div class="form-group">
+            <label class="col-md-4 control-label orange" for="field">Field of Science <span data-toggle="tooltip" title="What federal agency (or agencies) offers either primary or partial fiscal support of this project?" class="glyphicon glyphicon-info-sign" class="glyphicon glyphicon-info-sign"></span></label>
+            <div class="col-md-4">
+              <div class="checkbox">
+                <label for="field-animals">
+                  <input type="checkbox" name="field-animals" id="field-animals" value="Animals">
+                  Animals
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="field-archeology">
+                  <input type="checkbox" name="field-archeology" id="field-archeology" value="Archeology">
+                  Archeology
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="field-astronomy-space">
+                  <input type="checkbox" name="field-astronomy-space" id="field-astronomy-space" value="Astronomy & Space">
+                  Astronomy & Space
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="field-awards">
+                  <input type="checkbox" name="field-awards" id="field-awards" value="Awards">
+                  Awards
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="field-biology">
+                  <input type="checkbox" name="field-biology" id="field-biology" value="Biology">
+                  Biology
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="field-birds">
+                  <input type="checkbox" name="field-birds" id="field-birds" value="Birds">
+                  Birds
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="field-chemistry">
+                  <input type="checkbox" name="field-chemistry" id="field-chemistry" value="Chemistry">
+                  Chemistry
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="field-climate-weather">
+                  <input type="checkbox" name="field-climate-weather" id="field-climate-weather" value="Climate & Weather">
+                  Climate & Weather
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="field-computers-technology">
+                  <input type="checkbox" name="field-computers-technology" id="field-computers-technology" value="Computers & Technology">
+                  Computers & Technology
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="field-crowd-funding">
+                  <input type="checkbox" name="field-crowd-funding" id="field-crowd-funding" value="Crowd Funding">
+                  Crowd Funding
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="field-ecology-environment">
+                  <input type="checkbox" name="field-ecology-environment" id="field-ecology-environment" value="Ecology & Environment">
+                  Ecology & Environment
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="field-education">
+                  <input type="checkbox" name="field-education" id="field-education" value="Education">
+                  Education
+                </label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="checkbox">
+                <label for="field-food">
+                  <input type="checkbox" name="field-food" id="field-food" value="Food">
+                  Food
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="field-geology-earth-science">
+                  <input type="checkbox" name="field-geology-earth-science" id="field-geology-earth-science" value="Geology & Earth Science">
+                  Geology & Earth Science
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="field-health-medicine">
+                  <input type="checkbox" name="field-health-medicine" id="field-health-medicine" value="Health & Medicine">
+                  Health & Medicine
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="field-insects">
+                  <input type="checkbox" name="field-insects" id="field-insects" value="Insects">
+                  Insects
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="field-nature-outdoors">
+                  <input type="checkbox" name="field-nature-outdoors" id="field-nature-outdoors" value="Nature & Outdoors">
+                  Nature & Outdoors
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="field-ocean-water">
+                  <input type="checkbox" name="field-ocean-water" id="field-ocean-water" value="Ocean & Water">
+                  Ocean & Water
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="field-physics">
+                  <input type="checkbox" name="field-physics" id="field-physics" value="Physics">
+                  Physics
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="field-psychology">
+                  <input type="checkbox" name="field-psychology" id="field-psychology" value="Psychology">
+                  Psychology
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="field-science-policy">
+                  <input type="checkbox" name="field-science-policy" id="field-science-policy" value="Science Policy">
+                  Science Policy
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="field-sound">
+                  <input type="checkbox" name="field-sound" id="field-sound" value="Sound">
+                  Sound
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="field-transportation">
+                  <input type="checkbox" name="field-transportation" id="field-transportation" value="Transportation">
+                  Transportation
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label orange" for="keywords">Project Keywords <span data-toggle="tooltip" title="Please enter descriptive keywords, separated by a comma, which will help someone find your project on the browsable map." class="glyphicon glyphicon-info-sign"></span></label>
+            <div class="col-md-6">
+              <input id="keywords" name="keywords" type="text" placeholder="" class="form-control input-md">
+
+            </div>
+          </div>
+
+          <!-- Select Basic -->
+          <div class="form-group">
+            <label class="col-md-4 control-label orange" for="status">Project Status <span data-toggle="tooltip" title="What is the current status of this project?" class="glyphicon glyphicon-info-sign"></span></label>
+            <div class="col-md-6">
+              <select id="status" name="status" class="form-control">
+                <option value="Pending">Pending</option>
+                <option value="Active">Active</option>
+                <option value="Active but Seasonal">Active but Seasonal</option>
+                <option value="Complete">Complete</option>
+                <option value="Hiatus">Hiatus</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label orange" for="start-date">Project Start Date <span data-toggle="tooltip" title="Approximately when was the grant issued, or project launched?" class="glyphicon glyphicon-info-sign"></span></label>
+            <div class="col-md-6">
+              <input id="start-date" name="start-date" type="text" placeholder="yyyy-mm-dd" class="form-control input-md">
+
+            </div>
+          </div>
+
+          <!-- Multiple Checkboxes -->
+          <div class="form-group">
+            <label class="col-md-4 control-label orange" for="sponsors">Agency Sponsor <span data-toggle="tooltip" title="What federal agency (or agencies) offers either primary or partial fiscal support of this project?" class="glyphicon glyphicon-info-sign" class="glyphicon glyphicon-info-sign"></span></label>
+            <div class="col-md-4">
+              <div class="checkbox">
+                <label for="sponsors-blm">
+                  <input type="checkbox" name="sponsors-blm" id="sponsors-blm" value="Bureau of Land Management (BLM)">
+                  Bureau of Land Management (BLM)
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="sponsors-dhs">
+                  <input type="checkbox" name="sponsors-dhs" id="sponsors-dhs" value="Department of Homeland Security (DHS)">
+                  Department of Homeland Security (DHS)
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="sponsors-doi">
+                  <input type="checkbox" name="sponsors-doi" id="sponsors-doi" value="U.S. Department of the Interior (DOI)">
+                  U.S. Department of the Interior (DOI)
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="sponsors-epa">
+                  <input type="checkbox" name="sponsors-epa" id="sponsors-epa" value="U.S. Environmental Protection Agency (EPA)">
+                  U.S. Environmental Protection Agency (EPA)
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="sponsors-hhs">
+                  <input type="checkbox" name="sponsors-hhs" id="sponsors-hhs" value="United States Department of Health and Human Services (HHS)">
+                  United States Department of Health and Human Services (HHS)
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="sponsors-nara">
+                  <input type="checkbox" name="sponsors-nara" id="sponsors-nara" value="National Archives and Records Administration (NARA)">
+                  National Archives and Records Administration (NARA)
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="sponsors-nasa">
+                  <input type="checkbox" name="sponsors-nasa" id="sponsors-nasa" value="National Aeronautics and Space Administration (NASA)">
+                  National Aeronautics and Space Administration (NASA)
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="sponsors-nih">
+                  <input type="checkbox" name="sponsors-nih" id="sponsors-nih" value="National Institutes of Health (NIH)">
+                  National Institutes of Health (NIH)
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="sponsors-noaa">
+                  <input type="checkbox" name="sponsors-noaa" id="sponsors-noaa" value="National Oceanic and Atmospheric Administration (NOAA)">
+                  National Oceanic and Atmospheric Administration (NOAA)
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="sponsors-nsf">
+                  <input type="checkbox" name="sponsors-nsf" id="sponsors-nsf" value="National Science Foundation (NSF)">
+                  National Science Foundation (NSF)
+                </label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="checkbox">
+                <label for="sponsors-nps">
+                  <input type="checkbox" name="sponsors-nps" id="sponsors-nps" value="U.S. National Park Service (NPS)">
+                  U.S. National Park Service (NPS)
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="sponsors-ssa">
+                  <input type="checkbox" name="sponsors-ssa" id="sponsors-ssa" value="The United States Social Security Administration (SSA)">
+                  The United States Social Security Administration (SSA)
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="sponsors-usstate">
+                  <input type="checkbox" name="sponsors-usstate" id="sponsors-usstate" value="U.S Department of State">
+                  U.S Department of State
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="sponsors-usagriculture">
+                  <input type="checkbox" name="sponsors-usagriculture" id="sponsors-usagriculture" value="U.S. Department of Agriculture">
+                  U.S. Department of Agriculture
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="sponsors-usaid">
+                  <input type="checkbox" name="sponsors-usaid" id="sponsors-usaid" value="U.S. Agency for International Development (USAID)">
+                  U.S. Agency for International Development (USAID)
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="sponsors-usfs">
+                  <input type="checkbox" name="sponsors-usfs" id="sponsors-usfs" value="U.S. Forest Service (USFS)">
+                  U.S. Forest Service (USFS)
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="sponsors-usgs">
+                  <input type="checkbox" name="sponsors-usgs" id="sponsors-usgs" value="U.S. Geological Survey (USGS)">
+                  U.S. Geological Survey (USGS)
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="sponsors-si">
+                  <input type="checkbox" name="sponsors-si" id="sponsors-si" value="Smithsonian Institute (SI)">
+                  Smithsonian Institute (SI)
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="sponsors-legislative">
+                  <input type="checkbox" name="sponsors-legislative" id="sponsors-legislative" value="Other legislative branch agency">
+                  Other legislative branch agency
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="sponsors-executive">
+                  <input type="checkbox" name="sponsors-executive" id="sponsors-executive" value="Other executive branch agency">
+                  Other executive branch agency
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="sponsors-judicial">
+                  <input type="checkbox" name="sponsors-judicial" id="sponsors-judicial" value="Other judicial branch agency">
+                  Other judicial branch agency
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="sponsors-independent">
+                  <input type="checkbox" name="sponsors-independent" id="sponsors-independent" value="Other Independent agency">
+                  Other Independent agency
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Multiple Checkboxes -->
+          <div class="form-group">
+            <label class="col-md-4 control-label orange" for="partners">Agency Partner <span data-toggle="tooltip" title="A federal agency offering partial support" class="glyphicon glyphicon-info-sign"></span></label>
+            <div class="col-md-6">
+              <div class="checkbox">
+                <label for="partners-state-local-government">
+                  <input type="checkbox" name="partners-state-local-government" id="partners-state-local-government" value="State or Local Government">
+                  State or Local Government
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="partners-formal-nonprofit-ngo">
+                  <input type="checkbox" name="partners-formal-nonprofit-ngo" id="partners-formal-nonprofit-ngo" value="Formal Non-Profit/NGO">
+                  Formal Non-Profit/NGO
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="partners-community-group">
+                  <input type="checkbox" name="partners-community-group" id="partners-community-group" value="Community Group">
+                  Community Group
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="partners-college-university">
+                  <input type="checkbox" name="partners-college-university" id="partners-college-university" value="College or University">
+                  College or University
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="partners-k12education">
+                  <input type="checkbox" name="partners-k12education" id="partners-k12education" value="K-12 Education">
+                  K-12 Education
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="partners-museum">
+                  <input type="checkbox" name="partners-museum" id="partners-museum" value="Museum">
+                  Museum
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="partners-forprofit">
+                  <input type="checkbox" name="partners-forprofit" id="partners-forprofit" value="For-Profit">
+                  For-Profit
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="partners-other">
+                  <input type="checkbox" name="partners-other" id="partners-other" value="Other">
+                  Other
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Select Basic -->
+          <div class="form-group">
+            <label class="col-md-4 control-label orange" for="geographic-scope">Geographic Scope <span data-toggle="tooltip" title="Please select the best definition for your projects geographic scope." class="glyphicon glyphicon-info-sign"></span></label>
+            <div class="col-md-6">
+              <select id="geographic-scope" name="geographic-scope" class="form-control">
+                <option value="International">International</option>
+                <option value="National">National</option>
+                <option value="Regional">Regional</option>
+                <option value="Local">Local</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Multiple Checkboxes -->
+          <div class="form-group">
+            <label class="col-md-4 control-label orange" for="participant-age">Participant Age <span data-toggle="tooltip" title="Target age of participants" class="glyphicon glyphicon-info-sign"></span></label>
+            <div class="col-md-6">
+              <div class="checkbox">
+                <label for="age-public">
+                  <input type="checkbox" name="age-public" id="age-public" value="General Public">
+                  General Public
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="age-families">
+                  <input type="checkbox" name="age-families" id="age-families" value="Families">
+                  Families
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="age-elementary">
+                  <input type="checkbox" name="age-elementary" id="age-elementary" value="Elementary School Children">
+                  Elementary School Children
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="age-middle">
+                  <input type="checkbox" name="age-middle" id="age-middle" value="Middle School Children">
+                  Middle School Children
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="age-teens">
+                  <input type="checkbox" name="age-teens" id="age-teens" value="Teens">
+                  Teens
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="age-seniors">
+                  <input type="checkbox" name="age-seniors" id="age-seniors" value="Seniors">
+                  Seniors
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Multiple Checkboxes -->
+          <div class="form-group">
+            <label class="col-md-4 control-label orange" for="outcomes">Intended Outcomes <span data-toggle="tooltip" title="Desired outcomes of project" class="glyphicon glyphicon-info-sign"></span></label>
+            <div class="col-md-6">
+              <div class="checkbox">
+                <label for="outcomes-research">
+                  <input type="checkbox" name="outcomes-research" id="outcomes-research" value="Research Advancement">
+                  Research Advancement
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="outcomes-operational">
+                  <input type="checkbox" name="outcomes-operational" id="outcomes-operational" value="Operational Integration or Use">
+                  Operational Integration or Use
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="outcomes-regulation">
+                  <input type="checkbox" name="outcomes-regulation" id="outcomes-regulation" value="Regulation">
+                  Regulation
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="outcomes-education">
+                  <input type="checkbox" name="outcomes-education" id="outcomes-education" value="Education / Outreach">
+                  Education
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="outcomes-community">
+                  <input type="checkbox" name="outcomes-community" id="outcomes-community" value="Community Engagement / Outreach">
+                  Community Engagement / Outreach
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="outcomes-policy">
+                  <input type="checkbox" name="outcomes-policy" id="outcomes-policy" value="Inform Public Policy">
+                  Inform Public Policy
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="outcomes-proofconcept">
+                  <input type="checkbox" name="outcomes-proofconcept" id="outcomes-proofconcept" value="Proof of Concept">
+                  Proof of Concept
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="outcomes-other">
+                  <input type="checkbox" name="outcomes-other" id="outcomes-other" value="Other">
+                  Other
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Textarea -->
+          <div class="form-group">
+            <label class="col-md-4 control-label orange" for="participation-type">Participation Type <span data-toggle="tooltip" title="Description of volunteer activities" class="glyphicon glyphicon-info-sign"></span></label>
+            <div class="col-md-6">
+              <textarea class="form-control" id="participation-type" name="participation-type"></textarea>
+            </div>
+          </div>
+
+        </fieldset>
+
+        <fieldset>
+
+          <legend class="blue"><i class="fa fa-map-marker"></i>Location Information</legend>
+
+          <div class="well">
+            <p>Please enter the address where the project is administered.  For example, if your project crowdsources identification of images, then where is the project and its dataset managed?  OR if your project conducts water quality monitoring across a tri-state water feature then where is that data collected and managed?</p>
+            <p>After you enter an address and click the "Geocode Address" button, a pin will be placed on the map. To move the pin, click the edit button in the map and drag it to the most appropriate location. If you don't have an address, click the pin button on the left side of the map toolbar to draw the location.</p>
+            <p>If the project you are entering is only funded by your agency and all other aspects of the project are conducted on site, then please enter the address location of the projects field/administration site. </p>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6" id="input-map">
+              map
+            </div>
+
+            <div class="col-md-6" id="address">
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label light-blue" for="street-address">Street Address <span data-toggle="tooltip" title="Physical contact address" class="glyphicon glyphicon-info-sign"></span></label>
+                <div class="col-md-6">
+                  <input id="street-address" name="street-address" type="text" placeholder="" class="form-control input-md">
+
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label light-blue" for="street-address-2"></label>
+                <div class="col-md-6">
+                  <input id="street-address-2" name="street-address-2" type="text" placeholder="" class="form-control input-md">
+
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label light-blue" for="city">City</label>
+                <div class="col-md-6">
+                  <input id="city" name="city" type="text" placeholder="" class="form-control input-md">
+
+                </div>
+              </div>
+
+              <!-- Select Basic -->
+              <div class="form-group">
+                <label class="col-md-4 control-label light-blue" for="state">State</label>
+                <div class="col-md-6">
+                  <select id="state" name="state" class="form-control">
+                    <option value="AL">AL</option>
+                    <option value="AK">AK</option>
+                    <option value="AZ">AZ</option>
+                    <option value="AR">AR</option>
+                    <option value="CA">CA</option>
+                    <option value="CO">CO</option>
+                    <option value="CT">CT</option>
+                    <option value="DC">DC</option>
+                    <option value="DE">DE</option>
+                    <option value="FL">FL</option>
+                    <option value="GA">GA</option>
+                    <option value="HI">HI</option>
+                    <option value="ID">ID</option>
+                    <option value="IL">IL</option>
+                    <option value="IN">IN</option>
+                    <option value="IA">IA</option>
+                    <option value="KS">KS</option>
+                    <option value="KY">KY</option>
+                    <option value="LA">LA</option>
+                    <option value="ME">ME</option>
+                    <option value="MD">MD</option>
+                    <option value="MA">MA</option>
+                    <option value="MI">MI</option>
+                    <option value="MN">MN</option>
+                    <option value="MS">MS</option>
+                    <option value="MO">MO</option>
+                    <option value="MT">MT</option>
+                    <option value="NE">NE</option>
+                    <option value="NV">NV</option>
+                    <option value="NH">NH</option>
+                    <option value="NJ">NJ</option>
+                    <option value="NM">NM</option>
+                    <option value="NY">NY</option>
+                    <option value="NC">NC</option>
+                    <option value="ND">ND</option>
+                    <option value="OH">OH</option>
+                    <option value="OK">OK</option>
+                    <option value="OR">OR</option>
+                    <option value="PA">PA</option>
+                    <option value="RI">RI</option>
+                    <option value="SC">SC</option>
+                    <option value="SD">SD</option>
+                    <option value="TN">TN</option>
+                    <option value="TX">TX</option>
+                    <option value="UT">UT</option>
+                    <option value="VT">VT</option>
+                    <option value="VA">VA</option>
+                    <option value="WA">WA</option>
+                    <option value="WV">WV</option>
+                    <option value="WI">WI</option>
+                    <option value="WY">WY</option>
+                    <option value="GU">GU</option>
+                    <option value="PR">PR</option>
+                    <option value="VI">VI</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label light-blue" for="zip">Zip Code</label>
+                <div class="col-md-6">
+                  <input id="zip" name="zip" type="text" placeholder="" class="form-control input-md">
+
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-md-4 col-md-offset-4">
+                  <button type="button" id="geocode" name="geocode" class="btn btn-primary">Geocode Address</button>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <input type="hidden" name="latlng" id="latlng" value="">
+        </fieldset>
+
+        <fieldset>
+
+          <legend class="light-blue"><i class="fa fa-phone"></i>Contact Information</legend>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label light-blue" for="project-contact">Project Contact <span data-toggle="tooltip" title="Name of project contact" class="glyphicon glyphicon-info-sign"></span></label>
+            <div class="col-md-6">
+              <input id="project-contact" name="project-contact" type="text" placeholder="" class="form-control input-md" required="">
+
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label light-blue" for="affiliation">Contact Affiliation <span data-toggle="tooltip" title="Affiliation of project contact" class="glyphicon glyphicon-info-sign"></span></label>
+            <div class="col-md-6">
+              <input id="affiliation" name="affiliation" type="text" placeholder="" class="form-control input-md">
+
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label light-blue" for="email">Contact Email <span data-toggle="tooltip" title="Contact email address" class="glyphicon glyphicon-info-sign"></span></label>
+            <div class="col-md-6">
+              <input id="email" name="email" type="text" placeholder="" class="form-control input-md">
+
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label light-blue" for="phone">Contact Phone <span data-toggle="tooltip" title="Contact phone number" class="glyphicon glyphicon-info-sign"></span></label>
+            <div class="col-md-6">
+              <input id="phone" name="phone" type="text" placeholder="123-456-7890" class="form-control input-md">
+
+            </div>
+          </div>
+
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title text-center">That's everything!</h3>
+            </div>
+          </div>
+
+          <!-- Button -->
+          <div class="form-group">
+            <div class="col-md-4 col-md-offset-4">
+              <button id="submit" name="submit" class="btn btn-primary">Submit Entire Form</button>
+            </div>
+          </div>
+
+        </fieldset>
+
+      </form>
+
+    </div>
+
+    <!-- Modal about -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="aboutModalLabel">About The Commons Lab Inventory</h4>
+          </div>
+          <div class="modal-body">
+            <h3>Project rationale</h3>
+            <p>
+              Recent policy, including the <a href="https://www.whitehouse.gov/sites/default/files/docs/us_national_action_plan_6p.pdf">Second Open Government National Action
+                Plan</a> published in December 2013, and the OSTP fact sheet released in
+              March 2015, offer important support for federal citizen science and
+              crowdsourcing. These developments will help sustain existing projects,
+              and inspire new initiatives. The Commons Lab Inventory seeks to
+              support federal engagement in citizen science and crowdsourcing
+              by:</p>
+            <ul>
+              <li><em>Characterizing the value and diversity of federal citizen
+                  science</em>
+                . The Commons Lab will provide a web application and publish a policy brief describing the landscape of federal citizen science, highlighting achieved and potential impacts, and demonstrating productive partnership models between agencies and sectors.</li>
+
+              <li><em>Supporting coordination within and between agencies</em>
+                . The Commons Lab Inventory will reduce search costs for agencies seeking collaborators, exemplar projects, research data and results, and other resources.</li>
+
+              <li><em>Facilitating public analysis and engagement</em>
+                . Through our
+                interactive mapping tool, policymakers and the public may explore the
+                range of citizen science and crowdsourcing projects. Individuals may
+                also use this tool to find projects to contribute to.</li>
+            </ul>
+
+            <h3>Methodology</h3>
+            <p>The information in the Commons Lab Inventory comes from a variety of
+              sources.</p>
+            <ul>
+              <li>First, the Commons Lab compiles information from public sources
+                including official websites and project blogs, and also from
+                scientific literature, including journal articles and
+                whitepapers. </li>
+              <li>Second, projects are invited to submit their own information
+                through an interactive web form. This information is verified before
+                it is published in the inventory. </li>
+              <li>Third, the Commons Lab collaborates with employees at federal
+                agencies to obtain information on citizen science and crowdsourcing
+                activities. </li>
+              <li>Fourth, the Commons Lab information data with existing
+                inventories, such as USGS MyScience and Scistarter.com.</li>
+            </ul>
+
+            <h3>What kinds of projects are included?</h3>
+            <p>The Commons Lab Inventory includes
+              <a href="http://www2.epa.gov/innovation/federal-community-practice-crowdsourcing-and-citizen-science">citizen science and crowdsourcing projects</a> that are funded or otherwise supported by federal agencies. For example, projects may be funded directly, or through grants from agencies such as EPA, NIH, and USGS. Some projects also receive in-kind support, such as equipment lending or support from agency personnel.</p>
+
+            <p>Note that the Commons Lab Inventory does <strong>not</strong>
+              include other forms of open innovation, such as prize competitions, or projects funded solely through the National Science Foundation (NSF).</p>
+
+            <h3>Timeline</h3>
+            <p>The majority of data collection will take place between April 1st, 2015 and July 1st, 2015. Following this period, the Commons Lab Inventory will be released to the general public. Information obtained during research will be published in a Wilson Center report describing the landscape of federal citizen science and crowdsourcing.</p>
+
+            <p>If you have questions about the inventory, please contact Anne
+              Bowser at <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=Anne.Bowser@wilsoncenter.org">Anne.Bowser@wilsoncenter.org</a> or 202-691-4031.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal data policies -->
+    <div class="modal fade" id="dataModal" tabindex="-1" role="dialog" aria-labelledby="dataModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="dataModalLabel">Data Policies</h4>
+          </div>
+          <div class="modal-body">
+            <p>This page contains a legal disclaimer, terms of use including
+              intellectual property rights of users who submit projects to the
+              Commons Lab Inventory, and contact information for the project
+              director. The Commons Lab Inventory adheres to the same privacy
+              policy as the Wilson Center at large, which can be found <a href="http://wilsoncenter.org/privacy-policy">here</a>.</p>
+
+            <strong>Legal Disclaimer</strong>
+
+            <p>DISCLAIMER: This inventory has been compiled by the Commons Lab within the Science and Technology Innovation Program (the "Commons Lab") at the Woodrow Wilson International Center for Scholars (the "Center"). The material contained in this inventory is for informational purposes only. The Commons Lab has made this material available to stimulate discussion and comment about the emergence of federally supported citizen science and crowdsourcing. The Commons Lab has no formal association with any entry listed in this inventory. Reference to any entry does not reflect the position or policy of the Commons Lab, the Center, nor does inclusion of any entry in this inventory constitute or imply endorsement or criticism of, or commentary on, such entry. Any statements, claims and views expressed by an entry or by any third-party contained in this inventory are solely those of the party making such statement or claim, or expressing such view, and are not attributable to the Inventory.</p>
+
+            <p>This inventory contains "hyperlinks" to other web sites that contain information created, published, maintained, or otherwise posted by entries independent of the Commons Lab, and the copyright and privacy policies of such entries apply to that material (for further clarification, see terms of use below). The Commons Lab does not endorse, approve, certify, or control these other web sites and does not guarantee the accuracy, completeness, efficacy, or timeliness of information located at such sites. The Commons Lab assumes no responsibility for consequences resulting from use of information in this inventory or obtained at linked sites. The Commons Lab is not responsible for, and expressly disclaims all liability for, damages of any kind arising out of use, reference to, reliance on, or performance of such information. All entry names are trademarks or registered trademarks of their respective holder. Use of any trademark in this inventory is for identification purposes only, and is intended to be used only for the purpose of accurately describing the entry to which the trademark applies.</p>
+
+            <strong>Terms of use</strong>
+
+            <p>INTELLECTUAL PROPERTY RIGHTS OF USRES: The Service may provide users with the ability to add, create, upload, submit, distribute, collect, or post ("Submitting" or "Submission") content, videos, audio clips, written forum comments, data, text, photographs, software, scripts, graphics, or other information to the Site(s) (collectively, the "User Submissions"). By Submitting User Submissions on the Site(s) or otherwise through the Service, you:</p>
+
+            <ul>
+              <li>Acknowledge that by Submitting any User Submission to the Site(s), you are publishing that User Submission, and that you may be identified publicly by your User ID in association with any such User Submission; By Submitting any User Submissions through the Site(s) or the Service, you hereby do and shall grant us a worldwide, non-exclusive, perpetual, irrevocable, royalty-free, fully paid, sub licensable and transferable license to use, edit, modify, reproduce, distribute, prepare derivative works of, display, perform, and otherwise fully exploit the User Submissions in connection with the Site(s), the Service and our (and its successors and assignes) business, including without limitation for promoting and redistributing part or all of the Site(s) (and derivative works thereof) or the Service in any media formats and through any media channels (including, without limitation, third party websites). You also hereby do and shall grant each user of the Site(s) and/or the Service a non-exclusive license to access your User Submissions through the Site and the Service, and to use, edit, modify, reproduce, distribute, prepare derivative works of, display and perform such User Submissions solely for personal, non-commercial use. For clarity, the foregoing license grant to Company does not affect your other ownership or license rights in your User Submission(s), including the right to grant additional licenses to the material in your User Submission(s), unless otherwise agreed in writing;</li>
+
+              <li>Represent and warrant, and can demonstrate to our full satisfaction upon request that you (i) own or otherwise control all rights to all content in your User Submissions, or that the content in such User Submissions is in the public domain, (ii) you have full authority to act on behalf of any and all owners of any right, title or interest in and to any content in your User Submissions to use such content as contemplated by these Terms of Use and to grant the license rights set forth above, (iii) you have the permission to use the name and likeness of each identifiable individual person and to use such individuals identifying or personal information as contemplated by these Terms of Use; and (iv) you are authorized to grant all of the aforementioned rights to the User Submissions to Company and all users of the Service; You agree to pay all royalties and other amounts owed to any person or entity due to your Submission of any User Submissions to the Service;</li>
+
+              <li>That the use or other exploitation of such User Submissions by Company and use or other exploitation by users of the Site(s) and Service as contemplated by this Agreement will not infringe or violate the rights of any third party, including without limitation any privacy rights, publicity rights, copyrights, contract rights, or any other intellectual property or proprietary rights; and Understand that we shall have the right to delete, edit, modify, reformat, excerpt, or translate any materials, content or information submitted by you; and that all information publicly posted or privately transmitted through the Site(s) is the sole responsibility of the person from which such content originated and that we will not be liable for any errors or omissions in any content; and that we cannot guarantee the identity of any other users with whom you may interact in the course of using the Service.</li>
+
+              <li>Understand that we shall have the right to delete, edit, modify, reformat, excerpt, or translate any materials, content or information submitted by you; and that all information publicly posted or privately transmitted through the Site(s) is the sole responsibility of the person from which such content originated and that we will not be liable for any errors or omissions in any content; and that we cannot guarantee the identity of any other users with whom you may interact in the course of using the Service.</li>
+            </ul>
+
+            <strong>Contact Information</strong>
+
+            <p>If you have a question about these policies, please contact Anne
+              Bowser at <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=Anne.Bowser@wilsoncenter.org">Anne.Bowser@wilsoncenter.org</a> or 202-691-4031.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/vendor/bootstrap-datepicker.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script src="js/vendor/leaflet.draw.js"></script>
+    <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
+
+    <script>
+      var map;
+      var drawnItems;
+
+      $( document ).ready(function() {
+      $('#date-updated').datepicker({
+      format: 'yyyy-mm-dd'
+      });
+      $('#start-date').datepicker({
+      format: 'yyyy-mm-dd'
+      });
+      initMap();
+      $("[data-toggle='tooltip']").tooltip();
+
+      });
+
+      function initMap() {
+
+      map = L.map('input-map', { scrollWheelZoom: false }).setView([36, -91], 3);
+
+      var baseMap = new L.StamenTileLayer("toner-lite");
+      map.addLayer(baseMap);
+
+      // Initialise the FeatureGroup to store editable layers
+      drawnItems = new L.FeatureGroup();
+      map.addLayer(drawnItems);
+
+      // Initialise the draw control and pass it the FeatureGroup of editable layers
+      var drawControl = new L.Control.Draw({
+      draw: {
+      position: 'topleft',
+      polygon: false,
+      polyline: false,
+      circle: false,
+      rectangle: false
+      },
+      edit: {
+      featureGroup: drawnItems
+      }
+      });
+      map.addControl(drawControl);
+
+      map.on('draw:created', function (e) {
+      drawnItems.clearLayers();
+      var type = e.layerType,
+      layer = e.layer;
+
+      if (type === 'marker') {
+      layer.bindPopup('Project home location');
+      }
+
+      drawnItems.addLayer(layer);
+
+      $("#latlng").val('ST_SetSRID(ST_Point(' + layer.getLatLng().lng + ',' + layer.getLatLng().lat + '),4326)');
+      });
+
+      }
+
+      // add location button event
+      $("#geocode").click(function(e){
+
+      e.preventDefault();
+
+      // the name form field value
+      var street = $("#street-address").val();
+      var city = $("#city").val();
+      var state = $("#state").val();
+      var zip = $("#zip").val();
+
+      if(!street || !city) {
+      alert('Street address and city are required');
+      return;
+      }
+
+      $.ajax({
+      type: "GET",
+      dataType: "jsonp",
+      contentType: "application/json",
+      url: 'http://geocoding.geo.census.gov/geocoder/locations/address?street=' + street + '&city=' + city + '&state=' + state+ '&zip=' + zip + '&benchmark=9&format=jsonp',
+      success: function(data) {
+      if(data.result.addressMatches[0]) {
+      var gcLat = data.result.addressMatches[0].coordinates.y;
+      var gcLon = data.result.addressMatches[0].coordinates.x;
+      var gcLoc = new L.latLng(gcLat, gcLon);
+      map.setView(gcLoc, 12);
+      drawnItems.clearLayers();
+      L.marker(gcLoc).addTo(drawnItems);
+      $("#latlng").val('ST_SetSRID(ST_Point(' + gcLoc.lng + ',' + gcLoc.lat + '),4326)');
+      }
+      else alert('There was a problem geocoding that address. Please check that the address is valid.');
+      },
+      error: function(xhr, ajaxOptions, thrownError) {
+      alert(xhr.status, thrownError);
+      }
+      });
+      return false;
+
+      });
+
+    </script>
+
+  </body>
+</html>
