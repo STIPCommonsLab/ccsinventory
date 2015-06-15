@@ -9,7 +9,12 @@ body,
 }
 
 .main-content{
-    height: 90%;
+    height: 85%;
+}
+
+#hero-intro h2{
+    margin: 0;
+    padding: 0.8em 0 0.8em 0;
 }
 
 #filters,
