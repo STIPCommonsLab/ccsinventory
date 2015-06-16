@@ -414,89 +414,10 @@
       </section>
 
       <section id="projects" class="col-md-2">
-        <h2>732 projects</h2>
-        <ul class="list-unstyled">
-          <li><a href="#">IDAH2O Master Water Stewards</a></li>
-          <li><a href="#">National Weather Service Cooperative Observer Program</a></li>
-          <li><a href="#">Sea Ice for Walrus Outlook (SIWO)</a></li>
-          <li><a href="#">MapGive</a></li>
-          <li><a href="#">Ironbound Community Corporation (ICC) Environmental Monitoring</a></li>
-          <li><a href="#">The Costa Rica Science Exchange</a></li>
-          <li><a href="#">Did You Feel It?</a></li>
-          <li><a href="#">Alaska Volcano Observatory Citizen Network Ash Collection and Observation Program</a></li>
-          <li><a href="#">Student Watershed Research Project</a></li>
-          <li><a href="#">IDAH2O Master Water Stewards</a></li>
-          <li><a href="#">National Weather Service Cooperative Observer Program</a></li>
-          <li><a href="#">Sea Ice for Walrus Outlook (SIWO)</a></li>
-          <li><a href="#">MapGive</a></li>
-          <li><a href="#">Ironbound Community Corporation (ICC) Environmental Monitoring</a></li>
-          <li><a href="#">The Costa Rica Science Exchange</a></li>
-          <li><a href="#">Did You Feel It?</a></li>
-          <li><a href="#">Alaska Volcano Observatory Citizen Network Ash Collection and Observation Program</a></li>
-          <li><a href="#">Student Watershed Research Project</a></li>
-          <li><a href="#">IDAH2O Master Water Stewards</a></li>
-          <li><a href="#">National Weather Service Cooperative Observer Program</a></li>
-          <li><a href="#">Sea Ice for Walrus Outlook (SIWO)</a></li>
-          <li><a href="#">MapGive</a></li>
-          <li><a href="#">Ironbound Community Corporation (ICC) Environmental Monitoring</a></li>
-          <li><a href="#">The Costa Rica Science Exchange</a></li>
-          <li><a href="#">Did You Feel It?</a></li>
-          <li><a href="#">Alaska Volcano Observatory Citizen Network Ash Collection and Observation Program</a></li>
-          <li><a href="#">Student Watershed Research Project</a></li>
-          <li><a href="#">IDAH2O Master Water Stewards</a></li>
-          <li><a href="#">National Weather Service Cooperative Observer Program</a></li>
-          <li><a href="#">Sea Ice for Walrus Outlook (SIWO)</a></li>
-          <li><a href="#">MapGive</a></li>
-          <li><a href="#">Ironbound Community Corporation (ICC) Environmental Monitoring</a></li>
-          <li><a href="#">The Costa Rica Science Exchange</a></li>
-          <li><a href="#">Did You Feel It?</a></li>
-          <li><a href="#">Alaska Volcano Observatory Citizen Network Ash Collection and Observation Program</a></li>
-          <li><a href="#">Student Watershed Research Project</a></li>
-          <li><a href="#">IDAH2O Master Water Stewards</a></li>
-          <li><a href="#">National Weather Service Cooperative Observer Program</a></li>
-          <li><a href="#">Sea Ice for Walrus Outlook (SIWO)</a></li>
-          <li><a href="#">MapGive</a></li>
-          <li><a href="#">Ironbound Community Corporation (ICC) Environmental Monitoring</a></li>
-          <li><a href="#">The Costa Rica Science Exchange</a></li>
-          <li><a href="#">Did You Feel It?</a></li>
-          <li><a href="#">Alaska Volcano Observatory Citizen Network Ash Collection and Observation Program</a></li>
-          <li><a href="#">Student Watershed Research Project</a></li>
-          <li><a href="#">IDAH2O Master Water Stewards</a></li>
-          <li><a href="#">National Weather Service Cooperative Observer Program</a></li>
-          <li><a href="#">Sea Ice for Walrus Outlook (SIWO)</a></li>
-          <li><a href="#">MapGive</a></li>
-          <li><a href="#">Ironbound Community Corporation (ICC) Environmental Monitoring</a></li>
-          <li><a href="#">The Costa Rica Science Exchange</a></li>
-          <li><a href="#">Did You Feel It?</a></li>
-          <li><a href="#">Alaska Volcano Observatory Citizen Network Ash Collection and Observation Program</a></li>
-          <li><a href="#">Student Watershed Research Project</a></li>
-          <li><a href="#">IDAH2O Master Water Stewards</a></li>
-          <li><a href="#">National Weather Service Cooperative Observer Program</a></li>
-          <li><a href="#">Sea Ice for Walrus Outlook (SIWO)</a></li>
-          <li><a href="#">MapGive</a></li>
-          <li><a href="#">Ironbound Community Corporation (ICC) Environmental Monitoring</a></li>
-          <li><a href="#">The Costa Rica Science Exchange</a></li>
-          <li><a href="#">Did You Feel It?</a></li>
-          <li><a href="#">Alaska Volcano Observatory Citizen Network Ash Collection and Observation Program</a></li>
-          <li><a href="#">Student Watershed Research Project</a></li>
-          <li><a href="#">IDAH2O Master Water Stewards</a></li>
-          <li><a href="#">National Weather Service Cooperative Observer Program</a></li>
-          <li><a href="#">Sea Ice for Walrus Outlook (SIWO)</a></li>
-          <li><a href="#">MapGive</a></li>
-          <li><a href="#">Ironbound Community Corporation (ICC) Environmental Monitoring</a></li>
-          <li><a href="#">The Costa Rica Science Exchange</a></li>
-          <li><a href="#">Did You Feel It?</a></li>
-          <li><a href="#">Alaska Volcano Observatory Citizen Network Ash Collection and Observation Program</a></li>
-          <li><a href="#">Student Watershed Research Project</a></li>
-          <li><a href="#">IDAH2O Master Water Stewards</a></li>
-          <li><a href="#">National Weather Service Cooperative Observer Program</a></li>
-          <li><a href="#">Sea Ice for Walrus Outlook (SIWO)</a></li>
-          <li><a href="#">MapGive</a></li>
-          <li><a href="#">Ironbound Community Corporation (ICC) Environmental Monitoring</a></li>
-          <li><a href="#">The Costa Rica Science Exchange</a></li>
-          <li><a href="#">Did You Feel It?</a></li>
-          <li><a href="#">Alaska Volcano Observatory Citizen Network Ash Collection and Observation Program</a></li>
-          <li><a href="#">Student Watershed Research Project</a></li>
+        <h2><span class="project-num">0</span> projects</h2>
+        <ul id="project_list" class="list-unstyled">
+          
+
         </ul>
       </section>
 
@@ -514,6 +435,10 @@
           <%- property_name %>
         </label>
       </div>
+    </script>
+
+    <script type="text/template" id="project-list-tmpl">
+      <li><a href="projects/<%- cartodb_id %>"><%- project_name %></a></li>
     </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
