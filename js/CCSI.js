@@ -9,6 +9,11 @@ FilterElement = Backbone.Model.extend({
 FilterElementList = Backbone.Collection.extend({
     model: FilterElement,
     url: '',
+
+    comparator: function(item) {
+        return item.get('property_name');
+    }
+
 });
 
 Metadata = Backbone.Collection.extend({
@@ -38,16 +43,26 @@ FilterPanel = Backbone.View.extend({
 
 var metadata = new Metadata();
 
-var filterPanel = new FilterPanel({
+var project_topic = new FilterPanel({
+    el: $('#project_topic'),
+});
+
+var project_status = new FilterPanel({
     el: $('#project_status'),
 });
 
 metadata.fetch({
     success: function(collection, response, options){
-        filterPanel.collection = new FilterElementList(
+        project_topic.collection = new FilterElementList(
+            metadata.where({property_category: 'project_topic'})
+        );
+        project_topic.render();
+
+        project_status.collection = new FilterElementList(
             metadata.where({property_category: 'project_status'})
         );
-        filterPanel.render();
+        project_status.render();
+
         console.log('succes');
     },
     error: function(collection, xhr, options){
