@@ -35,10 +35,6 @@ FilterElementList = Backbone.Collection.extend({
     model: FilterElement,
     url: '',
 
-    comparator: function(item) {
-        return item.get('property_name');
-    }
-
 });
 
 Metadata = Backbone.Collection.extend({
@@ -49,6 +45,10 @@ Metadata = Backbone.Collection.extend({
     parse: function(data){
         return data.rows;
     },
+
+    comparator: function(item) {
+        return item.get('property_name');
+    }
 
 });
 
@@ -80,9 +80,7 @@ FilterPanel = Backbone.View.extend({
 
     render: function(){
         var app = this;
-        this.collection.models.forEach(function(element){
-            app.$el.append(app.template(element.toJSON()));
-        })
+        app.$el.append(app.template(app.model.toJSON()));
         return this;
     },
 
@@ -97,27 +95,18 @@ var projectsView = new ProjectListView({
 
 var metadata = new Metadata();
 
-var project_topic = new FilterPanel({
-    el: $('#project_topic'),
-});
-
-var project_status = new FilterPanel({
-    el: $('#project_status'),
-});
-
 projectsList.fetch();
 
 metadata.fetch({
     success: function(collection, response, options){
-        project_topic.collection = new FilterElementList(
-            metadata.where({property_category: 'project_topic'})
-        );
-        project_topic.render();
 
-        project_status.collection = new FilterElementList(
-            metadata.where({property_category: 'project_status'})
-        );
-        project_status.render();
+        metadata.models.forEach(function(element){
+            var filter_panel = new FilterPanel({
+                el: $('#' + element.get('property_category')),
+            });
+            filter_panel.model = element;
+            filter_panel.render();
+        })
 
         console.log('succes');
     },
