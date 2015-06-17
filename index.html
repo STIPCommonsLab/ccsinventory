@@ -13,7 +13,8 @@
   <body class="container-fluid">
 
     <header>
-      <nav class="row">
+      <nav>
+        <div>
         <image xlink:href="img/commons_logo.svg" src="img/commons_logo.png"
                width="260" height="40" />
         <image xlink:href="img/wilson_logo.svg" src="img/wilson_logo.png"
@@ -23,15 +24,18 @@
         <span><a href="about.html">About</a></span>
         <span><a class="lead-btn" href="add.html">Add project</a></span>
         <span><a class="current" href="index.html">Home</a></span>
+        </div>
       </nav>
-      <section id="hero-intro" class="row">
+      <section id="hero-intro">
+        <div>
         <h2>Inventory of federal crowdsourcing and citizen science projects</h2>
+        </div>
       </section>
     </header>
 
-    <main class="row main-content">
+    <main class="main-content">
 
-      <section id="filters" class="col-md-2">
+      <section id="filters" class="col-xs-2">
         <div class="input-group">
           <input id="searchinput" class="form-control" placeholder="Search for..." value="" type="search"> <span id="searchclear" class="glyphicon glyphicon-remove-circle" style="display: none;"></span>
           <span class="input-group-btn">
@@ -134,7 +138,7 @@
         </div>
       </section>
 
-      <section id="projects" class="col-md-2">
+      <section id="projects" class="col-xs-2">
         <h2><span class="project-num">0</span> projects</h2>
         <ul id="project_list" class="list-unstyled">
           
@@ -142,7 +146,7 @@
         </ul>
       </section>
 
-      <section id="map-container" class="col-md-8">
+      <section id="map-container" class="col-xs-8">
         <div id="map" class="row"></div>
       </section>
 
