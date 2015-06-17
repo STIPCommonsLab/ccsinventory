@@ -12,6 +12,7 @@ body,
 
 .main-content{
     min-height: 400px;
+    /* Fallback value for old browsers */
     height: 85%;
     height: calc(100vh - 149px);
 }
@@ -39,11 +40,17 @@ header nav div {
     margin: 0;
 }
 
+#left-panels,
 #filters,
 #projects,
 #map-container,
 #map{
     height: 100%;
+}
+
+#left-panels {
+   margin: 0px;
+   padding: 0px;
 }
 
 #input-map {

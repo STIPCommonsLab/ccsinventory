@@ -3,8 +3,9 @@
 Project = Backbone.Model.extend({
     defaults:{
         cartodb_id: null,
-        project_name: null,
-    }
+        project_name: null
+    },
+    idAttribute: 'cartodb_id'
 });
 
 FilterElement = Backbone.Model.extend({
@@ -19,7 +20,7 @@ FilterElement = Backbone.Model.extend({
 
 ProjectCollection = Backbone.Collection.extend({
     model: Project,
-    url: 'http://' + cdb_account + '.cartodb.com/api/v2/sql?q=SELECT cartodb_id, project_name FROM ' + cdb_projects_table,
+    url: 'http://' + cdb_account + '.cartodb.com/api/v2/sql?q=SELECT * FROM ' + cdb_projects_table,
 
     comparator: function(item) {
         return item.get('project_name');
@@ -74,13 +75,24 @@ var ProjectListView = Backbone.View.extend({
 
 });
 
-FilterPanel = Backbone.View.extend({
+var FilterPanel = Backbone.View.extend({
 
     template: _.template($('#filter-checkbox-tmpl').html()),
 
     render: function(){
         var app = this;
         app.$el.append(app.template(app.model.toJSON()));
+        return this;
+    },
+
+});
+
+var ProjectPanel = Backbone.View.extend({
+
+    template: _.template($('#project-data-tmpl').html()),
+
+    render: function(projectId){
+        this.$el.html(this.template(projectsList.get(projectId).toJSON()));
         return this;
     },
 
@@ -95,6 +107,15 @@ var projectsView = new ProjectListView({
 
 var metadata = new Metadata();
 
+var project_data = new ProjectPanel({
+  el: $('#project_data')
+});
+
+function show_project_panel(projectId) {
+  project_data.render(projectId);
+  $('#project_panel').animate({left: '0'});
+}
+
 projectsList.fetch();
 
 metadata.fetch({
@@ -108,7 +129,7 @@ metadata.fetch({
             filter_panel.render();
         })
 
-        console.log('succes');
+        console.log('success');
     },
     error: function(collection, xhr, options){
         console.log('error');
