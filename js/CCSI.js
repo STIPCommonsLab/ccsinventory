@@ -1,3 +1,12 @@
+project_fields = [
+  'cartodb_id',
+  'project_name',
+  'project_url',
+  'project_description',
+  'keywords',
+  'st_asgeojson(the_geom) as geojson'
+];
+
 // MODELS
 
 Project = Backbone.Model.extend({
@@ -20,14 +29,21 @@ FilterElement = Backbone.Model.extend({
 
 ProjectCollection = Backbone.Collection.extend({
     model: Project,
-    url: 'http://' + cdb_account + '.cartodb.com/api/v2/sql?q=SELECT * FROM ' + cdb_projects_table,
+    url: 'http://' + cdb_account + '.cartodb.com/api/v2/sql?q=SELECT ' + project_fields.join() + ' FROM ' + cdb_projects_table + ' WHERE project_name IS NOT NULL',
 
     comparator: function(item) {
         return item.get('project_name');
     },
 
     parse: function(data){
-        return data.rows;
+      rows = data.rows;
+      for (var i = 0, len = rows.length; i < len; i++) {
+        rows[i].geojson = JSON.parse(rows[i].geojson);
+        if (rows[i].geojson) {
+          rows[i].geojson.coordinates.reverse();
+        }
+      }
+      return rows;
     },
 
 });
@@ -111,9 +127,19 @@ var project_data = new ProjectPanel({
   el: $('#project_data')
 });
 
+function select_project(projectId) {
+  show_project_panel(projectId);
+  zoom_to_project(projectId);
+}
+
 function show_project_panel(projectId) {
   project_data.render(projectId);
   $('#project_panel').animate({left: '0'});
+}
+
+function zoom_to_project(projectId) {
+  map.setZoom(8);
+  map.panTo(projectsList.get(projectId).get('geojson').coordinates);
 }
 
 projectsList.fetch();
