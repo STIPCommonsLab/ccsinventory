@@ -162,12 +162,13 @@
     </script>
 
     <script type="text/template" id="project-data-tmpl">
-      <ul class="list-group">
-        <li class="list-group-item"><label>Project Name:</label><%- project_name %></li>
-        <li class="list-group-item"><label>URL:</label><a href="<%- project_url %>"><%- project_url %></a></li>
-        <li class="list-group-item"><label>Project Description:</label><%- project_description %></li>
-        <li class="list-group-item"><label>Keywords:</label><%- keywords %></li>
-      </ul>
+      <% if (project_url != null && project_url != '') { %>
+      <h3><a href="<%- project_url %>"><%- project_name %></a></h3>
+      <% } else { %>
+      <h3><%- project_name %></h3>
+      <% } %>
+      <p><%- project_description %></p>
+      <span id="keywords"><b>Keywords:</b> <%- keywords %></span>
     </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

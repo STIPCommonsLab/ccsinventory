@@ -57,9 +57,20 @@ header nav div {
   margin-right: 3px;
 }
 
-#project_data ul li label {
-  margin-right: 5px;
-  margin-bottom: 0px;
+#project_data h3 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+#project_data #keywords {
+  font-style: italic;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+#project_data a {
+   padding-right: 18px;
+   background: transparent url(../img/Icon_External_Link.png) no-repeat center right;
 }
 
 #input-map {
