@@ -18,16 +18,57 @@ var ProjectListView = Backbone.View.extend({
 
 });
 
+var ProjectPanel = Backbone.View.extend({
+
+    template: _.template($('#project-data-tmpl').html()),
+
+    render: function(projectId){
+        this.$el.html(this.template(projectsList.get(projectId).toJSON()));
+        return this;
+    },
+
+});
+
 var projectsList = new ProjectCollection();
 
 var projectsView = new ProjectListView({
-  el: $('#project_list'),
-  collection: projectsList
+    el: $('#project_list'),
+    collection: projectsList
 });
 
-projectsList.fetch();
-
 var metadata = new Metadata();
+
+var project_data = new ProjectPanel({
+  el: $('#project_data')
+});
+
+function select_project(projectId) {
+  if (typeof projectsList.get(projectId) !== 'undefined') {
+    window.location.hash = '#' + projectId;
+    show_project_panel(projectId);
+    zoom_to_project(projectId);
+  }
+}
+
+function show_project_panel(projectId) {
+  project_data.render(projectId);
+  $('#project_panel').animate({left: '0'});
+}
+
+function zoom_to_project(projectId) {
+  map.setZoom(8);
+  map.panTo(projectsList.get(projectId).get('geojson').coordinates);
+}
+
+projectsList.fetch({
+    success: function(collection, response, options) {
+      // If we have a project id in the URL fragment identifier, we display its data
+      if (window.location.hash &&
+        (typeof projectsList.get(window.location.hash.substr(1)) !== 'undefined')) {
+        show_project_panel(window.location.hash.substr(1));
+      }
+    }
+});
 
 metadata.fetch({
     success: function(collection, response, options){
@@ -40,7 +81,7 @@ metadata.fetch({
             filter_panel.render();
         })
 
-        console.log('succes');
+        console.log('success');
     },
     error: function(collection, xhr, options){
         console.log('error');
