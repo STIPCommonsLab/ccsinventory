@@ -36,10 +36,38 @@ var projectsView = new ProjectListView({
     collection: projectsList
 });
 
-var metadata = new Metadata();
-
 var project_data = new ProjectPanel({
   el: $('#project_data')
+});
+
+projectsList.fetch({
+    success: function(collection, response, options) {
+      // If we have a project id in the URL fragment identifier, we display its data
+      if (window.location.hash &&
+        (typeof projectsList.get(window.location.hash.substr(1)) !== 'undefined')) {
+        show_project_panel(window.location.hash.substr(1));
+      }
+    }
+});
+
+var metadata = new Metadata();
+
+metadata.fetch({
+    success: function(collection, response, options){
+
+        metadata.models.forEach(function(element){
+            var filter_panel = new FilterPanel({
+                el: $('#' + element.get('property_category')),
+            });
+            filter_panel.model = element;
+            filter_panel.render();
+        })
+
+        console.log('success');
+    },
+    error: function(collection, xhr, options){
+        console.log('error');
+    }
 });
 
 function select_project(projectId) {
@@ -59,31 +87,3 @@ function zoom_to_project(projectId) {
   map.setZoom(8);
   map.panTo(projectsList.get(projectId).get('geojson').coordinates);
 }
-
-projectsList.fetch({
-    success: function(collection, response, options) {
-      // If we have a project id in the URL fragment identifier, we display its data
-      if (window.location.hash &&
-        (typeof projectsList.get(window.location.hash.substr(1)) !== 'undefined')) {
-        show_project_panel(window.location.hash.substr(1));
-      }
-    }
-});
-
-metadata.fetch({
-    success: function(collection, response, options){
-
-        metadata.models.forEach(function(element){
-            var filter_panel = new FilterPanel({
-                el: $('#' + element.get('property_category')),
-            });
-            filter_panel.model = element;
-            filter_panel.render();
-        })
-
-        console.log('success');
-    },
-    error: function(collection, xhr, options){
-        console.log('error');
-    }
-});
