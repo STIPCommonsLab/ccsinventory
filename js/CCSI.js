@@ -4,6 +4,19 @@ project_fields = [
   'project_url',
   'project_description',
   'keywords',
+  'status',
+  'start_date',
+  'geographic_scope',
+  'participation_type',
+  'project_contact',
+  'affiliation',
+  'street_address',
+  'street_address_2',
+  'city',
+  'state',
+  'zip',
+  'email',
+  'phone',
   'st_asgeojson(the_geom) as geojson'
 ];
 

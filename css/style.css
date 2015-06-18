@@ -53,13 +53,38 @@ header nav div {
    padding: 0px;
 }
 
+#project_panel {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  z-index: 1000;
+}
+
+#project_panel > div {
+   overflow: auto;
+   width: 100%;
+   background-color: white;
+   height: 100%;
+} 
+
 #project_panel .close {
   margin-right: 3px;
 }
 
+#project_data {
+  padding: 15px;
+}
+
+#project_data label, p {
+  margin-bottom: 0px;
+  margin-top: 5px;
+}
+
 #project_data h3 {
   margin-top: 0px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 #project_data #keywords {
@@ -68,9 +93,25 @@ header nav div {
   margin-top: 10px;
 }
 
-#project_data a {
+#project_data .glyphicon {
+  margin-right: 8px;
+}
+
+#project_data div span {
+  margin-right: 20px;
+}
+
+#project_data h3 a {
    padding-right: 18px;
    background: transparent url(../img/Icon_External_Link.png) no-repeat center right;
+}
+
+#project_data #contact_info #contact_address {
+  display: table;
+}
+
+#project_data #contact_info #contact_address div {
+  float: right;
 }
 
 #input-map {

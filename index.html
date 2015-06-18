@@ -36,10 +36,10 @@
     <main class="main-content">
 
       <div id="left-panels" class="col-md-4 container">
-        <section id="project_panel" style="width: 100%; height: 100%; position: absolute; top: 0; left: -100%; z-index: 1000;">
-          <div style="overflow: auto; width: 100%; background-color: white; height: 100%;">
+        <section id="project_panel">
+          <div>
           <button type="button" id="close" class="close" onclick="Javascript:close_project_panel();return false;">&times;</button>
-          <div id="project_data" style="padding: 15px;"></div>
+          <div id="project_data"></div>
           </div>
         </section>
         <section id="filters" class="col-md-6">
@@ -167,8 +167,34 @@
       <% } else { %>
       <h3><%- project_name %></h3>
       <% } %>
+      <div><label>Field of science:</label> Awesome science</div>
+      <div><span><label>Status:</label> <%- status %></span><span><label>Start date:</label> <%- start_date %></span></div>
+      <div><label>Geographic scope:</label> <%- geographic_scope %></div>
       <p><%- project_description %></p>
-      <span id="keywords"><b>Keywords:</b> <%- keywords %></span>
+      <div id="keywords"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> <%- keywords %></div>
+      <hr>
+      <div id="additional_data">
+        <h4>Additional data</h4>
+        <div><label>Participation type:</label> <%- participation_type %></div>
+        <div><label>Participant age:</label> Very young!!</div>
+        <div><label>Intended outcomes:</label> Everything!!</div>
+        <div><label>Agency sponsors:</label> Nobody, sniff...</div>
+        <div><label>Agency partners:</label> Nobody, sniff...</div>
+      </div>
+      <hr>
+      <div id="contact_info">
+        <h4>Contact info</h4>
+        <div><span class="glyphicon glyphicon-user" aria-hidden="true"></span><span><%- project_contact %></span></div>
+        <div id="contact_address"><span class="glyphicon glyphicon-home" aria-hidden="true"></span><div><span><%- affiliation %></span><br>
+        <span><%- street_address %> <%- street_address_2 %></span><br>
+        <span><%- city %>, <%- state %> (<%- zip %>)</span></div></div>
+        <% if (phone != null && phone != '' && phone != 'n/a' && phone != '0') { %>
+        <span><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span><%- phone %></span><br>
+        <% } %>
+        <% if (email != null && email != '' && email.indexOf('@') != -1) { %>
+        <span><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a href="mailto:<%- email %>" target="_top"><%- email %></a></span>
+        <% } %>
+      </div>
     </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
