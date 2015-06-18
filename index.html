@@ -205,6 +205,12 @@
       // you can get the native map to work with it
       map = vis.getNativeMap();
 
+      // If we have a project id in the URL fragment identifier, we zoom onto it
+      if (window.location.hash &&
+        (typeof projectsList.get(window.location.hash.substr(1)) !== 'undefined')) {
+        zoom_to_project(window.location.hash.substr(1));
+      }
+
       // now, perform any operations you need
       // map.setZoom(3);
       // map.panTo([50.5, 30.5]);

@@ -128,8 +128,11 @@ var project_data = new ProjectPanel({
 });
 
 function select_project(projectId) {
-  show_project_panel(projectId);
-  zoom_to_project(projectId);
+  if (typeof projectsList.get(projectId) !== 'undefined') {
+    window.location.hash = '#' + projectId;
+    show_project_panel(projectId);
+    zoom_to_project(projectId);
+  }
 }
 
 function show_project_panel(projectId) {
@@ -142,7 +145,15 @@ function zoom_to_project(projectId) {
   map.panTo(projectsList.get(projectId).get('geojson').coordinates);
 }
 
-projectsList.fetch();
+projectsList.fetch({
+    success: function(collection, response, options) {
+      // If we have a project id in the URL fragment identifier, we display its data
+      if (window.location.hash &&
+        (typeof projectsList.get(window.location.hash.substr(1)) !== 'undefined')) {
+        show_project_panel(window.location.hash.substr(1));
+      }
+    }
+});
 
 metadata.fetch({
     success: function(collection, response, options){
