@@ -87,3 +87,12 @@ function zoom_to_project(projectId) {
   map.setZoom(8);
   map.panTo(projectsList.get(projectId).get('geojson').coordinates);
 }
+
+function close_project_panel() {
+  $('#project_panel').animate({left: '-100%'});
+  // Remove the fragment id from the URL
+  window.location.hash='';
+  // Reset the map to our starting view
+  map.setZoom(3);
+  map.panTo([36, -97]);
+}
