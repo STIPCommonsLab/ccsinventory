@@ -53,6 +53,15 @@ header nav div {
    padding: 0px;
 }
 
+#project_panel .close {
+  margin-right: 3px;
+}
+
+#project_data ul li label {
+  margin-right: 5px;
+  margin-bottom: 0px;
+}
+
 #input-map {
   height: 500px;
 }
