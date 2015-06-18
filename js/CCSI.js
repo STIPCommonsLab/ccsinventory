@@ -20,6 +20,21 @@ project_fields = [
   'st_asgeojson(the_geom) as geojson'
 ];
 
+// ROUTER
+
+Router = Backbone.Router.extend({
+    routes: {
+      'projectId/:id': 'selectProject'
+    },
+
+    initialize: function() {
+    },
+
+    selectProject: function(id) {
+      select_project(id);
+    }
+  });
+
 // MODELS
 
 Project = Backbone.Model.extend({

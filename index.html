@@ -212,6 +212,9 @@
 
 
     <script>
+      // Flag we use for identifying when both the map and project collection
+      // have been loaded
+      var ready = false;
       var map;
       var jsonViz = 'http://inventory.cartodb.com/api/v2/viz/ea121efc-d202-11e4-ae08-0e9d821ea90d/viz.json';
       <!-- 'https://inventory.cartodb.com/api/v2_1/viz/c5a41724-10f9-11e5-b25f-0e4fddd5de28/viz.json'; -->
@@ -233,11 +236,10 @@
       // you can get the native map to work with it
       map = vis.getNativeMap();
 
-      // If we have a project id in the URL fragment identifier, we zoom onto it
-      if (window.location.hash &&
-        (typeof projectsList.get(window.location.hash.substr(1)) !== 'undefined')) {
-        zoom_to_project(window.location.hash.substr(1));
+      if (ready) {
+        Backbone.history.start();
       }
+      ready = true;
 
       // now, perform any operations you need
       // map.setZoom(3);

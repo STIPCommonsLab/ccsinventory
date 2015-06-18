@@ -1,3 +1,5 @@
+var router = new Router();
+
 var ProjectListView = Backbone.View.extend({
 
   template: _.template($('#project-list-tmpl').html()),
@@ -23,6 +25,7 @@ var ProjectPanel = Backbone.View.extend({
     template: _.template($('#project-data-tmpl').html()),
 
     render: function(projectId){
+        router.navigate('projectId/' + projectId);
         this.$el.html(this.template(projectsList.get(projectId).toJSON()));
         return this;
     },
@@ -42,11 +45,10 @@ var project_data = new ProjectPanel({
 
 projectsList.fetch({
     success: function(collection, response, options) {
-      // If we have a project id in the URL fragment identifier, we display its data
-      if (window.location.hash &&
-        (typeof projectsList.get(window.location.hash.substr(1)) !== 'undefined')) {
-        show_project_panel(window.location.hash.substr(1));
+      if (ready) {
+        Backbone.history.start();
       }
+      ready = true;
     }
 });
 
@@ -72,7 +74,6 @@ metadata.fetch({
 
 function select_project(projectId) {
   if (typeof projectsList.get(projectId) !== 'undefined') {
-    window.location.hash = '#' + projectId;
     show_project_panel(projectId);
     zoom_to_project(projectId);
   }
@@ -91,7 +92,7 @@ function zoom_to_project(projectId) {
 function close_project_panel() {
   $('#project_panel').animate({left: '-100%'});
   // Remove the fragment id from the URL
-  window.location.hash='';
+  router.navigate();
   // Reset the map to our starting view
   map.setZoom(3);
   map.panTo([36, -97]);
