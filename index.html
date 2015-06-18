@@ -184,10 +184,15 @@
       <hr>
       <div id="contact_info">
         <h4>Contact info</h4>
+        <% if (project_contact != null && project_contact != '' && project_contact != 'n/a') { %>
         <div><span class="glyphicon glyphicon-user" aria-hidden="true"></span><span><%- project_contact %></span></div>
+        <% } %>
         <div id="contact_address"><span class="glyphicon glyphicon-home" aria-hidden="true"></span><div><span><%- affiliation %></span><br>
+        <% if ((street_address != null && street_address != '' && street_address != 'n/a') ||
+          (street_address_2 != null && street_address_2 != '' && street_address_2 != 'n/a')) { %>
         <span><%- street_address %> <%- street_address_2 %></span><br>
-        <span><%- city %>, <%- state %> (<%- zip %>)</span></div></div>
+        <% } %>
+        <span><%- city ? city + ', ' : '' %><%- state %> <%- zip ? '(' + zip + ')' : '' %></span></div></div>
         <% if (phone != null && phone != '' && phone != 'n/a' && phone != '0') { %>
         <span><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span><%- phone %></span><br>
         <% } %>

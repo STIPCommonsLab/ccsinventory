@@ -107,7 +107,8 @@ header nav div {
 }
 
 #project_data #contact_info #contact_address {
-  display: table;
+  width: 99%;
+  display: inline-flex;
 }
 
 #project_data #contact_info #contact_address div {
