@@ -224,35 +224,45 @@
       var jsonViz = 'http://inventory.cartodb.com/api/v2/viz/ea121efc-d202-11e4-ae08-0e9d821ea90d/viz.json';
       <!-- 'https://inventory.cartodb.com/api/v2_1/viz/c5a41724-10f9-11e5-b25f-0e4fddd5de28/viz.json'; -->
       function main() {
-      cartodb.createVis('map', jsonViz, {
-      tiles_loader: true,
-      center_lat: 36,
-      center_lon: -97,
-      zoom: 3
-      })
-      .done(function(vis, layers) {
-      // layer 0 is the base layer, layer 1 is cartodb layer
-      // setInteraction is disabled by default
-      layers[1].setInteraction(true);
-      layers[1].on('featureOver', function(e, latlng, pos, data) {
-      cartodb.log.log(e, latlng, pos, data);
-      });
+        cartodb.createVis('map', jsonViz, {
+          tiles_loader: true,
+          center_lat: 36,
+          center_lon: -97,
+          zoom: 3
+        }).done(function(vis, layers) {
+          // layer 0 is the base layer, layer 1 is cartodb layer
+          // setInteraction is disabled by default
+          layers[1].setInteraction(true);
+          layers[1].on('featureOver', function(e, latlng, pos, data) {
+            cartodb.log.log(e, latlng, pos, data);
+          });
 
-      // you can get the native map to work with it
-      map = vis.getNativeMap();
+          // you can get the native map to work with it
+          map = vis.getNativeMap();
 
-      if (ready) {
-        Backbone.history.start();
-      }
-      ready = true;
+          if (ready) {
+            Backbone.history.start();
+          }
+          ready = true;
 
-      // now, perform any operations you need
-      // map.setZoom(3);
-      // map.panTo([50.5, 30.5]);
-      })
-      .error(function(err) {
-      console.log(err);
-      });
+          // now, perform any operations you need
+          // map.setZoom(3);
+          // map.panTo([50.5, 30.5]);
+        }).error(function(err) {
+          console.log(err);
+        });
+
+        $("#searchinput").keyup(function(){
+          $("#searchclear").toggle(Boolean($(this).val()));
+        });
+
+        $("#searchclear").toggle(Boolean($("#searchinput").val()));
+
+        $("#searchclear").click(function(){
+          $("#searchinput").val('').focus();
+          $(this).hide();
+          //filterMap(layers);
+        });
       }
 
       window.onload = main;
