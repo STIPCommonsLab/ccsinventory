@@ -9,6 +9,7 @@ var ProjectListView = Backbone.View.extend({
   },
 
   render: function(){
+        this.$el.html('');
         var app = this;
         this.collection.models.forEach(function(element){
             app.$el.append(app.template(element.toJSON()));

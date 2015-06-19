@@ -50,22 +50,20 @@
             </span>
           </div>
 
-          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-            <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="headingOne">
-                <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Project Topic
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                <div id="project_topic" class="panel-body">
-                </div>
+          <div id="project_topic_filter" class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Project Topic
+                </a>
+              </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+              <div id="project_topic" class="panel-body">
               </div>
             </div>
           </div>
-          <div class="panel panel-default">
+          <div id="agency_sponsor_filter" class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingThree">
               <h4 class="panel-title">
                 <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -78,7 +76,7 @@
               </div>
             </div>
           </div>
-          <div class="panel panel-default">
+          <div id="agency_partner_filter" class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingFour">
               <h4 class="panel-title">
                 <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
@@ -91,7 +89,7 @@
               </div>
             </div>
           </div>
-          <div class="panel panel-default">
+          <div id="geographic_scope_filter" class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingFive">
               <h4 class="panel-title">
                 <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
@@ -104,7 +102,7 @@
               </div>
             </div>
           </div>
-          <div class="panel panel-default">
+          <div id="participant_age_filter" class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingSix">
               <h4 class="panel-title">
                 <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
@@ -117,7 +115,7 @@
               </div>
             </div>
           </div>
-          <div class="panel panel-default">
+          <div id="intended_outcomes_filter" class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingSeven">
               <h4 class="panel-title">
                 <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
@@ -151,7 +149,7 @@
     <script type="text/template" id="filter-checkbox-tmpl">
       <div class="checkbox">
         <label for="<%- property_category %>_<%- property_code %>">
-          <input type="checkbox" id="<%- property_code %>" />
+          <input type="checkbox" name="<%- property_code %>" onchange="Javascript:applyQuery();return false;"/>
           <%- property_name %>
         </label>
       </div>
@@ -240,6 +238,7 @@
       // have been loaded
       var ready = false;
       var map;
+      var layer;
       var jsonViz = 'http://inventory.cartodb.com/api/v2/viz/ea121efc-d202-11e4-ae08-0e9d821ea90d/viz.json';
       <!-- 'https://inventory.cartodb.com/api/v2_1/viz/c5a41724-10f9-11e5-b25f-0e4fddd5de28/viz.json'; -->
       function main() {
@@ -249,6 +248,7 @@
           center_lon: -97,
           zoom: 3
         }).done(function(vis, layers) {
+          layer = layers[1];
           infowindow_fields = [];
           project_fields.forEach(function(element, index, array) {
             if (index == array.length - 1) {
@@ -257,9 +257,9 @@
             infowindow_fields.push({name: element, title: true, position: index});
           });
 
-          layers[1].getSubLayer(1).infowindow.set('fields', infowindow_fields);
-          layers[1].getSubLayer(1).infowindow.set('template', $('#infowindow_template').html());
-          layers[1].getSubLayer(1).infowindow.set('sanitizeTemplate', false);
+          layer.getSubLayer(1).infowindow.set('fields', infowindow_fields);
+          layer.getSubLayer(1).infowindow.set('template', $('#infowindow_template').html());
+          layer.getSubLayer(1).infowindow.set('sanitizeTemplate', false);
 
           // you can get the native map to work with it
           map = vis.getNativeMap();
@@ -285,8 +285,88 @@
         $("#searchclear").click(function(){
           $("#searchinput").val('').focus();
           $(this).hide();
-          //filterMap(layers);
+          applyQuery();
         });
+      }
+
+      $("#filter-btn").click(function() {
+        applyQuery();
+      });
+
+      $('#searchinput').bind("keypress", function (e) {
+        if (e.keyCode == 13) {
+          applyQuery();
+        }
+      });
+
+      $("#searchclear").click(function(){
+        $("#searchinput").val('').focus();
+        $(this).hide();
+        applyQuery();
+      });
+
+      $('#searchinput').bind('notext', function () {
+        applyQuery();
+      });
+
+      function applyQuery() {
+        filterMap();
+        filterList();
+      }
+
+      function filterMap() {
+        fillWhere(); // set global var qParams
+        var points = layer.getSubLayer(1);
+        var cluster = layer.getSubLayer(0);
+        points.setSQL(qBase + " WHERE " + qParams);
+        cluster && filterCluster(cluster, " WHERE " + qParams);
+      }
+
+      function filterList() {
+        projectsList.fetch();
+      }
+
+      function fillWhere() {
+        qParams = '';
+        getSearchinput();
+        getCheckboxes();
+      }
+
+      function getCheckboxes() {
+        var groups = 0;
+        $('#filters .panel-body').each(function() {
+          var divId = this.id;
+          var paramNum = 0;
+          var groupInc = false;
+            $('#' + divId + ' :checkbox:checked').each(function() {
+            if (groups == 0 && paramNum == 0) {
+              qParams += ' AND (';
+            }
+            else if (groups > 0 && paramNum == 0) {
+              qParams += ' AND (';
+            }
+              if (paramNum > 0) qParams += ' OR ';
+              qParams += 'lower(' + divId + ') LIKE ' + "'%" + this.name.toLowerCase() + "%'";
+              paramNum++;
+              groupInc = true;
+            });
+
+            if(groupInc) {
+              qParams += ')';
+              groups++;
+            }
+        });
+      }
+
+      function getSearchinput() {
+        qParams += '(LOWER(project_name) LIKE ' + "LOWER('%" + $('#searchinput').val() + "%') ";
+        qParams += 'OR LOWER(project_description) LIKE ' + "LOWER('%" + $('#searchinput').val() + "%') ";
+        qParams += 'OR LOWER(keywords) LIKE ' + "LOWER('%" + $('#searchinput').val() + "%')";
+        qParams += ')';
+      }
+
+      function filterCluster(layer, where){
+        layer.setSQL("WITH meta AS (    SELECT greatest(!pixel_width!,!pixel_height!) as psz,ext, ST_XMin(ext) xmin, ST_YMin(ext) ymin FROM (SELECT !bbox! as ext) a),  filtered_table AS (    SELECT t.* FROM (SELECT * FROM " + cdb_projects_table +  " " + where + ") t, meta m WHERE t.the_geom_webmercator && m.ext  ), bucketA_snap AS (SELECT ST_SnapToGrid(f.the_geom_webmercator, 0, 0, m.psz * 48, m.psz * 48) the_geom_webmercator, count(*) as points_count, 1 as cartodb_id, array_agg(f.cartodb_id) AS id_list  FROM filtered_table f, meta m  GROUP BY ST_SnapToGrid(f.the_geom_webmercator, 0, 0, m.psz * 48, m.psz * 48), m.xmin, m.ymin), bucketA  AS (SELECT * FROM bucketA_snap WHERE points_count >  48 * 1 ) , bucketB_snap AS (SELECT ST_SnapToGrid(f.the_geom_webmercator, 0, 0, m.psz * 0.75 * 48, m.psz * 0.75 * 48) the_geom_webmercator, count(*) as points_count, 1 as cartodb_id, array_agg(f.cartodb_id) AS id_list  FROM filtered_table f, meta m  WHERE cartodb_id NOT IN (select unnest(id_list) FROM bucketA)  GROUP BY ST_SnapToGrid(f.the_geom_webmercator, 0, 0, m.psz * 0.75 * 48, m.psz * 0.75 * 48), m.xmin, m.ymin), bucketB  AS (SELECT * FROM bucketB_snap WHERE points_count >  48 * 0.75 ) , bucketC_snap AS (SELECT ST_SnapToGrid(f.the_geom_webmercator, 0, 0, m.psz * 0.5 * 48, m.psz * 0.5 * 48) the_geom_webmercator, count(*) as points_count, 1 as cartodb_id, array_agg(f.cartodb_id) AS id_list  FROM filtered_table f, meta m  WHERE cartodb_id NOT IN (select unnest(id_list) FROM bucketA)  AND cartodb_id NOT IN (select unnest(id_list) FROM bucketB)  GROUP BY ST_SnapToGrid(f.the_geom_webmercator, 0, 0, m.psz * 0.5 * 48, m.psz * 0.5 * 48), m.xmin, m.ymin), bucketC  AS (SELECT * FROM bucketC_snap WHERE points_count >  GREATEST(48 * 0.1, 2)  )  SELECT the_geom_webmercator, 1 points_count, cartodb_id, ARRAY[cartodb_id] as id_list, 'origin' as src, cartodb_id::text cdb_list FROM filtered_table WHERE cartodb_id NOT IN (select unnest(id_list) FROM bucketA) AND cartodb_id NOT IN (select unnest(id_list) FROM bucketB) AND cartodb_id NOT IN (select unnest(id_list) FROM bucketC)  UNION ALL SELECT *, 'bucketA' as src, array_to_string(id_list, ',') cdb_list FROM bucketA UNION ALL SELECT *, 'bucketB' as src, array_to_string(id_list, ',') cdb_list FROM bucketB UNION ALL SELECT *, 'bucketC' as src, array_to_string(id_list, ',') cdb_list FROM bucketC");
       }
 
       window.onload = main;

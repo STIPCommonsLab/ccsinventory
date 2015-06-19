@@ -1,4 +1,4 @@
-project_fields = [
+var project_fields = [
   'cartodb_id',
   'project_name',
   'project_url',
@@ -19,6 +19,8 @@ project_fields = [
   'phone',
   'st_asgeojson(the_geom) as geojson'
 ];
+var qBase = "select * from " + cdb_projects_table;
+var qParams = '';
 
 // ROUTER
 
@@ -57,7 +59,10 @@ FilterElement = Backbone.Model.extend({
 
 ProjectCollection = Backbone.Collection.extend({
     model: Project,
-    url: 'http://' + cdb_account + '.cartodb.com/api/v2/sql?q=SELECT ' + project_fields.join() + ' FROM ' + cdb_projects_table + ' WHERE project_name IS NOT NULL',
+
+    url: function() {
+      return 'http://' + cdb_account + '.cartodb.com/api/v2/sql?q=SELECT ' + project_fields.join() + ' FROM ' + cdb_projects_table + (qParams ? ' WHERE ' + qParams.replace(new RegExp('[%]', 'g'), '%25') : '');
+    },
 
     comparator: function(item) {
         return item.get('project_name');
