@@ -51,6 +51,18 @@ $app->post('/project', function () use ($app, $cartodb_username, $staging_table,
 
 });
 
+/*
+ * Add a new project
+ */
+$app->options('/project', function () use ($app) {
+
+    $app->response()->header('Content-Type', 'application/json');
+
+    echo json_encode(true);
+
+});
+
+
 
 /*
  * Runing the Slim app
