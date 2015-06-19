@@ -31,11 +31,17 @@ var ProjectForm = Backbone.View.extend({
   },
    
   save: function() {
-    var arr = this.$el.serializeArray();
-    var data = _(arr).reduce(function(acc, field) {
-      acc[field.name] = field.value;
-      return acc;
-    }, {});
+    var o = {};
+    var a = this.$el.serializeArray();
+    $.each(a, function() {
+        if (o[this.name] !== undefined) {
+            o[this.name] += ', ' + this.value;
+        } else {
+            o[this.name] = this.value || '';
+        }
+    });
+    
+    alert(JSON.stringify(o));
     this.model.save(data);
     return false;
   }
