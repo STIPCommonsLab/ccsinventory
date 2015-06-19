@@ -239,7 +239,7 @@
       var ready = false;
       var map;
       var layer;
-      var jsonViz = 'http://inventory.cartodb.com/api/v2/viz/ea121efc-d202-11e4-ae08-0e9d821ea90d/viz.json';
+      var jsonViz = 'https://inventory.cartodb.com/api/v2_1/viz/c5a41724-10f9-11e5-b25f-0e4fddd5de28/viz.json';
       <!-- 'https://inventory.cartodb.com/api/v2_1/viz/c5a41724-10f9-11e5-b25f-0e4fddd5de28/viz.json'; -->
       function main() {
         cartodb.createVis('map', jsonViz, {
@@ -257,9 +257,9 @@
             infowindow_fields.push({name: element, title: true, position: index});
           });
 
-          layer.getSubLayer(1).infowindow.set('fields', infowindow_fields);
-          layer.getSubLayer(1).infowindow.set('template', $('#infowindow_template').html());
-          layer.getSubLayer(1).infowindow.set('sanitizeTemplate', false);
+          layer.getSubLayer(0).infowindow.set('fields', infowindow_fields);
+          layer.getSubLayer(0).infowindow.set('template', $('#infowindow_template').html());
+          layer.getSubLayer(0).infowindow.set('sanitizeTemplate', false);
 
           // you can get the native map to work with it
           map = vis.getNativeMap();
@@ -316,10 +316,10 @@
 
       function filterMap() {
         fillWhere(); // set global var qParams
-        var points = layer.getSubLayer(1);
-        var cluster = layer.getSubLayer(0);
+        var points = layer.getSubLayer(0);
+        //var cluster = layer.getSubLayer(0);
         points.setSQL(qBase + " WHERE " + qParams);
-        cluster && filterCluster(cluster, " WHERE " + qParams);
+        //cluster && filterCluster(cluster, " WHERE " + qParams);
       }
 
       function filterList() {
