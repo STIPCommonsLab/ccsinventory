@@ -61,6 +61,7 @@ ProjectCollection = Backbone.Collection.extend({
     model: Project,
 
     url: function() {
+      // The regexp replacement was added because of some encoding problem with %, so we have to "encode" them manually
       return 'http://' + cdb_account + '.cartodb.com/api/v2/sql?q=SELECT ' + project_fields.join() + ' FROM ' + cdb_projects_table + (qParams ? ' WHERE ' + qParams.replace(new RegExp('[%]', 'g'), '%25') : '');
     },
 
