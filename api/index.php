@@ -14,7 +14,7 @@ $app = new \Slim\Slim();
 /*
  * Add a new project
  */
-$app->post('/project', function () use ($app) {
+$app->post('/project', function () use ($app, $cartodb_username, $staging_table, $api_key) {
 
     /*
      * We are reading JSON object received in HTTP request body and converting it to array
