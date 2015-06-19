@@ -202,6 +202,25 @@
       </div>
     </script>
 
+    <script type="infowindow/html" id="infowindow_template">
+      <div class="cartodb-popup v2">
+        <a href="#close" class="cartodb-popup-close-button close">x</a>
+        <div class="cartodb-popup-content-wrapper">
+          <div class="cartodb-popup-content">
+            <h3>{{project_name}}</h3>
+            <br>
+            <p>Keywords: {{keywords}}</p>
+            <p>{{project_description}}</p>
+            <p>{{participation_type}}</p>
+            <p><a href="{{project_url}}" target="_blank">{{project_url}}</a></p>
+            <p><a href="#projectId/{{cartodb_id}}">More info</a>
+            </p>
+          </div>
+        </div>
+        <div class="cartodb-popup-tip-container"></div>
+      </div>
+    </script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="http://libs.cartocdn.com/cartodb.js/v3/3.14/cartodb.js"></script>
@@ -230,12 +249,17 @@
           center_lon: -97,
           zoom: 3
         }).done(function(vis, layers) {
-          // layer 0 is the base layer, layer 1 is cartodb layer
-          // setInteraction is disabled by default
-          layers[1].setInteraction(true);
-          layers[1].on('featureOver', function(e, latlng, pos, data) {
-            cartodb.log.log(e, latlng, pos, data);
+          infowindow_fields = [];
+          project_fields.forEach(function(element, index, array) {
+            if (index == array.length - 1) {
+              return;
+            }
+            infowindow_fields.push({name: element, title: true, position: index});
           });
+
+          layers[1].getSubLayer(1).infowindow.set('fields', infowindow_fields);
+          layers[1].getSubLayer(1).infowindow.set('template', $('#infowindow_template').html());
+          layers[1].getSubLayer(1).infowindow.set('sanitizeTemplate', false);
 
           // you can get the native map to work with it
           map = vis.getNativeMap();
