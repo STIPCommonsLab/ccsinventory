@@ -45,6 +45,8 @@ Project = Backbone.Model.extend({
         project_name: null
     },
     idAttribute: 'cartodb_id'
+
+    url: 'http://198.211.119.82/ccsinventory/api/index.php/project';
 });
 
 FilterElement = Backbone.Model.extend({

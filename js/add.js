@@ -40,9 +40,8 @@ var ProjectForm = Backbone.View.extend({
             o[this.name] = this.value || '';
         }
     });
-    
-    alert(JSON.stringify(o));
-    this.model.save(data);
+
+    this.model.save(JSON.stringify(o));
     return false;
   }
 });
