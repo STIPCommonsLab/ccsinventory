@@ -410,3 +410,7 @@ nav a.current{
     background-color: #FE8433;
     border-color: #00A1DC;
 }
+
+div.cartodb-popup.v2 {
+  width:417px
+}

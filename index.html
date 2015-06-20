@@ -246,32 +246,32 @@
           tiles_loader: true,
           center_lat: 36,
           center_lon: -97,
-          zoom: 3
+          zoom: 3,
+          infowindow: false
         }).done(function(vis, layers) {
-          layer = layers[1];
-          infowindow_fields = [];
-          project_fields.forEach(function(element, index, array) {
-            if (index == array.length - 1) {
-              return;
-            }
-            infowindow_fields.push({name: element, title: true, position: index});
-          });
-
-          layer.getSubLayer(0).infowindow.set('fields', infowindow_fields);
-          layer.getSubLayer(0).infowindow.set('template', $('#infowindow_template').html());
-          layer.getSubLayer(0).infowindow.set('sanitizeTemplate', false);
-
           // you can get the native map to work with it
           map = vis.getNativeMap();
+          layer = layers[1];
+
+          // Hack needed in order to add the infowindow programmatically
+          map.viz = vis;
+          // Manually add our infowindow
+          // TODO activate clusters
+          cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(0),
+            ['cartodb_id', 'project_name', 'keywords', 'project_description', 'participation_type', 'project_url'],
+            {
+              infowindowTemplate: $('#infowindow_template').html(),
+              templateType: 'mustache',
+              triggerEvent: 'featureClick',
+              cursorInteraction: true,
+              sanitizeTemplate: false
+            }
+          );
 
           if (ready) {
             Backbone.history.start();
           }
           ready = true;
-
-          // now, perform any operations you need
-          // map.setZoom(3);
-          // map.panTo([50.5, 30.5]);
         }).error(function(err) {
           console.log(err);
         });
@@ -317,8 +317,10 @@
       function filterMap() {
         fillWhere(); // set global var qParams
         var points = layer.getSubLayer(0);
+        // TODO activate clusters
         //var cluster = layer.getSubLayer(0);
         points.setSQL(qBase + " WHERE " + qParams);
+        // TODO activate clusters
         //cluster && filterCluster(cluster, " WHERE " + qParams);
       }
 
