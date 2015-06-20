@@ -21,6 +21,8 @@ $app->post('/project', function () use ($app, $cartodb_username, $staging_table,
      */
     $data = (array) json_decode($app->request()->getBody());
 
+    unset($data['cartodb_id']);
+    
     foreach($data as $key => $value) {
         if($key == 'the_geom') {
             $data[$key] = sanitizeInput($value);
@@ -28,8 +30,6 @@ $app->post('/project', function () use ($app, $cartodb_username, $staging_table,
             $data[$key] = "'" . sanitizeInput($value) . "'";
         }
     }
-
-    unset($data['cartodb_id']);
 
     $sql = insertSQL($staging_table, $data);
 
