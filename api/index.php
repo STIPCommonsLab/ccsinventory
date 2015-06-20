@@ -29,6 +29,8 @@ $app->post('/project', function () use ($app, $cartodb_username, $staging_table,
         }
     }
 
+    unset($data['cartodb_id']);
+
     $sql = insertSQL($staging_table, $data);
 
 	//---------------
@@ -47,21 +49,9 @@ $app->post('/project', function () use ($app, $cartodb_username, $staging_table,
     /*
      * Outputing request, we need to return whole task object as an array, that way ID will be automatically added to model
      */
-    echo json_encode($result_not_parsed);
+    echo json_encode($sql);
 
 });
-
-/*
- * Add a new project
- */
-$app->options('/project', function () use ($app) {
-
-    $app->response()->header('Content-Type', 'application/json');
-
-    echo json_encode(true);
-
-});
-
 
 
 /*

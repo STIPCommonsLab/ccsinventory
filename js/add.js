@@ -41,7 +41,7 @@ var ProjectForm = Backbone.View.extend({
         }
     });
     
-    this.model.save(JSON.stringify(o));
+    this.model.save(o);
     return false;
   }
 });
