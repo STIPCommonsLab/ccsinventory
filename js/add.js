@@ -40,9 +40,17 @@ var ProjectForm = Backbone.View.extend({
             o[this.name] = this.value || '';
         }
     });
-    
-    this.model.save(o);
-    return false;
+
+    this.model.save(o, {
+        success: function (model, response) {
+            console.log("success");
+            form_panel = $('#submit-form');
+            form_panel.html(_.template($('#success-tmpl').html()));
+        },
+        error: function (model, response) {
+            console.log("error");
+        }
+    });
   }
 });
  
