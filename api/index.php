@@ -25,7 +25,11 @@ $app->post('/project', function () use ($app, $cartodb_username, $staging_table,
     
     foreach($data as $key => $value) {
         if($key == 'the_geom') {
-            $data[$key] = sanitizeInput($value);
+            if($value == '') {
+                $data[$key] = 'null';
+            }else{
+                $data[$key] = sanitizeInput($value);
+            }
         }else{
             $data[$key] = "'" . sanitizeInput($value) . "'";
         }
@@ -49,7 +53,7 @@ $app->post('/project', function () use ($app, $cartodb_username, $staging_table,
     /*
      * Outputing request, we need to return whole task object as an array, that way ID will be automatically added to model
      */
-    echo json_encode($result_not_parsed);
+    echo json_encode($sql);
 
 });
 
