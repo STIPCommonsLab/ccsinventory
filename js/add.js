@@ -16,7 +16,7 @@ metadata.fetch({
             filter_panel.render();
         })
 
-        console.log('succes');
+        console.log('success');
     },
     error: function(collection, xhr, options){
         console.log('error');
@@ -42,15 +42,19 @@ var ProjectForm = Backbone.View.extend({
     });
 
     this.model.save(o, {
-        success: function (model, response) {
-            console.log("success");
+        success: function(model, response) {
             form_panel = $('#submit-form');
-            form_panel.html(_.template($('#success-tmpl').html()));
+            form_panel.html(_.template($('#success-tmpl').html()));            
+            console.log(model);
+            console.log(response);
         },
-        error: function (model, response) {
-            console.log("error");
+        error: function(model, response) {
+            console.log(model);
+            console.log(response);
         }
     });
+
+    return false;
   }
 });
  
