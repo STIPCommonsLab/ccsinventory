@@ -76,8 +76,16 @@ metadata.fetch({
 function select_project(projectId) {
   if (typeof projectsList.get(projectId) !== 'undefined') {
     show_project_panel(projectId);
+    if (!project_panel_visible()) {
+      // If we weren't viewing projects, we store the current view
+      store_map_state();
+    }
     zoom_to_project(projectId);
   }
+}
+
+function project_panel_visible() {
+  return $('#project_panel').css('left') == '0px';
 }
 
 function show_project_panel(projectId) {
@@ -94,7 +102,17 @@ function close_project_panel() {
   $('#project_panel').animate({left: '-100%'});
   // Remove the fragment id from the URL
   router.navigate();
-  // Reset the map to our starting view
-  map.setZoom(3);
-  map.panTo([36, -97]);
+  // Reset the map to our previous view
+  reset_view();
+}
+
+function reset_view() {
+  map.setZoom(previous_zoom);
+  map.panTo(previous_center);
+}
+
+function store_map_state() {
+  previous_zoom = map.getZoom();
+  center = map.getCenter();
+  previous_center = [center.lat, center.lng];
 }
