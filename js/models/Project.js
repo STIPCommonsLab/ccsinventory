@@ -5,6 +5,6 @@ CcsInventory.Models.Project = Backbone.Model.extend({
     },
     idAttribute: 'cartodb_id',
 
-    urlRoot: 'http://198.211.119.82/ccsinventory/api/index.php/project'    
+    urlRoot: 'http://198.211.119.82/ccsinventory/api/index.php/project'
 
 });
