@@ -28,15 +28,31 @@ var project_fields = [
     'st_asgeojson(the_geom) as geojson'
 ];
 
-var projects_list_view = new CcsInventory.Views.ProjectsListView({
+var projects_list_view = new CCSI.Views.ProjectList({
     el: $('#project_list')
 });
 
-new CcsInventory.Collections.Metadata();
+var properties = new CCSI.Collections.Properties();
 
-var router = new CcsInventory.Routers.Project();
+properties.fetch({
+    success: function(collection, response, options){
+        properties.models.forEach(function(element){
+            var property_panel = new CCSI.Views.PropertyComponent({
+                el: $('#' + element.get('property_category')),
+            });
+            property_panel.model = element;
+            property_panel.render();
+        })
+        console.log('success');
+    },
+    error: function(collection, xhr, options){
+        console.log('error');
+    }
+});
 
-var project_data = new CcsInventory.Views.ProjectPanel({
+var router = new CCSI.Routers.Project();
+
+var project_data = new CCSI.Views.ProjectPanel({
     collection: projects_list_view.collection,
     el: $('#project_data')
 });

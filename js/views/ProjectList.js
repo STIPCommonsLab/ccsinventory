@@ -1,8 +1,8 @@
-CcsInventory.Views.ProjectsListView = Backbone.View.extend({
+CCSI.Views.ProjectList = Backbone.View.extend({
     template: _.template($('#project-list-tmpl').html()),
 
     initialize: function() {
-        this.collection = new CcsInventory.Collections.ProjectsCollection();
+        this.collection = new CCSI.Collections.Projects();
         this.listenTo(this.collection, 'sync', this.render);
         this.collection.fetch({
             success: function(collection, response, options) {

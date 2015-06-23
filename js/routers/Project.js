@@ -1,4 +1,4 @@
-CcsInventory.Routers.Project = Backbone.Router.extend({
+CCSI.Routers.Project = Backbone.Router.extend({
     routes: {
         'projectId/:id': 'selectProject'
     },

@@ -1,4 +1,4 @@
-var CcsInventory = {
+var CCSI = {
     Models: {},
     Collections: {},
     Views: {},

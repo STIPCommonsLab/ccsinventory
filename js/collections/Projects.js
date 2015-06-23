@@ -1,5 +1,5 @@
-CcsInventory.Collections.ProjectsCollection = Backbone.Collection.extend({
-    model: CcsInventory.Models.Project,
+CCSI.Collections.Projects = Backbone.Collection.extend({
+    model: CCSI.Models.Project,
 
     url: function() {
         // The regexp replacement was added because of some encoding problem with %, so we have to "encode" them manually

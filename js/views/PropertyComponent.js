@@ -1,4 +1,4 @@
-CcsInventory.Views.FilterPanel = Backbone.View.extend({
+CCSI.Views.PropertyComponent = Backbone.View.extend({
     template: _.template($('#filter-checkbox-tmpl').html()),
 
     render: function(){

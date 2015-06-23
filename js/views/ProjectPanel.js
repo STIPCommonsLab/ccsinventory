@@ -1,4 +1,4 @@
-CcsInventory.Views.ProjectPanel = Backbone.View.extend({
+CCSI.Views.ProjectPanel = Backbone.View.extend({
     template: _.template($('#project-data-tmpl').html()),
 
     render: function(projectId){

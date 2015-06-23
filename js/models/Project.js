@@ -1,4 +1,4 @@
-CcsInventory.Models.Project = Backbone.Model.extend({
+CCSI.Models.Project = Backbone.Model.extend({
     defaults:{
         cartodb_id: null,
         project_name: null
