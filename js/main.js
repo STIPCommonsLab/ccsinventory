@@ -20,6 +20,11 @@ var project_fields = [
   'zip',
   'email',
   'phone',
+  'project_topic',
+  'participant_age',
+  'intended_outcomes',
+  'agency_partner',
+  'agency_sponsor',
   'st_asgeojson(the_geom) as geojson'
 ];
 
