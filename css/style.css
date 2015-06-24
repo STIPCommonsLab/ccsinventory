@@ -12,11 +12,6 @@ body,
     height: 85%;
 }
 
-#hero-intro h2{
-    margin: 0;
-    padding: 0.8em 0 0.8em 0;
-}
-
 #filters,
 #projects,
 #project_panel,
@@ -35,28 +30,80 @@ body,
     overflow-y: scroll;
 }
 
-/* managing sections space */
+/* sections micro-space */
 
 nav{
-    padding: 1em 0 1em 0;
+    padding: 2em 0 2em 0;
+}
+
+#hero-intro h2{
+    margin: 0;
+    padding: 0.8em 0 0.8em 0;
+}
+
+#filters,
+#projects{
+    padding-top: 1em;
+}
+
+.input-group {
+    margin-bottom: 2em;
+}
+
+#projects h2{
+    margin: 0;
+    padding-bottom: .5em;
 }
 
 #submit-form {
-    padding: 1em 3em 1em 3em;
+    padding: 0 3em 0 0;
+}
+
+#submit-form-div{
+    padding: 2em 4em 2em 4em;
 }
 
 #about,
 #data-policy{
     padding: 1em 3em 3em 3em;
 }
+
+.footer-nav{
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.footer-nav li{
+    margin: .5em 0 .5em 0;
+}
+
+.copyright{
+    padding-top: 1em;
+}
+
+.initiative-by{
+    margin-top: .5em;
+    margin-bottom: 1em;
+}
+
+.initiative-by img{
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
 /* ----- MODULES ----- */
 
 /* buttons style for links */
 nav a {
     padding: .3em .9em .3em .9em;
     border-radius: 20px;
-    margin: .4% .2% 0% .2%;
+    margin: .4% .7% 0% .7%;
     float: right;
+}
+
+.footer-nav a{
+    padding: .3em .9em .3em .9em;
+    border-radius: 20px;
 }
 
 /* explanations in form */
@@ -81,23 +128,6 @@ nav a {
    background: transparent url(../img/Icon_External_Link.png) no-repeat center right;
 }
 
-/* more space above projects & filters sidebar */
-#filters,
-#projects{
-    padding-top: 1em;
-}
-
-/* more space below search box */
-.input-group {
-    margin-bottom: 2em;
-}
-
-/* projects summary: reset margins and give space */
-#projects h2{
-    margin: 0;
-    padding-bottom: .5em;
-}
-
 /* each project stands for itself */
 #projects li {
     border-bottom: 1px dashed #d3d3d3;
@@ -106,7 +136,7 @@ nav a {
 }
 
 /* more space within form components: fieldset block and header (legend) */
-fieldset{
+fieldset {
         margin-top: 3em;
 }
 
@@ -142,7 +172,6 @@ body{
 
 .well{
     font-weight:300;
-
 }
 
 #hero-intro,
@@ -163,57 +192,47 @@ from there: nav and hero sections are a shade variation of the blue sea.
 
 */
 
-nav{
+nav,
+.footer-nav{
     background-color: #36537d;
-}
-
-body{
-    background-color: #f3f3f3;
 }
 
 #hero-intro{
     background-color: #486fa6;
 }
 
+main,
+#submit-form{
+    background-color: #f3f3f3;
+}
+
 #about,
 #data-policy,
 #filters,
 #projects,
-#project_panel{
+#project_panel,
+#submit-form-div{
     background-color: white;
+}
+
+.copyright{
+    background-color: #1D3464;
 }
 
 #map-container{
     background-color: #d8e1ee;
 }
 
-#submit-form{
-    background-color: white;
-}
-
-header{
-    color: white;
-}
-
-a {
-    color:#00a2da;
-}
-
-a:hover{
-    color:#FE8433;
-}
-
 nav a{
     background-color: #192639;
-    color: white;
 }
 
-nav a:hover{
+nav a:hover,
+.footer-nav a:hover{
     background-color: #486fa6;
-    color: white;
 }
 
-nav a.current{
+.current{
     background-color: #36537d;
 }
 
@@ -225,15 +244,44 @@ nav a.current{
     background-color: #fd6d3c;
 }
 
+header,
+footer {
+    color: white;
+}
+
+.copyright {
+    color: #5A87AA;
+}
+
+a {
+    color: #00a2da;
+}
+
+.copyright a:hover,
+a:hover {
+    color: #FE8433;
+}
+
+nav a,
+.footer-nav a,
+nav a:hover,
+.footer-nav a:hover,
+.copyright a{
+    color: white;
+}
+
 .orange{
     color:#FE8433;
 }
+
 .light-blue{
     color:#00A1DC;
 }
+
 .blue{
     color:#0067AB;
 }
+
 .light-grey{
     color:#e2e3e4;
 }
