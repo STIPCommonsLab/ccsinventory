@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <title>Inventory of federal crowdsourcing and citizen science projects, by Commons Lab - Wilson Center</title>
-    <link rel="shortcut icon" href="http://cartodb.com/assets/favicon.ico" />
-    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.14/themes/css/cartodb.css" />
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/cartodb.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="container-fluid">
 
@@ -217,15 +217,13 @@
       </div>
     </script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/vendor/jquery-min-1.11.3.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
-    <script src="http://libs.cartocdn.com/cartodb.js/v3/3.14/cartodb.js"></script>
-
-    <!-- backbone -->
-
-    <script src="js/libs/json2.js"></script>
-    <script src="js/libs/underscore-min-1.8.2.js"></script>
-    <script src="js/libs/backbone-min-1.2.1.js"></script>
+    <script src="js/vendor/cartodb.js"></script>
+    <script src="js/vendor/json2.js"></script>
+    <script src="js/vendor/underscore-min-1.8.2.js"></script>
+    <script src="js/vendor/backbone-min-1.2.1.js"></script>
+    <!-- our own -->
     <script src="js/config.js"></script>
     <script src="js/CCSI.js"></script>
     <script src="js/models/Property.js"></script>
@@ -246,7 +244,8 @@
       var previous_zoom = 3;
       var previous_center = [36, -97];
       var layer;
-      var jsonViz = 'https://inventory.cartodb.com/api/v2_1/viz/c5a41724-10f9-11e5-b25f-0e4fddd5de28/viz.json';
+      var jsonViz = '';
+      <!-- var jsonViz = 'https://inventory.cartodb.com/api/v2_1/viz/c5a41724-10f9-11e5-b25f-0e4fddd5de28/viz.json'; -->
       <!-- 'https://inventory.cartodb.com/api/v2_1/viz/c5a41724-10f9-11e5-b25f-0e4fddd5de28/viz.json'; -->
       function main() {
         cartodb.createVis('map', jsonViz, {
