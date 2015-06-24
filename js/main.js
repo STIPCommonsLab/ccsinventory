@@ -72,18 +72,22 @@ function project_panel_visible() {
     return $('#project_panel').css('left') == '0px';
 }
 
-function show_project_panel(projectId) {
-    project_data.render(projectId);
-    $('#project_panel').animate({left: '0'});
-}
-
 function zoom_to_project(projectId) {
     map.setZoom(8);
     map.panTo(project_data.collection.get(projectId).get('geojson').coordinates);
 }
 
+function show_project_panel(projectId) {
+    project_data.render(projectId);
+    $('#project_panel').addClass('col-md-4').removeClass('hidden');
+    $('#filters').addClass('hidden');
+    $('#projects').addClass('hidden');
+}
+
 function close_project_panel() {
-    $('#project_panel').animate({left: '-100%'});
+    $('#project_panel').removeClass('col-md-4').addClass('hidden');
+    $('#filters').removeClass('hidden');
+    $('#projects').removeClass('hidden');
     // Remove the fragment id from the URL
     router.navigate();
     // Reset the map to our previous view
