@@ -22,6 +22,12 @@ CCSI.Views.ProjectList = Backbone.View.extend({
         })
 
         $('.project-num').text(this.collection.length);
+        var agencies = this.collection.pluck('agency_sponsor').join(',').split(',').map(
+            function(str){ return str.trim()}
+        );
+        agencies = _.compact(_.uniq(agencies));
+        console.log(agencies);
+        $('.agency-num').text(agencies.length);
         return this;
     }
 });

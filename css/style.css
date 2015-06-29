@@ -41,9 +41,17 @@ nav{
     padding: 0.8em 0 0.8em 0;
 }
 
-#filters,
-#projects{
+#filters{
     padding-top: 1em;
+}
+
+#projects > div{
+    border-bottom: 1px solid #f3f3f3;
+    margin-bottom: 1em;
+}
+
+#projects-summary{
+    border-right: 1px solid #f3f3f3;
 }
 
 .input-group {
@@ -130,7 +138,7 @@ nav a {
 
 /* each project stands for itself */
 #projects li {
-    border-bottom: 1px dashed #d3d3d3;
+    border-bottom: 1px solid #f3f3f3;
     margin-bottom: 0.5em;
     /* padding-bottom: 0.1em; */
 }

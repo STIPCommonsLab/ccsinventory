@@ -128,8 +128,18 @@
           </div>
         </section>
 
+
         <section id="projects" class="col-md-2">
-          <h2><span class="project-num">0</span> projects</h2>
+          <div class="row">
+            <div id="projects-summary" class="col-md-6 text-center">
+              <h5>PROJECTS</h5>
+              <h2><span class="project-num">0</span></h2>
+            </div>
+            <div id="agencies-summary" class="col-md-6 text-center">
+              <h5>AGENCIES</h5>
+              <h2><span class="agency-num">0</span></h2>
+            </div>
+          </div>
           <ul id="project_list" class="list-unstyled">
           </ul>
         </section>
@@ -178,7 +188,7 @@
     </script>
 
     <script type="text/template" id="project-list-tmpl">
-      <li><a href="#projectId/<%- cartodb_id %>"><%- project_name %></a></li>
+      <li><a href="#projectId/<%- cartodb_id %>"><%- project_name %></a><small style="color: grey; font-size: 75%"> <br/>by <%- agency_sponsor %> </small></li>
     </script>
 
     <script type="text/template" id="project-data-tmpl">
