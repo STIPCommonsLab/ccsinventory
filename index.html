@@ -191,9 +191,9 @@
     </script>
 
     <script type="text/template" id="project-data-tmpl">
-      <button type="button" id="close" class="close col-md-1 col-md-offset-11 " onclick="Javascript:close_project_panel();return false;">&times;</button>
+      <button type="button" id="close" class="close col-md-1 " onclick="Javascript:close_project_panel();return false;">&times;</button>
       <% if (project_url != null && project_url != '') { %>
-      <h3 class="col-md-12"><a href="<%- project_url %>" target="_blank"><%- project_name %></a></h3>
+      <h3 class="col-md-11"><a href="<%- project_url %>" target="_blank"><%- project_name %></a></h3>
       <% } else { %>
       <h3 class="col-md-12"><%- project_name %></h3>
       <% } %>

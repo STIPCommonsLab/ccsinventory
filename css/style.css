@@ -45,15 +45,6 @@ nav{
     padding-top: 1em;
 }
 
-#projects > div{
-    border-bottom: 1px solid #f3f3f3;
-    margin-bottom: 1em;
-}
-
-#projects-summary{
-    border-right: 1px solid #f3f3f3;
-}
-
 .input-group {
     margin-bottom: 2em;
 }
@@ -114,6 +105,23 @@ nav a {
     border-radius: 20px;
 }
 
+/* project and agency summaries */
+#projects > div{
+    border-bottom: 1px solid #f3f3f3;
+    margin-bottom: 1em;
+}
+
+#projects-summary{
+    border-right: 1px solid #f3f3f3;
+}
+
+/* each project stands for itself */
+#projects li {
+    border-bottom: 1px solid #f3f3f3;
+    margin-bottom: 0.5em;
+    /* padding-bottom: 0.1em; */
+}
+
 /* explanations in form */
 .well {
     padding: 1.5em;
@@ -134,21 +142,6 @@ nav a {
 #project_data h3 a {
    padding-right: 18px;
    background: transparent url(../img/Icon_External_Link.png) no-repeat center right;
-}
-
-#project_data p strong{
-    color: #FE8433;
-}
-
-#project_data #contact_info h4{
-    color: #0067AB;
-}
-
-/* each project stands for itself */
-#projects li {
-    border-bottom: 1px solid #f3f3f3;
-    margin-bottom: 0.5em;
-    /* padding-bottom: 0.1em; */
 }
 
 /* more space within form components: fieldset block and header (legend) */
@@ -284,6 +277,14 @@ nav a:hover,
 .footer-nav a:hover,
 .copyright a{
     color: white;
+}
+
+#project_data p strong{
+    color: #FE8433;
+}
+
+#project_data #contact_info h4{
+    color: #0067AB;
 }
 
 .orange{
