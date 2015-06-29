@@ -279,6 +279,10 @@ nav a:hover,
     color: white;
 }
 
+#projects h5{
+    color: #7d7d7d;
+}
+
 #project_data p strong{
     color: #FE8433;
 }
