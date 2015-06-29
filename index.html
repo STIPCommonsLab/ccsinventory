@@ -36,8 +36,7 @@
     <main class="main-content row">
 
       <section id="project_panel" class="hidden">
-          <button type="button" id="close" class="close" onclick="Javascript:close_project_panel();return false;">&times;</button>
-          <div id="project_data"></div>
+          <div id="project_data" class="row"></div>
         </section>
 
         <section id="filters" class="col-md-2">
@@ -192,37 +191,33 @@
     </script>
 
     <script type="text/template" id="project-data-tmpl">
+      <button type="button" id="close" class="close col-md-1 col-md-offset-11 " onclick="Javascript:close_project_panel();return false;">&times;</button>
       <% if (project_url != null && project_url != '') { %>
-      <h3><a href="<%- project_url %>" target="_blank"><%- project_name %></a></h3>
+      <h3 class="col-md-12"><a href="<%- project_url %>" target="_blank"><%- project_name %></a></h3>
       <% } else { %>
-      <h3><%- project_name %></h3>
+      <h3 class="col-md-12"><%- project_name %></h3>
       <% } %>
-      <div><label>Fields of science:</label> <%- project_topic %></div>
-      <div><span><label>Status:</label> <%- status %></span><span><label>Start date:</label> <%- start_date %></span></div>
-      <div><label>Geographic scope:</label> <%- geographic_scope %></div>
-      <p><%- project_description %></p>
-      <div id="keywords"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> <%- keywords %></div>
-      <hr>
-      <div id="additional_data">
-        <h4>Additional data</h4>
-        <div><label>Participation type:</label> <%- participation_type %></div>
-        <div><label>Participant age:</label> <%- participant_age %></div>
-        <div><label>Intended outcomes:</label> <%- intended_outcomes %></div>
-        <div><label>Agency sponsors:</label> <%- agency_sponsor %></div>
-        <div><label>Agency partners:</label> <%- agency_partner %></div>
-      </div>
-      <hr>
-      <div id="contact_info">
-        <h4>Contact info</h4>
+      <p class="col-md-12"><%- project_description %></p>
+      <p class="col-md-12"><strong>Keywords:</strong> <%- keywords %></p>
+      <p class="col-md-12"><strong>Fields of science:</strong> <%- project_topic %></p>
+      <p class="col-md-12"><span><strong>Status:</strong> <%- status %></span></p>
+      <p class="col-md-12"><span><strong>Start date:</strong> <%- start_date %></span></p>
+      <p class="col-md-12"><strong>Agency sponsors:</strong> <%- agency_sponsor %></p>
+      <p class="col-md-12"><strong>Agency partners:</strong> <%- agency_partner %></p>
+      <p class="col-md-12"><strong>Geographic scope:</strong> <%- geographic_scope %></p>
+      <p class="col-md-12"><strong>Intended outcomes:</strong> <%- intended_outcomes %></p>
+      <p class="col-md-12"><strong>Participation type:</strong> <%- participation_type %></p>
+      <p class="col-md-12"><strong>Participant age:</strong> <%- participant_age %></p>
+      <div class="col-md-12" id="contact_info">
+        <h4>Contact information</h4>
         <% if (project_contact != null && project_contact != '' && project_contact != 'n/a') { %>
-        <div><span class="glyphicon glyphicon-user" aria-hidden="true"></span><span><%- project_contact %></span></div>
+        <div><span class="glyphicon glyphicon-user" aria-hidden="true"></span><span><%- project_contact %></span>, <span><%- affiliation %></span></div>
         <% } %>
-        <div id="contact_address"><span class="glyphicon glyphicon-home" aria-hidden="true"></span><div><span><%- affiliation %></span><br>
-        <% if ((street_address != null && street_address != '' && street_address != 'n/a') ||
+        <div id="contact_address"><span class="glyphicon glyphicon-home" aria-hidden="true"></span><% if ((street_address != null && street_address != '' && street_address != 'n/a') ||
           (street_address_2 != null && street_address_2 != '' && street_address_2 != 'n/a')) { %>
         <span><%- street_address %> <%- street_address_2 %></span><br>
         <% } %>
-        <span><%- city ? city + ', ' : '' %><%- state %> <%- zip ? '(' + zip + ')' : '' %></span></div></div>
+        <span><%- city ? city + ', ' : '' %><%- state %> <%- zip ? '(' + zip + ')' : '' %></span></div>
         <% if (phone != null && phone != '' && phone != 'n/a' && phone != '0') { %>
         <span><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span><%- phone %></span><br>
         <% } %>
