@@ -45,6 +45,10 @@ nav{
     padding-top: 1em;
 }
 
+#filters a{
+    margin-left: 3px;
+}
+
 .input-group {
     margin-bottom: 2em;
 }
@@ -90,6 +94,10 @@ nav{
     margin-bottom: .5em;
 }
 
+div.cartodb-popup.v2 {
+  width:417px
+}
+
 /* ----- MODULES ----- */
 
 /* buttons style for links */
@@ -128,6 +136,67 @@ nav a {
     background-color: #edf0f4;
     border: 1px solid #E2E3E4;
     border-radius: 4px;
+}
+
+/* Form */
+
+.form-control {
+    display: block;
+    width: 100%;
+    height:48px;
+    padding: 8px 12px;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 2px solid #edf0f4;
+    border-radius: 4px;
+    box-shadow: none!important;
+    margin-bottom:16px;
+}
+
+.form-horizontal .control-label {
+    text-align: right;
+    font-weight: 400;
+}
+
+/* Buttons */
+
+.btn-default {
+    display: block;
+    width: 100%;
+    min-width: 50px;
+    height:48px;
+    padding: 8px 12px;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 2px solid #edf0f4;
+    border-radius: 4px;
+    box-shadow: none!important;
+    margin-bottom:16px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #FE8433;
+    border-color:#FE8433;
+    padding:10px 24px;
+    border-radius: 24px;
+    margin-top: 20px;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #EF7430;
+    border-color: #EF7430;
 }
 
 /* project panel */
@@ -308,105 +377,8 @@ nav a:hover,
     color: #e2e3e4;
 }
 
-
-
-
-
-
-
-
-
-
-
-/* TODO */
-
-
 .feature{
     height:300px;
     background-color: #00a2da;
     padding:24px;
-}
-
-
-/* Forms */
-
-.form-control {
-    display: block;
-    width: 100%;
-    height:48px;
-    padding: 8px 12px;
-    font-size: 16px;
-    line-height: 1.42857143;
-    color: #555;
-    background-color: #fff;
-    background-image: none;
-    border: 2px solid #edf0f4;
-    border-radius: 4px;
-    box-shadow: none!important;
-    margin-bottom:16px;
-}
-
-.btn-default {
-    display: block;
-    width: 100%;
-    min-width: 50px;
-    height:48px;
-    padding: 8px 12px;
-    font-size: 16px;
-    line-height: 1.42857143;
-    color: #555;
-    background-color: #fff;
-    background-image: none;
-    border: 2px solid #edf0f4;
-    border-radius: 4px;
-    box-shadow: none!important;
-    margin-bottom:16px;
-}
-
-.form-horizontal .control-label {
-    text-align: right;
-    font-weight: 400;
-}
-
-/* Buttons */
-
-.btn-primary {
-    color: #fff;
-    background-color: #FE8433;
-    border-color:#FE8433;
-    padding:10px 24px;
-    border-radius: 24px;
-    margin-top: 20px;
-}
-
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active,
-.open .dropdown-toggle.btn-primary {
-    color: #fff;
-    background-color: #EF7430;
-    border-color: #EF7430;
-}
-
-.btn-about {
-    color: #fff;
-    background-color: transparent;
-    border: solid 2px #fff;
-    padding:10px 14px;
-    border-radius:24px;
-}
-
-.btn-about:hover,
-.btn-about:focus,
-.btn-about:active,
-.btn-about.active,
-.open .dropdown-toggle.btn-about {
-    color: #fff;
-    background-color: #FE8433;
-    border-color: #00A1DC;
-}
-
-div.cartodb-popup.v2 {
-  width:417px
 }
