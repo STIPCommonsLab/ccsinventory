@@ -202,17 +202,17 @@
 
     <script type="text/template" id="project-data-tmpl">
       <button type="button" id="close" class="close col-md-1 " onclick="Javascript:close_project_panel();return false;">&times;</button>
-      <% if (project_url != null && project_url != '') { %>
-      <h3 class="col-md-11"><a href="<%- project_url %>" target="_blank"><%- project_name %></a></h3>
-      <% } else { %>
       <h3 class="col-md-12"><%- project_name %></h3>
+      <% if (project_url != null && project_url != '' && project_url != 'n/a' && project_url != '0') { %>
+      <p class="col-md-12"><a href="<%- project_url %>" target="_blank"><%- project_url %></a></p>
       <% } %>
+
       <p class="col-md-12"><%- project_description %></p>
       <p class="col-md-12"><strong>Keywords:</strong> <%- keywords %></p>
       <p class="col-md-12"><strong>Fields of science:</strong> <%- project_topic %></p>
       <p class="col-md-12"><span><strong>Status:</strong> <%- status %></span></p>
       <p class="col-md-12"><span><strong>Start date:</strong> <%- start_date %></span></p>
-      <p class="col-md-12"><strong>Agency sponsors:</strong> <%- agency_sponsor %></p>
+      <p class="col-md-12"><strong>Agency sponsor:</strong> <%- agency_sponsor %></p>
       <p class="col-md-12"><strong>Agency partners:</strong> <%- agency_partner %></p>
       <p class="col-md-12"><strong>Geographic scope:</strong> <%- geographic_scope %></p>
       <p class="col-md-12"><strong>Intended outcomes:</strong> <%- intended_outcomes %></p>
@@ -220,14 +220,12 @@
       <p class="col-md-12"><strong>Participant age:</strong> <%- participant_age %></p>
       <div class="col-md-12" id="contact_info">
         <h4>Contact information</h4>
-        <% if (project_contact != null && project_contact != '' && project_contact != 'n/a') { %>
-        <div><span class="glyphicon glyphicon-user" aria-hidden="true"></span><span><%- project_contact %></span>, <span><%- affiliation %></span></div>
-        <% } %>
+        <div><span class="glyphicon glyphicon-user" aria-hidden="true"></span><span><%- project_contact %></span><span><%- affiliation? ' - ' + affiliation : '' %></span></div>
         <div id="contact_address"><span class="glyphicon glyphicon-home" aria-hidden="true"></span><% if ((street_address != null && street_address != '' && street_address != 'n/a') ||
           (street_address_2 != null && street_address_2 != '' && street_address_2 != 'n/a')) { %>
-        <span><%- street_address %> <%- street_address_2 %></span><br>
+        <span><%- street_address %> <%- street_address_2 %></span>
         <% } %>
-        <span><%- city ? city + ', ' : '' %><%- state %> <%- zip ? '(' + zip + ')' : '' %></span></div>
+        <span><%- city ? ' - ' + city + ', ' : ' - ' %><%- state %> <%- zip ? '(' + zip + ')' : '' %></span></div>
         <% if (phone != null && phone != '' && phone != 'n/a' && phone != '0') { %>
         <span><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span><%- phone %></span><br>
         <% } %>
@@ -243,13 +241,10 @@
         <div class="cartodb-popup-content-wrapper">
           <div class="cartodb-popup-content">
             <h3>{{project_name}}</h3>
-            <br>
-            <p>Keywords: {{keywords}}</p>
-            <p>{{project_description}}</p>
-            <p>{{participation_type}}</p>
             <p><a href="{{project_url}}" target="_blank">{{project_url}}</a></p>
-            <p><a href="#projectId/{{cartodb_id}}">More info</a>
-            </p>
+            <p><strong style="color:#FE8433">Keywords</strong>: {{keywords}}</p>
+            <p><strong style="color:#FE8433">Agency sponsor</strong>: {{agency_sponsor}}</p>
+            <p><a href="#projectId/{{cartodb_id}}">Expand project</a></p>
           </div>
         </div>
         <div class="cartodb-popup-tip-container"></div>
@@ -302,7 +297,7 @@
           // Manually add our infowindow
           // TODO activate clusters
           cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(0),
-            ['cartodb_id', 'project_name', 'keywords', 'project_description', 'participation_type', 'project_url'],
+            ['cartodb_id', 'project_name', 'keywords', 'agency_sponsor', 'project_url'],
             {
               infowindowTemplate: $('#infowindow_template').html(),
               templateType: 'mustache',

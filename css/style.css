@@ -201,17 +201,17 @@ nav a {
 
 /* project panel */
 #project_data {
-  padding-bottom: 2em;
+  padding-bottom: 4em;
 }
 
 #project_data .glyphicon {
   margin-right: 8px;
 }
 
-#project_data h3 a {
-   padding-right: 18px;
-   background: transparent url(../img/Icon_External_Link.png) no-repeat center right;
-}
+/* #project_data h3 a { */
+/*    padding-right: 18px; */
+/*    background: transparent url(../img/Icon_External_Link.png) no-repeat center right; */
+/* } */
 
 /* more space within form components: fieldset block and header (legend) */
 fieldset {
@@ -256,6 +256,12 @@ body{
 /* #projects, */
 #projects h2{
     text-align: center;
+}
+
+#project_panel h3{
+    text-transform: uppercase;
+    color: #ccc;
+    margin-bottom: 0;
 }
 
 a:hover{
