@@ -197,7 +197,8 @@
     </script>
 
     <script type="text/template" id="project-list-tmpl">
-      <li><a href="#projectId/<%- cartodb_id %>"><%- project_name %></a><small style="color: grey; font-size: 75%"> <br/>by <%- agency_sponsor %> </small></li>
+      <li><a href="#projectId/<%- cartodb_id %>"><%- project_name %></a><br/>
+        <small style="color: grey; font-size: 75%"> by <%- agency_sponsor? agency_sponsor : 'n/a' %> </small></li>
     </script>
 
     <script type="text/template" id="project-data-tmpl">
