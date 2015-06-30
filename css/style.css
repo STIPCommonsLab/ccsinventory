@@ -279,7 +279,8 @@ nav a:hover,
     color: white;
 }
 
-#projects h5{
+#projects h5,
+#filters p{
     color: #7d7d7d;
 }
 

@@ -1,3 +1,5 @@
+$('[data-toggle="tooltip"]').tooltip();
+
 var qBase = "select * from " + cdb_projects_table;
 var qParams = '';
 

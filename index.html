@@ -37,13 +37,26 @@
           <div id="project_data" class="row"></div>
         </section>
 
-        <section id="filters" class="col-md-2">
+      <section id="filters" class="col-md-2">
+
+        <p><small>
+          <a href="#" data-toggle="tooltip" data-placement="right" title=""
+              data-original-title="Search by project name, description and keywords. Leave blank to show all">
+            <span class="glyphicon glyphicon-info-sign"></span></a>
+          FIND PROJECTS:
+        </small></p>
+
           <div class="input-group">
             <input id="searchinput" class="form-control" placeholder="Search for..." value="" type="search"> <span id="searchclear" class="glyphicon glyphicon-remove-circle" style="display: none;"></span>
             <span class="input-group-btn">
               <button id="filter-btn" class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
             </span>
           </div>
+
+        <p><small>
+            <a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="You may browse for projects with specific attributes including project topic, project status, intended age group, and many others."><span class="glyphicon glyphicon-info-sign"></span></a>
+            FILTER BY:
+        </small></p>
 
           <div id="project_topic_filter" class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingOne">
@@ -53,7 +66,7 @@
                 </a>
               </h4>
             </div>
-            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
               <div id="project_topic" class="panel-body">
               </div>
             </div>
