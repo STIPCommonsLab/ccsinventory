@@ -26,7 +26,6 @@ CCSI.Views.ProjectList = Backbone.View.extend({
             function(str){ return str.trim()}
         );
         agencies = _.compact(_.uniq(agencies));
-        console.log(agencies);
         $('.agency-num').text(agencies.length);
         return this;
     }

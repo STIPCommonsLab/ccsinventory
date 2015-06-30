@@ -45,10 +45,9 @@ properties.fetch({
             property_panel.model = element;
             property_panel.render();
         })
-        console.log('success');
     },
     error: function(collection, xhr, options){
-        console.log('error');
+        console.log('error on fetching properties');
     }
 });
 

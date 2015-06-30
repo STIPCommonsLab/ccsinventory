@@ -279,8 +279,7 @@
       var previous_zoom = 3;
       var previous_center = [36, -97];
       var layer;
-      <!-- var jsonViz = ''; -->
-      var jsonViz = 'https://inventory.cartodb.com/api/v2/viz/c5a41724-10f9-11e5-b25f-0e4fddd5de28/viz.json';
+      var jsonViz = cdb_inventory_viz;
       function main() {
         cartodb.createVis('map', jsonViz, {
           tiles_loader: true,
@@ -296,7 +295,6 @@
           // Hack needed in order to add the infowindow programmatically
           map.viz = vis;
           // Manually add our infowindow
-          // TODO activate clusters
           cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(0),
             ['cartodb_id', 'project_name', 'keywords', 'agency_sponsor', 'project_url'],
             {
