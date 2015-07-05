@@ -35,7 +35,7 @@ $app->post('/project', function () use ($app, $cartodb_username, $staging_table,
         }
     }
 
-    if($data['scitarter']) {
+    if(array_key_exists("scitarter", $data)) {
         $data['scitarter'] = true; 
     } else {
         $data['scitarter'] = false;
