@@ -59,7 +59,7 @@ $app->post('/project', function () use ($app, $cartodb_username, $staging_table,
     /*
      * Outputing request, we need to return whole task object as an array, that way ID will be automatically added to model
      */
-    echo json_encode($sql);
+    echo json_encode($result_not_parsed);
 
 });
 
