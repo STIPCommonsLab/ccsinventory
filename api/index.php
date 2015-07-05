@@ -35,6 +35,12 @@ $app->post('/project', function () use ($app, $cartodb_username, $staging_table,
         }
     }
 
+    if($data['scitarter']) {
+        $data['scitarter'] = true; 
+    } else {
+        $data['scitarter'] = false;
+    }
+
     $sql = insertSQL($staging_table, $data);
 
 	//---------------
