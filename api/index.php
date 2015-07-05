@@ -35,10 +35,10 @@ $app->post('/project', function () use ($app, $cartodb_username, $staging_table,
         }
     }
 
-    if(array_key_exists("scitarter", $data)) {
-        $data['scitarter'] = 'true'; 
+    if(array_key_exists("scistarter", $data)) {
+        $data['scistarter'] = 'true'; 
     } else {
-        $data['scitarter'] = 'false';
+        $data['scistarter'] = 'false';
     }
 
     $sql = insertSQL($staging_table, $data);
