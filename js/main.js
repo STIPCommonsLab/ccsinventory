@@ -74,7 +74,7 @@ function project_panel_visible() {
 }
 
 function zoom_to_project(projectId) {
-    map.setZoom(11);
+    map.setZoom(11, {'animate': false});
     map.panTo(project_data.collection.get(projectId).get('geojson').coordinates);
 }
 
@@ -96,7 +96,7 @@ function close_project_panel() {
 }
 
 function reset_view() {
-    map.setZoom(previous_zoom);
+    map.setZoom(previous_zoom, {'animate': false});
     map.panTo(previous_center);
 }
 
