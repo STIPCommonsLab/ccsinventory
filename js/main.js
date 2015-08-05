@@ -27,6 +27,7 @@ var project_fields = [
     'intended_outcomes',
     'agency_partner',
     'agency_sponsor',
+    'agency_sponsor_other',
     'st_asgeojson(the_geom) as geojson'
 ];
 
