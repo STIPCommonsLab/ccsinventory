@@ -12,7 +12,7 @@ var project_fields = [
     'status',
     'start_date',
     'geographic_scope',
-    'participation_type',
+    'participation_tasks',
     'project_contact',
     'affiliation',
     'street_address',
