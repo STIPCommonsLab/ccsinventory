@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/leaflet-0.7.3.css" />
     <link rel="stylesheet" href="css/leaflet.draw.css" />
     <link rel="stylesheet" href="css/font-awesome.min.css" />
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -175,7 +175,7 @@
 		                  <input type="checkbox" value="true" id="scistarter" name="scistarter">
 		                  Yes, publish my data!
 		                </label>
-			            </div>			             
+			            </div>
 	              </div>
             </div>
 
@@ -520,7 +520,7 @@
       type: "GET",
       dataType: "jsonp",
       contentType: "application/json",
-      url: 'http://geocoding.geo.census.gov/geocoder/locations/address?street=' + street + '&city=' + city + '&state=' + state+ '&zip=' + zip + '&benchmark=9&format=jsonp',
+      url: 'https://geocoding.geo.census.gov/geocoder/locations/address?street=' + street + '&city=' + city + '&state=' + state+ '&zip=' + zip + '&benchmark=9&format=jsonp',
       success: function(data) {
       if(data.result.addressMatches[0]) {
       var gcLat = data.result.addressMatches[0].coordinates.y;
