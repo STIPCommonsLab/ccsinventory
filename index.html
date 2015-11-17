@@ -234,7 +234,10 @@
         <% if (email != null && email != '' && email.indexOf('@') != -1) { %>
         <span><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a href="mailto:<%- email %>" target="_top"><%- email %></a></span>
         <% } %>
+
       </div>
+
+
     </script>
 
     <script type="infowindow/html" id="infowindow_template">
@@ -346,9 +349,34 @@
         $('#searchinput').bind('notext', function () {
           applyQuery();
         });
+
+        // Detect Browser Back Button 
+        $( document ).ready(function($) {
+
+          if (window.history && window.history.pushState) {
+
+            $(window).on('popstate', function() {
+              var hashLocation = location.hash;
+              var hashSplit = hashLocation.split("#!/");
+              var hashName = hashSplit[1];
+
+              if (hashName !== '') {
+                var hash = window.location.hash;
+                if (hash === '') {
+                  // project view visible?
+                  if ($('#project-list-tmpl').length > 0) {
+                    close_project_panel();
+                  }
+                }
+              }
+            });
+          }
+
+        });
       }
 
       window.onload = main;
+
     </script>
 
   </body>
