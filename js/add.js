@@ -8,16 +8,27 @@ properties.fetch({
                 el: $('#' + element.get('property_category')),
             });
 
-            if ($('#' + element.get('property_category')).is('select')) {
-                property_panel.template = _.template($('#filter-select-tmpl').html());
+            if (element.get('property_category') == "agency_sponsor") {
+                    property_panel.template = _.template($('#multiple-select-tmpl').html());
+
+            }else{
+
+                if ($('#' + element.get('property_category')).is('select')) {
+                    property_panel.template = _.template($('#filter-select-tmpl').html());
+                }
             }
 
             property_panel.model = element;
             property_panel.render();
+
         })
     },
     error: function(collection, xhr, options){
         console.log('error on fetching properties');
+    },
+    complete: function(collection, xhr, options){
+        var options = { hideSidePanel: true, startCollapsed: true };
+        $("#agency_sponsor").treeMultiselect(options);
     }
 });
 
