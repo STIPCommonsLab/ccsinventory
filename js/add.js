@@ -11,6 +11,15 @@ properties.fetch({
             if (element.get('property_category') == "agency_sponsor") {
                     property_panel.template = _.template($('#multiple-select-tmpl').html());
 
+                    // Rendering government contact affiliation
+                    var property_panel_government = new CCSI.Views.PropertyComponent({
+                        el: $('#government_contact_affiliation'),
+                    });
+
+                    property_panel_government.template = _.template($('#multiple-select-tmpl').html());
+                    property_panel_government.model = element;
+                    property_panel_government.render();
+
             }else{
 
                 if ($('#' + element.get('property_category')).is('select')) {
@@ -29,6 +38,61 @@ properties.fetch({
     complete: function(collection, xhr, options){
         var options = { hideSidePanel: true, startCollapsed: true };
         $("#agency_sponsor").treeMultiselect(options);
+        $("#government_contact_affiliation").treeMultiselect(options);
+
+        // Project topic other checkbox render
+        var property_panel = new CCSI.Views.OtherComponent({
+                el: $('#project_topic'),
+            });
+        property_panel.data = { identifier: 'project_topic_other'}
+        property_panel.render();
+
+        // Participant age other checkbox render
+        var property_panel = new CCSI.Views.OtherComponent({
+                el: $('#participant_age'),
+            });
+        property_panel.data = { identifier: 'participant_age_other'}
+        property_panel.render();
+
+        // Participant age other checkbox render
+        var property_panel = new CCSI.Views.OtherComponent({
+                el: $('#agency_partner'),
+            });
+        property_panel.data = { identifier: 'agency_partner_other'}
+        property_panel.render();
+
+        // Project status other checkbox render
+        var property_panel = new CCSI.Views.OtherComponent({
+                el: $('#project_status'),
+            });
+        property_panel.template = _.template($('#other-select-tmpl').html());
+        property_panel.data = { identifier: 'project_status'}
+        property_panel.render();
+
+        // Project status other checkbox render
+        var property_panel = new CCSI.Views.OtherComponent({
+                el: $('#project_status_other_box'),
+            });
+        property_panel.template = _.template($('#script-select-tmpl').html());
+        property_panel.data = { identifier: 'project_status'}
+        property_panel.render();
+
+        // Geographic scope other checkbox render
+        var property_panel = new CCSI.Views.OtherComponent({
+                el: $('#geographic_scope'),
+            });
+        property_panel.template = _.template($('#other-select-tmpl').html());
+        property_panel.data = { identifier: 'geographic_scope'}
+        property_panel.render();
+
+        // Project status age other checkbox render
+        var property_panel = new CCSI.Views.OtherComponent({
+                el: $('#geographic_scope_other_box'),
+            });
+        property_panel.template = _.template($('#script-select-tmpl').html());
+        property_panel.data = { identifier: 'geographic_scope'}
+        property_panel.render();
+
     }
 });
 

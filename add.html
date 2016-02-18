@@ -141,7 +141,7 @@ ul#checkboxLists li {
 
           <!-- Text input-->
           <div class="form-group">
-            <label class="col-md-4 control-label orange" for="project-name">Project Name <span data-toggle="tooltip" title="Commonly accepted name for the project" class="glyphicon glyphicon-info-sign"></span></label>
+            <label class="col-md-4 control-label orange" for="project-name">Project Name <span data-toggle="tooltip" title="Give the commonly accepted name for the project." class="glyphicon glyphicon-info-sign"></span></label>
             <div class="col-md-6">
               <input id="project-name" name="project_name" type="text" placeholder="" class="form-control input-md" required="">
 
@@ -150,7 +150,7 @@ ul#checkboxLists li {
 
           <!-- Text input-->
           <div class="form-group">
-            <label class="col-md-4 control-label orange" for="project-url">Project URL <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="URL for project website"></span></label>
+            <label class="col-md-4 control-label orange" for="project-url">Project URL <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="Give the address (URL) for the project website. If there is no website, leave blank."></span></label>
             <div class="col-md-6">
               <input id="project-url" name="project_url" type="text" placeholder="http://" class="form-control input-md" required="">
 
@@ -159,7 +159,7 @@ ul#checkboxLists li {
 
           <!-- Textarea -->
           <div class="form-group">
-            <label class="col-md-4 control-label orange" for="project-description">Project Description <span data-toggle="tooltip" title="1-3 sentences defining the mission statement for your project" class="glyphicon glyphicon-info-sign"></span></label>
+            <label class="col-md-4 control-label orange" for="project-description">Project Description <span data-toggle="tooltip" title="Define the mission statement for the project in a sentence or two." class="glyphicon glyphicon-info-sign"></span></label>
             <div class="col-md-6">
               <textarea class="form-control" id="project-description" name="project_description"></textarea>
             </div>
@@ -167,14 +167,24 @@ ul#checkboxLists li {
 
           <!-- Multiple Checkboxes -->
           <div class="form-group">
-            <label class="col-md-4 control-label orange" for="field">Project topic <span data-toggle="tooltip" title="What federal agency (or agencies) offers either primary or partial fiscal support of this project?" class="glyphicon glyphicon-info-sign" class="glyphicon glyphicon-info-sign"></span></label>
+            <label class="col-md-4 control-label orange" for="field">Project topic <span data-toggle="tooltip" title="Check all that apply" class="glyphicon glyphicon-info-sign" class="glyphicon glyphicon-info-sign"></span></label>
             <div id="project_topic" class="col-md-4">
+                
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div id="project_topic_other_box" class="form-group" style="display:none;">
+            <label class="col-md-4 control-label orange" for="project-url">Other Project Topic  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="Other project topic not listed above"></span></label>
+            <div class="col-md-6">
+              <input id="project_topic_other" name="project_topic_other" type="text" placeholder="" class="form-control input-md">
+
             </div>
           </div>
 
           <!-- Text input-->
           <div class="form-group">
-            <label class="col-md-4 control-label orange" for="keywords">Project Keywords <span data-toggle="tooltip" title="Please enter descriptive keywords, separated by a comma, which will help someone find your project on the browsable map." class="glyphicon glyphicon-info-sign"></span></label>
+            <label class="col-md-4 control-label orange" for="keywords">Project Keywords <span data-toggle="tooltip" title="In addition to any topics checked above, add keywords (separated by a comma) that will help someone find your project on the Internet." class="glyphicon glyphicon-info-sign"></span></label>
             <div class="col-md-6">
               <input id="keywords" name="keywords" type="text" placeholder="" class="form-control input-md">
 
@@ -183,7 +193,7 @@ ul#checkboxLists li {
 
           <!-- Select Basic -->
           <div class="form-group">
-            <label class="col-md-4 control-label orange" for="status">Project Status <span data-toggle="tooltip" title="What is the current status of this project?" class="glyphicon glyphicon-info-sign"></span></label>
+            <label class="col-md-4 control-label orange" for="status">Project Status <span data-toggle="tooltip" title="Give the current status of your project." class="glyphicon glyphicon-info-sign"></span></label>
             <div class="col-md-6">
               <select id="project_status" name="status" class="form-control">
               </select>
@@ -191,25 +201,25 @@ ul#checkboxLists li {
           </div>
 
           <!-- Text input-->
+          <div id="project_status_other_box" class="form-group" style="display:none;">
+            <label class="col-md-4 control-label orange" for="project-url">Other Project Status  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="Other project status not listed above"></span></label>
+            <div class="col-md-6">
+              <input id="project_status_other" name="project_status_other" type="text" placeholder="" class="form-control input-md">
+
+            </div>
+          </div>
+
+          <!-- Text input-->
           <div class="form-group">
-            <label class="col-md-4 control-label orange" for="start-date">Project Start Date <span data-toggle="tooltip" title="Approximately when was the grant issued, or project launched?" class="glyphicon glyphicon-info-sign"></span></label>
+            <label class="col-md-4 control-label orange" for="start-date">Project Start Date <span data-toggle="tooltip" title="Give the approximate date that the first grant was issued or the project was first launched." class="glyphicon glyphicon-info-sign"></span></label>
             <div class="col-md-6">
               <input id="start-date" name="start_date" type="text" placeholder="yyyy-mm-dd" class="form-control input-md">
 
             </div>
           </div>
           
-          <!-- Multiple Checkboxes -->
-          <!--
           <div class="form-group">
-            <label class="col-md-4 control-label orange" for="sponsors">Agency Sponsor <span data-toggle="tooltip" title="What federal agency (or agencies) offers either primary or partial fiscal support of this project?" class="glyphicon glyphicon-info-sign" class="glyphicon glyphicon-info-sign"></span></label>
-            <div id="agency_sponsor" class="col-md-4">
-            </div>
-          </div>
-          -->
-          <!-- Select Basic -->
-          <div class="form-group">
-            <label class="col-md-4 control-label orange" for="sponsors">Agency Sponsor <span data-toggle="tooltip" title="What federal agency (or agencies) offers either primary or partial fiscal support of this project?" class="glyphicon glyphicon-info-sign"></span></label>
+            <label class="col-md-4 control-label orange" for="sponsors">Federal Government Sponsor <span data-toggle="tooltip" title="Check all that give primary or partial support." class="glyphicon glyphicon-info-sign"></span></label>
             <div class="col-md-6">
               <select id="agency_sponsor" name="agency_sponsor" class="form-control" multiple="multiple">
               </select>
@@ -218,7 +228,7 @@ ul#checkboxLists li {
 
           <!-- Text input-->
           <div class="form-group">
-            <label class="col-md-4 control-label orange" for="project-url">Other Agency Sponsor  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="Other agency not listed above"></span></label>
+            <label class="col-md-4 control-label orange" for="project-url">Other Federal Government Sponsor  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="Other agency not listed above"></span></label>
             <div class="col-md-6">
               <input id="agency-sponsor-other" name="agency_sponsor_other" type="text" placeholder="" class="form-control input-md">
 
@@ -228,37 +238,72 @@ ul#checkboxLists li {
 
           <!-- Multiple Checkboxes -->
           <div class="form-group">
-            <label class="col-md-4 control-label orange" for="partners">Agency Partner <span data-toggle="tooltip" title="A federal agency offering partial support" class="glyphicon glyphicon-info-sign"></span></label>
+            <label class="col-md-4 control-label orange" for="partners">Type of Nonfederal Government Sponsor <span data-toggle="tooltip" title="Check any that apply to a partner that gives financial or in-kind support. If you check 'Other,' then describe the type of partner." class="glyphicon glyphicon-info-sign"></span></label>
             <div id="agency_partner" class="col-md-6">
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div id="agency_partner_other_box" class="form-group" style="display:none;">
+            <label class="col-md-4 control-label orange" for="project-url">Other Type of Nonfederal Government Sponsor  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="Other type of nonfederal government sponsor not listed above"></span></label>
+            <div class="col-md-6">
+              <input id="agency_partner_other" name="agency_partner_other" type="text" placeholder="" class="form-control input-md">
+
+            </div>
+          </div>
+
+          <!-- Textarea -->
+          <div class="form-group">
+            <label class="col-md-4 control-label orange" for="project-description">Name of Nonfederal Government Sponsors <span data-toggle="tooltip" title="Name of Nonfederal Government Sponsors" class="glyphicon glyphicon-info-sign"></span></label>
+            <div class="col-md-6">
+              <textarea class="form-control" id="name-nonfederal-goverment-sponsors" name="name_nonfederal_goverment_sponsors"></textarea>
             </div>
           </div>
 
           <!-- Select Basic -->
           <div class="form-group">
-            <label class="col-md-4 control-label orange" for="geographic-scope">Geographic Scope <span data-toggle="tooltip" title="Please select the best definition for your projects geographic scope." class="glyphicon glyphicon-info-sign"></span></label>
+            <label class="col-md-4 control-label orange" for="geographic-scope">Geographic Scope <span data-toggle="tooltip" title="Please select the best definition for your projects geographic scope. If you check 'Other,' add the missing category or categories." class="glyphicon glyphicon-info-sign"></span></label>
             <div class="col-md-6">
               <select id="geographic_scope" name="geographic_scope" class="form-control">
               </select>
             </div>
           </div>
 
-          <!-- Multiple Checkboxes -->
-          <div class="form-group">
-            <label class="col-md-4 control-label orange" for="participant-age">Participant Age <span data-toggle="tooltip" title="Target age of participants" class="glyphicon glyphicon-info-sign"></span></label>
-            <div id="participant_age" class="col-md-6">
+          <!-- Text input-->
+          <div id="geographic_scope_other_box" class="form-group" style="display:none;">
+            <label class="col-md-4 control-label orange" for="project-url">Other Geographic Scope  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="Other geographic scope not listed above"></span></label>
+            <div class="col-md-6">
+              <input id="geographic_scope_other" name="geographic_scope_other" type="text" placeholder="" class="form-control input-md">
+
             </div>
           </div>
 
           <!-- Multiple Checkboxes -->
           <div class="form-group">
-            <label class="col-md-4 control-label orange" for="outcomes">Intended Outcomes <span data-toggle="tooltip" title="Desired outcomes of project" class="glyphicon glyphicon-info-sign"></span></label>
+            <label class="col-md-4 control-label orange" for="participant-age">Participant Age <span data-toggle="tooltip" title="Check all that apply to your project participants. If you check 'Other,' add the missing category or categories." class="glyphicon glyphicon-info-sign"></span></label>
+            <div id="participant_age" class="col-md-6">
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div id="participant_age_other_box" class="form-group" style="display:none;">
+            <label class="col-md-4 control-label orange" for="project-url">Other Participant Age Range  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="Other participant age range not listed above"></span></label>
+            <div class="col-md-6">
+              <input id="participant_age_other" name="participant_age_other" type="text" placeholder="" class="form-control input-md">
+
+            </div>
+          </div>
+
+          <!-- Multiple Checkboxes -->
+          <div class="form-group">
+            <label class="col-md-4 control-label orange" for="outcomes">Project Outcomes <span data-toggle="tooltip" title="Check all that apply. If you check 'Other,' write in any additional project outcomes." class="glyphicon glyphicon-info-sign"></span></label>
             <div id="intended_outcomes" class="col-md-6">
             </div>
           </div>
 
           <!-- Multiple Checkboxes -->
           <div class="form-group">
-            <label class="col-md-4 control-label orange" for="sponsors">Participation Tasks <span data-toggle="tooltip" title="Description of volunteer activities" class="glyphicon glyphicon-info-sign" class="glyphicon glyphicon-info-sign"></span></label>
+            <label class="col-md-4 control-label orange" for="sponsors">Participation Tasks <span data-toggle="tooltip" title="Check all that apply. If you check 'Other,' write in any tasks that apply." class="glyphicon glyphicon-info-sign" class="glyphicon glyphicon-info-sign"></span></label>
             <div id="participation_tasks" class="col-md-4">
             </div>
           </div>
@@ -275,6 +320,26 @@ ul#checkboxLists li {
 			            </div>
 	              </div>
             </div>
+            <div class="form-group">
+              <label for="scistarter" class="col-md-4 control-label orange">Recruiting Volunteers <span class="glyphicon glyphicon-info-sign" title="" data-toggle="tooltip" data-original-title="Check the box if the project is recruiting volunteers."></span></label>
+	              <div class="col-md-6">
+		              <div class="checkbox">
+		                <label for="scistarter">
+		                  <input type="checkbox" value="true" id="recruiting" name="recruiting">
+		                  Yes, this project is recruiting 
+		                </label>
+			            </div>
+	              </div>
+            </div>
+
+          <!-- Textarea -->
+          <div class="form-group">
+            <label class="col-md-4 control-label orange" for="project-description">Types of volunteers <span data-toggle="tooltip" title="Types of volunteers" class="glyphicon glyphicon-info-sign"></span></label>
+            <div class="col-md-6">
+              <textarea class="form-control" id="typers-volunteers" name="typers_volunteers"></textarea>
+            </div>
+       </div>
+           
 
         </fieldset>
 
@@ -400,15 +465,54 @@ ul#checkboxLists li {
               </div>
 
             </div>
-
           </div>
 
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label light-blue" for="geojson">Link to GeoJSON file</label>
+                <div class="col-md-6">
+                  <input id="link_geojson" name="link_geojson" type="text" placeholder="" class="form-control input-md">
+
+                </div>
+              </div>
+
+
+
           <input type="hidden" name="the_geom" id="latlng" value="">
+
         </fieldset>
 
         <fieldset>
 
           <legend class="light-blue"><i class="fa fa-phone"></i>Contact Information</legend>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label light-blue" for="affiliation">Government Contact <span data-toggle="tooltip" title="Government Contact" class="glyphicon glyphicon-info-sign"></span></label>
+            <div class="col-md-6">
+              <input id="government_contact" name="government_contact" type="text" placeholder="" class="form-control input-md">
+
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label light-blue" for="affiliation">Government Contact Affiliation <span data-toggle="tooltip" title="Government Contact Affiliation" class="glyphicon glyphicon-info-sign"></span></label>
+            <div class="col-md-6">
+              <select id="government_contact_affiliation" name="government_contact_affiliation" class="form-control">
+              </select>
+
+            </div>
+          </div> 
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label light-blue" for="email">Government Contact Email <span data-toggle="tooltip" title="Contact email address" class="glyphicon glyphicon-info-sign"></span></label>
+            <div class="col-md-6">
+              <input id="government_contact_email" name="government_contact_email" type="text" placeholder="" class="form-control input-md">
+
+            </div>
+          </div>
 
           <!-- Text input-->
           <div class="form-group">
@@ -418,6 +522,7 @@ ul#checkboxLists li {
 
             </div>
           </div>
+
 
           <!-- Text input-->
           <div class="form-group">
@@ -501,20 +606,48 @@ ul#checkboxLists li {
       </div>
     </script>
 
-    <script type="text/template" id="multilevel-checkbox-tmpl">
-	    <li id="<%- property_parent_code %>">
-		    <label class="multiLevelCheckbox">
-			    <input id="<%- property_code %>" value="1"  name="<%- property_category %>" type="checkbox"> <%- property_parent_name %>							
-			    <span></span>
-		    </label>
-	    </li>
-        <div id="childCheckboxes_<%- property_parent_code %>">
-        </div>
-    </script>
-
     <!-- templates -->
     <script type="text/template" id="filter-select-tmpl">
       <option value="<%- property_name %>"><%- property_name %></option>
+    </script>
+
+    <!-- templates -->
+    <script type="text/template" id="other-checkbox-tmpl">
+      <div class="checkbox inline">
+        <label for="<%- identifier %>">
+          <input type="checkbox" id="<%- identifier %>_checkbox" name="<%- identifier %>_checkbox" value="Other" />
+          Other
+        </label>
+      </div>
+      <script>
+            $('#<%- identifier %>_checkbox').change(function() {        
+                if($(this).is(":checked")) {
+                    $('#<%- identifier %>_box').css("display", "block");
+                    $('#<%- identifier %>').focus();                    
+                }else{
+                    $('#<%- identifier %>_box').css("display", "none");
+                }
+          });
+      </script>
+    </script>
+
+    <!-- templates -->
+    <script type="text/template" id="other-select-tmpl">
+        <option value="<%- identifier %>_other">Other</option>
+    </script>
+
+    <!-- templates -->
+    <script type="text/template" id="script-select-tmpl">
+        <script>
+            $('#<%- identifier %>').change(function() {
+                if(this.value == '<%- identifier %>_other'){
+                    $('#<%- identifier %>_other_box').css("display", "block");
+                    $('#<%- identifier %>_other').focus(); 
+                }else{
+                    $('#<%- identifier %>_other_box').css("display", "none");
+                }
+            });
+        </script>
     </script>
 
     <!-- templates -->
@@ -554,10 +687,12 @@ ul#checkboxLists li {
     <script src="js/models/Project.js"></script>
     <script src="js/collections/Properties.js"></script>
     <script src="js/views/PropertyComponent.js"></script>
+    <script src="js/views/OtherComponent.js"></script>
     <script src="js/views/ProjectForm.js"></script>
     <script src="js/add.js"></script>
 
     <script>
+
       var map;
       var drawnItems;
 
@@ -570,7 +705,6 @@ ul#checkboxLists li {
       });
       initMap();
       $("[data-toggle='tooltip']").tooltip();
-
       });
 
       function initMap() {
@@ -657,6 +791,7 @@ ul#checkboxLists li {
       });
 
     $(function () {
+
         $('.button-checkbox').each(function () {
 
             // Settings
