@@ -44,21 +44,21 @@ properties.fetch({
         var property_panel = new CCSI.Views.OtherComponent({
                 el: $('#project_topic'),
             });
-        property_panel.data = { identifier: 'project_topic_other'}
+        property_panel.data = { identifier: 'project_topic'}
         property_panel.render();
 
         // Participant age other checkbox render
         var property_panel = new CCSI.Views.OtherComponent({
                 el: $('#participant_age'),
             });
-        property_panel.data = { identifier: 'participant_age_other'}
+        property_panel.data = { identifier: 'participant_age'}
         property_panel.render();
 
         // Participant age other checkbox render
         var property_panel = new CCSI.Views.OtherComponent({
                 el: $('#agency_partner'),
             });
-        property_panel.data = { identifier: 'agency_partner_other'}
+        property_panel.data = { identifier: 'agency_partner'}
         property_panel.render();
 
         // Project status other checkbox render
@@ -71,7 +71,7 @@ properties.fetch({
 
         // Project status other checkbox render
         var property_panel = new CCSI.Views.OtherComponent({
-                el: $('#project_status_other_box'),
+                el: $('#project_status'),
             });
         property_panel.template = _.template($('#script-select-tmpl').html());
         property_panel.data = { identifier: 'project_status'}
@@ -87,7 +87,7 @@ properties.fetch({
 
         // Project status age other checkbox render
         var property_panel = new CCSI.Views.OtherComponent({
-                el: $('#geographic_scope_other_box'),
+                el: $('#geographic_scope'),
             });
         property_panel.template = _.template($('#script-select-tmpl').html());
         property_panel.data = { identifier: 'geographic_scope'}

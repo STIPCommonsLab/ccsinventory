@@ -204,7 +204,7 @@ ul#checkboxLists li {
           <div id="project_status_other_box" class="form-group" style="display:none;">
             <label class="col-md-4 control-label orange" for="project-url">Other Project Status  <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="Other project status not listed above"></span></label>
             <div class="col-md-6">
-              <input id="project_status_other" name="project_status_other" type="text" placeholder="" class="form-control input-md">
+              <input id="project_status_other" name="status_other" type="text" placeholder="" class="form-control input-md">
 
             </div>
           </div>
@@ -256,7 +256,7 @@ ul#checkboxLists li {
           <div class="form-group">
             <label class="col-md-4 control-label orange" for="project-description">Name of Nonfederal Government Sponsors <span data-toggle="tooltip" title="Name of Nonfederal Government Sponsors" class="glyphicon glyphicon-info-sign"></span></label>
             <div class="col-md-6">
-              <textarea class="form-control" id="name-nonfederal-goverment-sponsors" name="name_nonfederal_goverment_sponsors"></textarea>
+              <textarea class="form-control" id="agency_partner_name" name="agency_partner_name"></textarea>
             </div>
           </div>
 
@@ -336,7 +336,7 @@ ul#checkboxLists li {
           <div class="form-group">
             <label class="col-md-4 control-label orange" for="project-description">Types of volunteers <span data-toggle="tooltip" title="Types of volunteers" class="glyphicon glyphicon-info-sign"></span></label>
             <div class="col-md-6">
-              <textarea class="form-control" id="typers-volunteers" name="typers_volunteers"></textarea>
+              <textarea class="form-control" id="types-volunteers" name="types_volunteers"></textarea>
             </div>
        </div>
            
@@ -615,17 +615,17 @@ ul#checkboxLists li {
     <script type="text/template" id="other-checkbox-tmpl">
       <div class="checkbox inline">
         <label for="<%- identifier %>">
-          <input type="checkbox" id="<%- identifier %>_checkbox" name="<%- identifier %>_checkbox" value="Other" />
+          <input type="checkbox" id="<%- identifier %>_other_checkbox" name="<%- identifier %>" value="Other" />
           Other
         </label>
       </div>
       <script>
-            $('#<%- identifier %>_checkbox').change(function() {        
+            $('#<%- identifier %>_other_checkbox').change(function() {        
                 if($(this).is(":checked")) {
-                    $('#<%- identifier %>_box').css("display", "block");
-                    $('#<%- identifier %>').focus();                    
+                    $('#<%- identifier %>_other_box').css("display", "block");
+                    $('#<%- identifier %>_other').focus();                    
                 }else{
-                    $('#<%- identifier %>_box').css("display", "none");
+                    $('#<%- identifier %>_other_box').css("display", "none");
                 }
           });
       </script>
@@ -633,14 +633,14 @@ ul#checkboxLists li {
 
     <!-- templates -->
     <script type="text/template" id="other-select-tmpl">
-        <option value="<%- identifier %>_other">Other</option>
+        <option value="Other">Other</option>
     </script>
 
     <!-- templates -->
     <script type="text/template" id="script-select-tmpl">
         <script>
             $('#<%- identifier %>').change(function() {
-                if(this.value == '<%- identifier %>_other'){
+                if(this.value == 'Other'){
                     $('#<%- identifier %>_other_box').css("display", "block");
                     $('#<%- identifier %>_other').focus(); 
                 }else{
