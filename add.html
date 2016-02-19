@@ -274,6 +274,15 @@
           </div>
 
           <div class="col-md-6" id="address">
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label light-blue" for="geojson">GeoJSON file</label>
+              <div class="col-md-8">
+                <input id="the_geom_geojson" type="file" accept=".geojson, .GEOJSON" />
+              </div>
+            </div>
+
             <!-- Text input-->
             <div class="form-group">
               <label class="col-md-4 control-label light-blue" for="street-address">Street Address <span data-toggle="tooltip" title="Physical contact address" class="glyphicon glyphicon-info-sign"></span></label>
@@ -632,7 +641,7 @@ function initMap() {
   map.addLayer(baseMap);
 
   // Initialise the FeatureGroup to store editable layers
-  drawnItems = new L.FeatureGroup();
+  drawnItems = new L.geoJson();
   map.addLayer(drawnItems);
 
   // Initialise the draw control and pass it the FeatureGroup of editable layers
@@ -665,6 +674,48 @@ function initMap() {
   });
 
 }
+
+$('#the_geom_geojson').on('change', function(e){
+
+  var files = e.target.files;
+
+  // read file
+  var reader = new FileReader();
+  reader.onloadend = (function(e){
+
+    drawnItems.clearLayers();
+
+    var geofile = JSON.parse(e.target.result);
+    var point;
+    if(geofile.type === 'FeatureCollection'){
+      geofile.features.forEach(function(feature){
+        if(feature.type === 'Feature' && feature.geometry.type === 'Point'){
+          // if it is a collection, would take the last valid point
+          point = feature;
+        }
+      });
+    } else if ((geofile.type === 'Feature') && (geofile.geometry.type === 'Point')){
+      point = geofile;
+    }
+    if((point !== null) && (point !== undefined)){
+      // set latlng value
+      var coords = point.geometry.coordinates;
+      var latlng = new L.latLng(coords[1], coords[0]);
+      $("#latlng").val('ST_SetSRID(ST_Point(' + latlng.lng + ',' + latlng.lat + '),4326)');
+
+      // load it on map
+      drawnItems.clearLayers();
+      drawnItems.addData(point);
+      map.setView(latlng, 3);
+    } else{
+      alert('Sorry, no point found. Try with other file.');
+    }
+
+  });
+
+  reader.readAsText(files[0]);
+
+});
 
 // add location button event
 $("#geocode").click(function(e){
