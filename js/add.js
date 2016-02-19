@@ -36,7 +36,7 @@ properties.fetch({
         console.log('error on fetching properties');
     },
     complete: function(collection, xhr, options){
-        var options = { hideSidePanel: true, startCollapsed: true };
+        var options = { hideSidePanel: true, startCollapsed: true, allowBatchSelection: false };
         $("#agency_sponsor").treeMultiselect(options);
         $("#government_contact_affiliation").treeMultiselect(options);
 
@@ -91,6 +91,21 @@ properties.fetch({
             });
         property_panel.template = _.template($('#script-select-tmpl').html());
         property_panel.data = { identifier: 'geographic_scope'}
+        property_panel.render();
+
+
+        // Project topic other checkbox render
+        var property_panel = new CCSI.Views.OtherComponent({
+                el: $('#intended_outcomes'),
+            });
+        property_panel.data = { identifier: 'intended_outcomes'}
+        property_panel.render();
+
+        // Project topic other checkbox render
+        var property_panel = new CCSI.Views.OtherComponent({
+                el: $('#participation_tasks'),
+            });
+        property_panel.data = { identifier: 'participation_tasks'}
         property_panel.render();
 
     }

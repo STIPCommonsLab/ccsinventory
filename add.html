@@ -132,7 +132,7 @@ ul#checkboxLists li {
 
     <main id="submit-form" class="row">
       <div id="submit-form-div" class="col-md-8 col-md-offset-2">
-      <div class="well">Welcome to the Federal Database of Crowdsourcing and Citizen Science.  Below is a two-part webform for you to fill out entirely. If at any point you do not understand the field, please refer to <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="Hover over this for more instruction"></span> for more instructions.  The information collected will be displayed on a searchable map for the public to use.  To assist in visualizing the final product, explore the <a href="browse">map</a>. For further detail on each field of science category, please visit <a href="http://sites.nationalacademies.org/pga/Resdoc/PGA_044522.htm">this website</a>.</div>
+      <div class="well">Welcome to the Catalogue of Federal Crowdsourcing and Citizen Science.  Below is a webform for you to fill out entirely. If at any point you do not understand the field, please refer to <span data-original-title="Hover over this for more instruction" class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title=""></span> for more instructions.  The information collected will be displayed on a searchable map for the public to use.</div>
 
       <form class="form-horizontal" method="post" action="">
         <fieldset>
@@ -184,7 +184,7 @@ ul#checkboxLists li {
 
           <!-- Text input-->
           <div class="form-group">
-            <label class="col-md-4 control-label orange" for="keywords">Project Keywords <span data-toggle="tooltip" title="In addition to any topics checked above, add keywords (separated by a comma) that will help someone find your project on the Internet." class="glyphicon glyphicon-info-sign"></span></label>
+            <label class="col-md-4 control-label orange" for="keywords">Keywords <span data-toggle="tooltip" title="In addition to any topics checked above, add keywords (separated by a comma) that will help someone find your project on the Internet." class="glyphicon glyphicon-info-sign"></span></label>
             <div class="col-md-6">
               <input id="keywords" name="keywords" type="text" placeholder="" class="form-control input-md">
 
@@ -308,18 +308,6 @@ ul#checkboxLists li {
             </div>
           </div>
 
-
-            <div class="form-group">
-              <label for="scistarter" class="col-md-4 control-label orange">Publish data on Scistarter? <span class="glyphicon glyphicon-info-sign" title="" data-toggle="tooltip" data-original-title="Opt in to data sharing with Scistarter.com, an inventory of active projects looking for volunteers"></span></label>
-	              <div class="col-md-6">
-		              <div class="checkbox">
-		                <label for="scistarter">
-		                  <input type="checkbox" value="true" id="scistarter" name="scistarter">
-		                  Yes, publish my data!
-		                </label>
-			            </div>
-	              </div>
-            </div>
             <div class="form-group">
               <label for="scistarter" class="col-md-4 control-label orange">Recruiting Volunteers <span class="glyphicon glyphicon-info-sign" title="" data-toggle="tooltip" data-original-title="Check the box if the project is recruiting volunteers."></span></label>
 	              <div class="col-md-6">
@@ -327,6 +315,19 @@ ul#checkboxLists li {
 		                <label for="scistarter">
 		                  <input type="checkbox" value="true" id="recruiting" name="recruiting">
 		                  Yes, this project is recruiting 
+		                </label>
+			            </div>
+	              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label for="scistarter" class="col-md-4 control-label orange">Advertise on SciStarter? <span class="glyphicon glyphicon-info-sign" title="" data-toggle="tooltip" data-original-title="Opt in to data sharing with Scistarter.com, an inventory of active projects looking for volunteers"></span></label>
+	              <div class="col-md-6">
+		              <div class="checkbox">
+		                <label for="scistarter">
+		                  <input type="checkbox" value="true" id="scistarter" name="scistarter">
+		                  Yes
 		                </label>
 			            </div>
 	              </div>
@@ -348,9 +349,9 @@ ul#checkboxLists li {
           <legend class="blue"><i class="fa fa-map-marker"></i>Location Information</legend>
 
           <div class="well">
-            <p>Please enter the address where the project is administered.  For example, if your project crowdsources identification of images, then where is the project and its dataset managed?  OR if your project conducts water quality monitoring across a tri-state water feature then where is that data collected and managed?</p>
-            <p>After you enter an address and click the "Geocode Address" button, a pin will be placed on the map. To move the pin, click the edit button in the map and drag it to the most appropriate location. If you don't have an address, click the pin button on the left side of the map toolbar to draw the location.</p>
-            <p>If the project you are entering is only funded by your agency and all other aspects of the project are conducted on site, then please enter the address location of the projects field/administration site. </p>
+            <p>Please enter the address where the project is administered.  For example, if your project crowdsources identification of images, then where is the project and its dataset managed?  OR if your project conducts water quality monitoring across a tri-state water feature, then where are those data collected and managed?</p>
+            <p>After you enter an address and click the "Geocode Address" button, a pin will be placed on the map. To move the pin, click the edit button in the map and drag it to the most appropriate location. If you don't have an address, click the pin button on the left side of the map toolbar and place the pin in the most appropriate location.</p>
+            <p>If the project you are entering is funded only by your agency and all other aspects of the project are conducted on site, then please enter the address location of the project's field/administration site. </p>
           </div>
 
           <div class="row">
@@ -486,33 +487,6 @@ ul#checkboxLists li {
 
           <legend class="light-blue"><i class="fa fa-phone"></i>Contact Information</legend>
 
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-md-4 control-label light-blue" for="affiliation">Government Contact <span data-toggle="tooltip" title="Government Contact" class="glyphicon glyphicon-info-sign"></span></label>
-            <div class="col-md-6">
-              <input id="government_contact" name="government_contact" type="text" placeholder="" class="form-control input-md">
-
-            </div>
-          </div>
-
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-md-4 control-label light-blue" for="affiliation">Government Contact Affiliation <span data-toggle="tooltip" title="Government Contact Affiliation" class="glyphicon glyphicon-info-sign"></span></label>
-            <div class="col-md-6">
-              <select id="government_contact_affiliation" name="government_contact_affiliation" class="form-control">
-              </select>
-
-            </div>
-          </div> 
-
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-md-4 control-label light-blue" for="email">Government Contact Email <span data-toggle="tooltip" title="Contact email address" class="glyphicon glyphicon-info-sign"></span></label>
-            <div class="col-md-6">
-              <input id="government_contact_email" name="government_contact_email" type="text" placeholder="" class="form-control input-md">
-
-            </div>
-          </div>
 
           <!-- Text input-->
           <div class="form-group">
@@ -550,6 +524,35 @@ ul#checkboxLists li {
 
             </div>
           </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label light-blue" for="affiliation">Government Contact <span data-toggle="tooltip" title="Government Contact" class="glyphicon glyphicon-info-sign"></span></label>
+            <div class="col-md-6">
+              <input id="government_contact" name="government_contact" type="text" placeholder="" class="form-control input-md">
+
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label light-blue" for="affiliation">Government Contact Affiliation <span data-toggle="tooltip" title="Government Contact Affiliation" class="glyphicon glyphicon-info-sign"></span></label>
+            <div class="col-md-6">
+              <select id="government_contact_affiliation" name="government_contact_affiliation" class="form-control">
+              </select>
+
+            </div>
+          </div> 
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label light-blue" for="email">Government Contact Email <span data-toggle="tooltip" title="Contact email address" class="glyphicon glyphicon-info-sign"></span></label>
+            <div class="col-md-6">
+              <input id="government_contact_email" name="government_contact_email" type="text" placeholder="" class="form-control input-md">
+
+            </div>
+          </div>
+
 
           <div class="panel panel-info">
             <div class="panel-heading">
@@ -614,7 +617,7 @@ ul#checkboxLists li {
     <!-- templates -->
     <script type="text/template" id="other-checkbox-tmpl">
       <div class="checkbox inline">
-        <label for="<%- identifier %>">
+        <label for="<%- identifier %>_other_checkbox">
           <input type="checkbox" id="<%- identifier %>_other_checkbox" name="<%- identifier %>" value="Other" />
           Other
         </label>
