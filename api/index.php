@@ -41,6 +41,12 @@ $app->post('/project', function () use ($app, $cartodb_username, $staging_table,
         $data['scistarter'] = 'false';
     }
 
+    if(array_key_exists("recruiting", $data)) {
+        $data['recruiting'] = 'true'; 
+    } else {
+        $data['recruiting'] = 'false';
+    }
+
     $sql = insertSQL($staging_table, $data);
 
 	//---------------

@@ -388,3 +388,46 @@ nav a:hover,
     background-color: #00a2da;
     padding:24px;
 }
+
+/* STYLEs FOR MULTILEVEL CHECKBOXES */
+
+/* hide real checkboxes */
+.multiLevelCheckbox input {
+  display: none;
+}
+
+/* add new checkboxes */
+.multiLevelCheckbox span {
+  width: 15px;
+  height: 15px;
+  float: left;
+  background: url("images/lite-green-check.png");
+  background-repeat: no-repeat;
+}
+
+.multiLevelCheckbox input:checked + span {
+  background-position:0px -15px;
+}
+
+/* add margin for child cat */
+.multiLevelCheckbox.child-location span {
+  margin-left: 50px;
+}
+
+/* add margin for label */
+ul {
+  list-style-type:none;
+}
+
+ul#checkboxLists label {
+  padding-left: 10px;
+}
+
+ul#checkboxLists li {
+  min-height: 15px;
+}
+
+#childCheckboxes {
+  display:none;
+}
+/* END OF STYLEs FOR MULTILEVEL CHECKBOXES */
