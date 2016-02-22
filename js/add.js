@@ -79,22 +79,6 @@ properties.fetch({
         property_panel.data = { identifier: 'project_status'}
         property_panel.render();
 
-        // Geographic scope other checkbox render
-        var property_panel = new CCSI.Views.OtherComponent({
-                el: $('#geographic_scope'),
-            });
-        property_panel.template = _.template($('#other-select-tmpl').html());
-        property_panel.data = { identifier: 'geographic_scope'}
-        property_panel.render();
-
-        // Project status age other checkbox render
-        var property_panel = new CCSI.Views.OtherComponent({
-                el: $('#geographic_scope'),
-            });
-        property_panel.template = _.template($('#script-select-tmpl').html());
-        property_panel.data = { identifier: 'geographic_scope'}
-        property_panel.render();
-
 
         // Project topic other checkbox render
         var property_panel = new CCSI.Views.OtherComponent({
