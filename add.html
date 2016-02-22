@@ -670,6 +670,8 @@ $('#the_geom_geojson').on('change', function(e){
 
   var files = e.target.files;
 
+  if(files.length === 0) return;
+
   // read file
   var reader = new FileReader();
   reader.onloadend = (function(e){
