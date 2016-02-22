@@ -12,13 +12,13 @@ properties.fetch({
                     property_panel.template = _.template($('#multiple-select-tmpl').html());
 
                     // Rendering government contact affiliation
-                    var property_panel_government = new CCSI.Views.PropertyComponent({
-                        el: $('#government_contact_affiliation'),
+                    var property_panel_gov = new CCSI.Views.PropertyComponent({
+                        el: $('#gov_contact_affiliation'),
                     });
 
-                    property_panel_government.template = _.template($('#multiple-select-tmpl').html());
-                    property_panel_government.model = element;
-                    property_panel_government.render();
+                    property_panel_gov.template = _.template($('#multiple-select-tmpl').html());
+                    property_panel_gov.model = element;
+                    property_panel_gov.render();
 
 
             }else{
