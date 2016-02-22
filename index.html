@@ -213,13 +213,18 @@
       <p class="col-md-12"><strong>Fields of science:</strong> <%- project_topic %></p>
       <p class="col-md-12"><span><strong>Status:</strong> <%- status %></span></p>
       <p class="col-md-12"><span><strong>Start date:</strong> <%- start_date %></span></p>
-      <p class="col-md-12"><strong>Agency sponsor:</strong> <%- agency_sponsor %></p>
-      <p class="col-md-12"><strong>Other agency sponsor:</strong> <%- agency_sponsor_other %></p>
-      <p class="col-md-12"><strong>Agency partners:</strong> <%- agency_partner %></p>
+      <p class="col-md-12"><strong>Federal Government Sponsor:</strong> <%- agency_sponsor %></p>
+      <p class="col-md-12"><strong>Other Federal Government Sponsor:</strong> <%- agency_sponsor_other %></p>
+      <p class="col-md-12"><strong>Type of Nonfederal Government Sponsor:</strong> <%- agency_partner %></p>
+      <p class="col-md-12"><strong>Name of
+Nonfederal Government Sponsors:</strong> <%- agency_partner_name %></p>
       <p class="col-md-12"><strong>Geographic scope:</strong> <%- geographic_scope %></p>
       <p class="col-md-12"><strong>Intended outcomes:</strong> <%- intended_outcomes %></p>
       <p class="col-md-12"><strong>Participation tasks:</strong> <%- participation_tasks %></p>
       <p class="col-md-12"><strong>Participant age:</strong> <%- participant_age %></p>
+      <% if (recruiting) { %>
+        <p class="col-md-12"><strong>Recruiting Volunteers:</strong> Yes, this project is recruiting</p>
+    <% } %>
       <div class="col-md-12" id="contact_info">
         <h4>Contact information</h4>
         <div><span class="glyphicon glyphicon-user" aria-hidden="true"></span><span><%- project_contact %></span><span><%- affiliation? ' - ' + affiliation : '' %></span></div>
