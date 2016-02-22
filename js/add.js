@@ -20,6 +20,7 @@ properties.fetch({
                     property_panel_government.model = element;
                     property_panel_government.render();
 
+
             }else{
 
                 if ($('#' + element.get('property_category')).is('select')) {
@@ -28,6 +29,7 @@ properties.fetch({
             }
 
             property_panel.model = element;
+
             property_panel.render();
 
         })
