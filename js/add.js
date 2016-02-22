@@ -40,7 +40,7 @@ properties.fetch({
     complete: function(collection, xhr, options){
         var options = { hideSidePanel: true, startCollapsed: true, allowBatchSelection: false };
         $("#agency_sponsor").treeMultiselect(options);
-        $("#government_contact_affiliation").treeMultiselect(options);
+        $("#gov_contact_affiliation").treeMultiselect(options);
 
         // Project topic other checkbox render
         var property_panel = new CCSI.Views.OtherComponent({
