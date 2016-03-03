@@ -186,21 +186,19 @@
     <script type="text/template" id="project-list-tmpl">
       <li><a href="#projectId/<%- cartodb_id %>"><%- project_name %></a><br/>
         <small style="color: grey; font-size: 75%"> by <%
+            var sponsors = [];
             if (agency_sponsor) {
-                var sponsors = [];
                 agency_sponsor.split(",").forEach(function (item) {
                     var property = properties.findWhere({property_code: item.replace(/\s/g, '')});
                     if (typeof(property) != "undefined") {
                         sponsors.push(property.get('property_name'));
                     }
                 });
-                %>
-                <%= sponsors.join(', ') %>
-                <%
             }else{
+              sponsors.push('n/a');
+            }
             %>
-              <%= 'n/a' %>
-            <% } %>
+        <%= sponsors.join(', ') %>        
         </small></li>
     </script>
 
