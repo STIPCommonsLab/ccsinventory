@@ -37,6 +37,8 @@ var projects_list_view = new CCSI.Views.ProjectList({
     el: $('#project_list')
 });
 
+projects_list_view.collection.fetch();
+
 var properties = new CCSI.Collections.Properties();
 
 properties.fetch({
