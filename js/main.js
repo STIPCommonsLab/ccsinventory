@@ -53,7 +53,46 @@ properties.fetch({
     },
     error: function(collection, xhr, options){
         console.log('error on fetching properties');
+    },    
+    complete: function(collection, xhr, options){
+
+        // Project topic other filter checkbox render
+        var property_panel = new CCSI.Views.OtherFilterComponent({
+                el: $('#project_topic'),
+            });
+        property_panel.data = { identifier: 'project_topic'}
+        property_panel.render();
+
+        // Agency sponsor other filter checkbox render
+        var property_panel = new CCSI.Views.OtherFilterComponent({
+                el: $('#agency_sponsor'),
+            });
+        property_panel.data = { identifier: 'agency_sponsor'}
+        property_panel.render();
+
+        // Agency partner other filter checkbox render
+        var property_panel = new CCSI.Views.OtherFilterComponent({
+                el: $('#agency_partner'),
+            });
+        property_panel.data = { identifier: 'agency_partner'}
+        property_panel.render();
+
+        // Participant age other filter checkbox render
+        var property_panel = new CCSI.Views.OtherFilterComponent({
+                el: $('#participant_age'),
+            });
+        property_panel.data = { identifier: 'participant_age'}
+        property_panel.render();
+
+        // Intended outcomes other filter checkbox render
+        var property_panel = new CCSI.Views.OtherFilterComponent({
+                el: $('#intended_outcomes'),
+            });
+        property_panel.data = { identifier: 'intended_outcomes'}
+        property_panel.render();
     }
+
+
 });
 
 var router = new CCSI.Routers.Project();

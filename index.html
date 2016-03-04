@@ -183,24 +183,34 @@
       </div>
     </script>
 
+    <!-- templates -->
+    <script type="text/template" id="filter-checkbox-other-tmpl">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="other" onchange="Javascript:applyQuery();return false;"/>
+          Other
+        </label>
+      </div>
+    </script>
+
     <script type="text/template" id="project-list-tmpl">
       <li><a href="#projectId/<%- cartodb_id %>"><%- project_name %></a><br/>
         <small style="color: grey; font-size: 75%"> by <%
-            var sponsors_list = [];
+            var sponsors = [];
             if (agency_sponsor) {
                 agency_sponsor.split(",").forEach(function (item) {
                     var property = properties.findWhere({property_code: item.replace(/\s/g, '')});
                     if (typeof(property) != "undefined") {
-                        sponsors_list.push(property.get('property_name'));
+                        sponsors.push(property.get('property_name'));
                     }else if (item.replace(/\s/g, '') == 'other') {
-                        sponsors_list.push('Other');
+                        sponsors.push('Other');
                     }
                 });
             }else{
-              sponsors_list.push('n/a');
+              sponsors.push('n/a');
             }
             %>
-        <%= sponsors_list.join(', ') %>        
+        <%= sponsors.join(', ') %>        
         </small></li>
     </script>
 
@@ -354,6 +364,7 @@ Nonfederal Government Sponsors:</strong> <%- agency_partner_name %></p>
     <script src="js/collections/Properties.js"></script>
     <script src="js/collections/Projects.js"></script>
     <script src="js/views/PropertyComponent.js"></script>
+    <script src="js/views/OtherFilterComponent.js"></script>
     <script src="js/views/ProjectPanel.js"></script>
     <script src="js/views/ProjectList.js"></script>
     <script src="js/routers/Project.js"></script>
