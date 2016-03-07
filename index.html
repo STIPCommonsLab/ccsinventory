@@ -342,7 +342,23 @@ Nonfederal Government Sponsors:</strong> <%- agency_partner_name %></p>
             <h3>{{project_name}}</h3>
             <p><a href="{{project_url}}" target="_blank">{{project_url}}</a></p>
             <p><strong style="color:#FE8433">Keywords</strong>: {{keywords}}</p>
-            <p><strong style="color:#FE8433">Agency sponsor</strong>: {{agency_sponsor}}</p>
+            <p><strong style="color:#FE8433">Agency sponsor</strong>: <%
+            var sponsors = [];
+            if (agency_sponsor) {
+                agency_sponsor.split(",").forEach(function (item) {
+                    var property = properties.findWhere({property_code: item.replace(/\s/g, '')});
+                    if (typeof(property) != "undefined") {
+                        sponsors.push(property.get('property_name'));
+                    }else if (item.replace(/\s/g, '') == 'other') {
+                        sponsors.push('Other');
+                    }
+                });
+            }else{
+              sponsors.push('n/a');
+            }
+            %>
+            <%= sponsors.join(', ') %>     
+            </p>
             <p><a href="#projectId/{{cartodb_id}}">Expand project</a></p>
           </div>
         </div>
