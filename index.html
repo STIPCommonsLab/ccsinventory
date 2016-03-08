@@ -339,10 +339,10 @@ Nonfederal Government Sponsors:</strong> <%- agency_partner_name %></p>
         <a href="#close" class="cartodb-popup-close-button close">x</a>
         <div class="cartodb-popup-content-wrapper">
           <div class="cartodb-popup-content">
-            <h3><%- project_name %></h3>
-            <p><a href="<%- project_url %>" target="_blank"><%- project_url %></a></p>
-            <p><strong style="color:#FE8433">Keywords</strong>: <%- keywords %></p>
-            <p><a href="#projectId/<%- cartodb_id %>">Expand project</a></p>
+            <h3>{{project_name}}</h3>
+            <p><a href="{{project_url}}" target="_blank">{{project_url}}</a></p>
+            <p><strong style="color:#FE8433">Keywords</strong>: {{keywords}}</p>
+            <p><a href="#projectId/{{cartodb_id}}">Expand project</a></p>
           </div>
         </div>
         <div class="cartodb-popup-tip-container"></div>
@@ -393,27 +393,17 @@ Nonfederal Government Sponsors:</strong> <%- agency_partner_name %></p>
           // Hack needed in order to add the infowindow programmatically
           map.viz = vis;
           // Manually add our infowindow
-
-           var sublayer = layer.getSubLayer(0);
-
-           sublayer.setInteraction(true);
-
-           sublayer.infowindow.set('sanitizeTemplate',false);
-
-           sublayer.infowindow.set('template', $('#infowindow_template').html());
-
-          /*
           cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(0),
-            ['cartodb_id', 'project_name', 'keywords', 'agency_sponsor', 'project_url'],
+            ['cartodb_id', 'project_name', 'keywords', 'project_url'],
             {
               infowindowTemplate: $('#infowindow_template').html(),
-              templateType: 'underscore',
+              templateType: 'mustache',
               triggerEvent: 'featureClick',
               cursorInteraction: true,
               sanitizeTemplate: false
             }
           );
-          */
+
           if (ready) {
             Backbone.history.start();
           }
