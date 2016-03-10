@@ -183,9 +183,35 @@
       </div>
     </script>
 
+    <!-- templates -->
+    <script type="text/template" id="filter-checkbox-other-tmpl">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="other" onchange="Javascript:applyQuery();return false;"/>
+          Other
+        </label>
+      </div>
+    </script>
+
     <script type="text/template" id="project-list-tmpl">
       <li><a href="#projectId/<%- cartodb_id %>"><%- project_name %></a><br/>
-        <small style="color: grey; font-size: 75%"> by <%- agency_sponsor? agency_sponsor : 'n/a' %> </small></li>
+        <small style="color: grey; font-size: 75%"> by <%
+            var sponsors = [];
+            if (agency_sponsor) {
+                agency_sponsor.split(",").forEach(function (item) {
+                    var property = properties.findWhere({property_code: item.replace(/\s/g, '')});
+                    if (typeof(property) != "undefined") {
+                        sponsors.push(property.get('property_name'));
+                    }else if (item.replace(/\s/g, '') == 'other') {
+                        sponsors.push('Other');
+                    }
+                });
+            }else{
+              sponsors.push('n/a');
+            }
+            %>
+        <%= sponsors.join(', ') %>        
+        </small></li>
     </script>
 
     <script type="text/template" id="project-data-tmpl">
@@ -197,18 +223,94 @@
 
       <p class="col-md-12"><%- project_description %></p>
       <p class="col-md-12"><strong>Keywords:</strong> <%- keywords %></p>
-      <p class="col-md-12"><strong>Fields of science:</strong> <%- project_topic %></p>
-      <p class="col-md-12"><span><strong>Status:</strong> <%- status %></span></p>
+      <p class="col-md-12"><strong>Fields of science:</strong><%
+        var topics = [];
+        project_topic.split(",").forEach(function (item) {
+            var property = properties.findWhere({property_code: item.replace(/\s/g, '')});
+            if (typeof(property) != "undefined") {
+                topics.push(property.get('property_name'));
+            }else if (item.replace(/\s/g, '') == 'other') {
+                topics.push('Other');
+            }
+        });
+        %>
+        <%= topics.join(', ')  %>
+      </p>
+      <p class="col-md-12"><span><strong>Status:</strong><%
+        var property = properties.findWhere({property_code: status});
+        %>
+        <%= property.get('property_name') %>
+      </span></p>
       <p class="col-md-12"><span><strong>Start date:</strong> <%- start_date %></span></p>
-      <p class="col-md-12"><strong>Federal Government Sponsor:</strong> <%- agency_sponsor %></p>
+      <p class="col-md-12"><strong>Federal Government Sponsor:</strong><%
+        var sponsors = [];
+        agency_sponsor.split(",").forEach(function (item) {
+            var property = properties.findWhere({property_code: item.replace(/\s/g, '')});
+            if (typeof(property) != "undefined") {
+                sponsors.push(property.get('property_name'));
+            }else if (item.replace(/\s/g, '') == 'other') {
+                sponsors.push('Other');
+            }
+        });
+        %>
+        <%= sponsors.join(', ')
+        %></p>
       <p class="col-md-12"><strong>Other Federal Government Sponsor:</strong> <%- agency_sponsor_other %></p>
-      <p class="col-md-12"><strong>Type of Nonfederal Government Sponsor:</strong> <%- agency_partner %></p>
+      <p class="col-md-12"><strong>Type of Nonfederal Government Sponsor:</strong><%
+        var partners = [];
+        agency_partner.split(",").forEach(function (item) {
+            var property = properties.findWhere({property_code: item.replace(/\s/g, '')});
+            if (typeof(property) != "undefined") {            
+                partners.push(property.get('property_name'));
+            }else if (item.replace(/\s/g, '') == 'other') {
+                partners.push('Other');
+            }
+        });
+        %>
+        <%= partners.join(', ') %>
+      </p>
       <p class="col-md-12"><strong>Name of
 Nonfederal Government Sponsors:</strong> <%- agency_partner_name %></p>
       <p class="col-md-12"><strong>Geographic scope:</strong> <%- geographic_scope %></p>
-      <p class="col-md-12"><strong>Intended outcomes:</strong> <%- intended_outcomes %></p>
-      <p class="col-md-12"><strong>Participation tasks:</strong> <%- participation_tasks %></p>
-      <p class="col-md-12"><strong>Participant age:</strong> <%- participant_age %></p>
+      <p class="col-md-12"><strong>Intended outcomes:</strong><%
+        var outcomes = [];
+        intended_outcomes.split(",").forEach(function (item) {
+            var property = properties.findWhere({property_code: item.replace(/\s/g, '')});
+            if (typeof(property) != "undefined") {
+                outcomes.push(property.get('property_name'));
+            }else if (item.replace(/\s/g, '') == 'other') {
+                outcomes.push('Other');
+            }
+        });
+        %>
+        <%= outcomes.join(', ') %>
+      </p>
+      <p class="col-md-12"><strong>Participation tasks:</strong><% 
+        var tasks = [];
+        participation_tasks.split(",").forEach(function (item) {
+            var property = properties.findWhere({property_code: item.replace(/\s/g, '')});
+            if (typeof(property) != "undefined") {
+                tasks.push(property.get('property_name'));
+            }else if (item.replace(/\s/g, '') == 'other') {
+                tasks.push('Other');
+            }
+        });
+        %>
+        <%= tasks.join(', ') %>
+      </p>
+      <p class="col-md-12"><strong>Participant age:</strong><%
+        var ages = [];
+        participant_age.split(",").forEach(function (item) {
+            var property = properties.findWhere({property_code: item.replace(/\s/g, '')});
+            if (typeof(property) != "undefined") {
+                ages.push(property.get('property_name'));
+            }else if (item.replace(/\s/g, '') == 'other') {
+                ages.push('Other');
+            }
+        });
+        %>
+        <%= ages.join(', ') %>
+      </p>
       <% if (recruiting) { %>
         <p class="col-md-12"><strong>Recruiting Volunteers:</strong> Yes, this project is recruiting</p>
     <% } %>
@@ -240,7 +342,6 @@ Nonfederal Government Sponsors:</strong> <%- agency_partner_name %></p>
             <h3>{{project_name}}</h3>
             <p><a href="{{project_url}}" target="_blank">{{project_url}}</a></p>
             <p><strong style="color:#FE8433">Keywords</strong>: {{keywords}}</p>
-            <p><strong style="color:#FE8433">Agency sponsor</strong>: {{agency_sponsor}}</p>
             <p><a href="#projectId/{{cartodb_id}}">Expand project</a></p>
           </div>
         </div>
@@ -262,6 +363,7 @@ Nonfederal Government Sponsors:</strong> <%- agency_partner_name %></p>
     <script src="js/collections/Properties.js"></script>
     <script src="js/collections/Projects.js"></script>
     <script src="js/views/PropertyComponent.js"></script>
+    <script src="js/views/OtherFilterComponent.js"></script>
     <script src="js/views/ProjectPanel.js"></script>
     <script src="js/views/ProjectList.js"></script>
     <script src="js/routers/Project.js"></script>
@@ -292,7 +394,7 @@ Nonfederal Government Sponsors:</strong> <%- agency_partner_name %></p>
           map.viz = vis;
           // Manually add our infowindow
           cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(0),
-            ['cartodb_id', 'project_name', 'keywords', 'agency_sponsor', 'project_url'],
+            ['cartodb_id', 'project_name', 'keywords', 'project_url'],
             {
               infowindowTemplate: $('#infowindow_template').html(),
               templateType: 'mustache',

@@ -525,7 +525,7 @@
 <script type="text/template" id="filter-checkbox-tmpl">
   <div class="checkbox inline">
     <label for="<%- property_code %>">
-      <input type="checkbox" id="<%- property_code %>" name="<%- property_category %>" value="<%- property_name %>" />
+      <input type="checkbox" id="<%- property_code %>" name="<%- property_category %>" value="<%- property_code %>" />
       <%- property_name %>
     </label>
   </div>
@@ -533,7 +533,7 @@
 
 <!-- templates -->
 <script type="text/template" id="filter-select-tmpl">
-  <option value="<%- property_name %>"><%- property_name %></option>
+  <option value="<%- property_code %>"><%- property_name %></option>
 </script>
 
 <!-- templates -->
@@ -577,7 +577,7 @@
 
 <!-- templates -->
 <script type="text/template" id="multiple-select-tmpl">
-  <option value="<%- property_name %>" data-section="<%- property_parent_name %>"><%- property_name %></option>
+  <option value="<%- property_code %>" data-section="<%- property_parent_name %>"><%- property_name %></option>
 </script>
 
 <script type="text/template" id="success-tmpl">
