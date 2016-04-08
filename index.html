@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <title>Database of federal crowdsourcing and citizen science projects, by Commons Lab - Wilson Center</title>
+    <title>Federal Crowdsourcing and Citizen Science Catalog</title>
     <link rel="stylesheet" href="css/cartodb.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
@@ -12,22 +12,22 @@
   </head>
   <body class="container-fluid">
 
-    <header>
+ <header>
       <nav class="row">
         <div class="col-md-6">
-          <image xlink:href="img/commons_logo.svg" src="img/commons_logo.png"
-                 width="260" height="40" />
-          <!-- <image xlink:href="img/wilson_logo.svg" src="img/wilson_logo.png" -->
-          <!--        width="260" height="40" /> -->
         </div>
         <div class="col-md-6">
-          <span><a href="about.html">About</a></span>
-          <span><a class="lead-btn" href="add.html">Add project</a></span>
-          <span><a class="current" href="index.html">Home</a></span>
+          <span><a class="current" href="about.html">About The Catalog</a></span>
+          <span><a class="current" href="add.html">Add A Project</a></span>
+          <span><a class="current" href="https://www.citizenscience.gov">CitizenScience.gov</a></span>
         </div>
       </nav>
+      
       <section id="hero-intro" class="row">
-        <h2>Database of federal crowdsourcing and citizen science projects</h2>
+         <a href="https://ccsinventory.wilsoncenter.org/">
+         <img src="img/Catalog-Gray.png"
+                 style= "float: left" width="200" height="60" hspace="15" vspace="13"/> </a>
+        <h2>Federal Crowdsourcing and Citizen Science Catalog</h2>
       </section>
     </header>
 
@@ -158,17 +158,13 @@
           </ul>
         </div>
         <div class="initiative-by col-md-offset-2 col-md-6">
-          <p >An initiative led by:</p>
+          <p >An initiative led by the Wilson Center in partnership with the General Services Administration (GSA)</p>
           <image xlink:href="img/commons_logo.svg" src="img/commons_logo.png"
                  width="260" height="40" />
           <image xlink:href="img/wilson_logo.svg" src="img/wilson_logo.png"
                  width="260" height="40" />
 
         </div>
-      </div>
-
-      <div class="row copyright">
-        <div class="col-md-12 text-center"><p>Copyrighted by <a href="http://wilsoncenter.org/the-commons-lab-inventory">Wilson Center</a> &#169; 2015 · Developed by <a href="http://icarto.es" target="_blank">iCarto</a></p></div>
       </div>
 
     </footer>
@@ -210,7 +206,7 @@
               sponsors.push('n/a');
             }
             %>
-        <%= sponsors.join(', ') %>
+        <%= sponsors.join(', ') %>        
         </small></li>
     </script>
 
@@ -222,116 +218,92 @@
       <% } %>
 
       <p class="col-md-12"><%- project_description %></p>
-      <p class="col-md-12"><strong>Keywords:</strong> <%- keywords || 'n/a' %></p>
+      <p class="col-md-12"><strong>Keywords:</strong> <%- keywords %></p>
       <p class="col-md-12"><strong>Fields of science:</strong><%
         var topics = [];
-        if(project_topic){
-          project_topic.split(",").forEach(function (item) {
+        project_topic.split(",").forEach(function (item) {
             var property = properties.findWhere({property_code: item.replace(/\s/g, '')});
-            if(typeof(property) != "undefined") {
-              topics.push(property.get('property_name'));
-            } else if (item.replace(/\s/g, '') == 'other') {
-              topics.push('Other');
+            if (typeof(property) != "undefined") {
+                topics.push(property.get('property_name'));
+            }else if (item.replace(/\s/g, '') == 'other') {
+                topics.push('Other');
             }
-          });
-        } else {
-          topics.push('n/a');
-        }
+        });
         %>
         <%= topics.join(', ')  %>
       </p>
       <p class="col-md-12"><span><strong>Status:</strong><%
         var property = properties.findWhere({property_code: status});
         %>
-        <%= property.get('property_name') || 'n/a' %>
+        <%= property.get('property_name') %>
       </span></p>
-      <p class="col-md-12"><span><strong>Start date:</strong> <%- start_date || 'n/a' %></span></p>
+      <p class="col-md-12"><span><strong>Start date:</strong> <%- start_date %></span></p>
       <p class="col-md-12"><strong>Federal Government Sponsor:</strong><%
         var sponsors = [];
-        if(agency_sponsor) {
-          agency_sponsor.split(",").forEach(function (item) {
+        agency_sponsor.split(",").forEach(function (item) {
             var property = properties.findWhere({property_code: item.replace(/\s/g, '')});
             if (typeof(property) != "undefined") {
-              sponsors.push(property.get('property_name'));
-            } else if (item.replace(/\s/g, '') == 'other') {
-              sponsors.push('Other');
+                sponsors.push(property.get('property_name'));
+            }else if (item.replace(/\s/g, '') == 'other') {
+                sponsors.push('Other');
             }
-          });
-        } else {
-          sponsors.push('n/a');
-        }
+        });
         %>
         <%= sponsors.join(', ')
         %></p>
-      <p class="col-md-12"><strong>Other Federal Government Sponsor:</strong> <%- agency_sponsor_other || 'n/a' %></p>
+      <p class="col-md-12"><strong>Other Federal Government Sponsor:</strong> <%- agency_sponsor_other %></p>
       <p class="col-md-12"><strong>Type of Nonfederal Government Sponsor:</strong><%
         var partners = [];
-        if(agency_partner){
-          agency_partner.split(",").forEach(function (item) {
+        agency_partner.split(",").forEach(function (item) {
             var property = properties.findWhere({property_code: item.replace(/\s/g, '')});
-            if (typeof(property) != "undefined") {
-              partners.push(property.get('property_name'));
-            } else if (item.replace(/\s/g, '') == 'other') {
-              partners.push('Other');
+            if (typeof(property) != "undefined") {            
+                partners.push(property.get('property_name'));
+            }else if (item.replace(/\s/g, '') == 'other') {
+                partners.push('Other');
             }
-          });
-        } else {
-          partners.push('n/a');
-        }
+        });
         %>
         <%= partners.join(', ') %>
       </p>
       <p class="col-md-12"><strong>Name of
-Nonfederal Government Sponsors:</strong> <%- agency_partner_name || 'n/a' %></p>
+Nonfederal Government Sponsors:</strong> <%- agency_partner_name %></p>
       <p class="col-md-12"><strong>Geographic scope:</strong> <%- geographic_scope %></p>
       <p class="col-md-12"><strong>Intended outcomes:</strong><%
         var outcomes = [];
-        if(intended_outcomes){
-          intended_outcomes.split(",").forEach(function (item) {
+        intended_outcomes.split(",").forEach(function (item) {
             var property = properties.findWhere({property_code: item.replace(/\s/g, '')});
-            if(typeof(property) != "undefined") {
-              outcomes.push(property.get('property_name'));
-            } else if (item.replace(/\s/g, '') == 'other') {
-              outcomes.push('Other');
+            if (typeof(property) != "undefined") {
+                outcomes.push(property.get('property_name'));
+            }else if (item.replace(/\s/g, '') == 'other') {
+                outcomes.push('Other');
             }
-          });
-        } else {
-          outcomes.push('n/a');
-        }
+        });
         %>
         <%= outcomes.join(', ') %>
       </p>
-      <p class="col-md-12"><strong>Participation tasks:</strong><%
+      <p class="col-md-12"><strong>Participation tasks:</strong><% 
         var tasks = [];
-        if(participation_tasks){
-          participation_tasks.split(",").forEach(function (item) {
+        participation_tasks.split(",").forEach(function (item) {
             var property = properties.findWhere({property_code: item.replace(/\s/g, '')});
             if (typeof(property) != "undefined") {
-              tasks.push(property.get('property_name'));
-            } else if (item.replace(/\s/g, '') == 'other') {
-              tasks.push('Other');
+                tasks.push(property.get('property_name'));
+            }else if (item.replace(/\s/g, '') == 'other') {
+                tasks.push('Other');
             }
-          });
-        } else {
-          tasks.push('n/a');
-        }
+        });
         %>
         <%= tasks.join(', ') %>
       </p>
       <p class="col-md-12"><strong>Participant age:</strong><%
         var ages = [];
-        if(participant_age){
-          participant_age.split(",").forEach(function (item) {
+        participant_age.split(",").forEach(function (item) {
             var property = properties.findWhere({property_code: item.replace(/\s/g, '')});
             if (typeof(property) != "undefined") {
-              ages.push(property.get('property_name'));
-            } else if (item.replace(/\s/g, '') == 'other') {
-              ages.push('Other');
+                ages.push(property.get('property_name'));
+            }else if (item.replace(/\s/g, '') == 'other') {
+                ages.push('Other');
             }
-          });
-        } else {
-          ages.push('n/a');
-        }
+        });
         %>
         <%= ages.join(', ') %>
       </p>
@@ -468,7 +440,7 @@ Nonfederal Government Sponsors:</strong> <%- agency_partner_name || 'n/a' %></p>
           applyQuery();
         });
 
-        // Detect Browser Back Button
+        // Detect Browser Back Button 
         $( document ).ready(function($) {
 
           if (window.history && window.history.pushState) {

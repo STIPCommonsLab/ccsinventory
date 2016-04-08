@@ -1,5 +1,4 @@
 /* ---- STRUCTURE ---- */
-
 /* height system to have scrolly panels */
 
 html,
@@ -9,8 +8,9 @@ body,
 }
 
 .main-content{
-    height: 85%;
+    height: 95%;
 }
+
 
 #filters,
 #projects,
@@ -35,6 +35,7 @@ body,
 nav{
     padding: 2em 0 2em 0;
 }
+
 
 #hero-intro h2{
     margin: 0;
@@ -103,14 +104,14 @@ div.cartodb-popup.v2 {
 /* buttons style for links */
 nav a {
     padding: .3em .9em .3em .9em;
-    border-radius: 20px;
-    margin: .4% .7% 0% .7%;
+    border-radius: 0px;
+    margin: 0% .7% 0% .7%;
     float: right;
 }
 
 .footer-nav a{
     padding: .3em .9em .3em .9em;
-    border-radius: 20px;
+    border-radius: 0px;
 }
 
 /* project and agency summaries */
@@ -133,7 +134,14 @@ nav a {
 /* explanations in form */
 .well {
     padding: 1.5em;
-    background-color: #edf0f4;
+    background-color: white;
+    border: 1px solid #E2E3E4;
+    border-radius: 4px;
+}
+
+.well2 {
+    padding: 1.5em;
+    background-color: #f1f1f1;
     border: 1px solid #E2E3E4;
     border-radius: 4px;
 }
@@ -182,8 +190,8 @@ nav a {
 
 .btn-primary {
     color: #fff;
-    background-color: #FE8433;
-    border-color:#FE8433;
+    background-color: #F45851; /*orange */
+    border-color:#F45851;
     padding:10px 24px;
     border-radius: 24px;
     margin-top: 20px;
@@ -195,8 +203,9 @@ nav a {
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
     color: #fff;
-    background-color: #EF7430;
-    border-color: #EF7430;
+    background-color: black;
+    border-color: black;
+    border-style: dashed;
 }
 
 /* project panel */
@@ -214,17 +223,7 @@ nav a {
 /* } */
 
 /* more space within form components: fieldset block and header (legend) */
-fieldset {
-        margin-top: 3em;
-}
 
-legend{
-    padding-bottom: 0.5em;
-}
-
-legend i{
-    padding-right:0.5em;
-}
 
 /* search button discard contents */
 
@@ -245,18 +244,31 @@ legend i{
 /* ----- TYPOGRAPHY ----- */
 
 body{
-    font-family: 'Open Sans', sans-serif;
+	font-family:'Roboto Bold', sans-serif;
+	font-size:16px;
+	line-height:1.6em;
+	color:#555;
+	font-weight:400;
 }
 
 .well{
     font-weight:300;
 }
 
-#hero-intro,
+.well2{
+    font-weight:300;
+}
+
+#hero-intro{
+    text-align: left;
+}
+
+
 /* #projects, */
 #projects h2{
     text-align: center;
 }
+
 
 #project_panel h3{
     text-transform: uppercase;
@@ -278,17 +290,18 @@ from there: nav and hero sections are a shade variation of the blue sea.
 
 nav,
 .footer-nav{
-    background-color: #36537d;
+    background-color: #3b9bbf;
 }
 
 #hero-intro{
-    background-color: #486fa6;
+    background-color: #f2f2f3;
 }
 
 main,
 #submit-form{
     background-color: #f3f3f3;
 }
+
 
 #about,
 #data-policy,
@@ -313,22 +326,24 @@ nav a{
 
 nav a:hover,
 .footer-nav a:hover{
-    background-color: #486fa6;
+    background-color: #000000;
 }
 
 .current{
-    background-color: #36537d;
+    background-color: #3b9bbf;
 }
 
 .lead-btn{
-    background-color: #FD8D3C;
+    background-color: #3b9bbf;
 }
 
 .lead-btn:hover{
-    background-color: #fd6d3c;
+    background-color: #f45851;
 }
 
-header,
+header {
+    color: black;
+}
 footer {
     color: white;
 }
@@ -368,11 +383,11 @@ nav a:hover,
 }
 
 .orange{
-    color: #FE8433;
+    color: #F15A53;
 }
 
 .light-blue{
-    color: #00A1DC;
+    color: #3A7498;
 }
 
 .blue{
