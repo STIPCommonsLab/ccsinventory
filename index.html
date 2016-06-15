@@ -331,7 +331,8 @@ Nonfederal Government Sponsors:</strong> <%- agency_partner_name || 'n/a' %></p>
         %>
         <%= ages.join(', ') %>
       </p>
-      <% if (recruiting) { %>
+      <% if (((typeof recruiting === 'boolean') && recruiting) || 
+             ((typeof recruiting === 'string') && ((recruiting === 'true') || (recruiting === 'True')))) { %>
         <p class="col-md-12"><strong>Recruiting Volunteers:</strong> Yes, this project is recruiting</p>
     <% } %>
       <div class="col-md-12" id="contact_info">
